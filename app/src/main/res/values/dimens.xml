@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--sizes-->
+    <dimen name="dpm30">-30dp</dimen>
+    <dimen name="dp146">146dp</dimen>
+    <dimen name="dp154">154dp</dimen>
+    <dimen name="dp179">179dp</dimen>
+    <dimen name="dp188">188dp</dimen>
+    <dimen name="dp192">192dp</dimen>
+    <dimen name="dp195">195dp</dimen>
+    <dimen name="dp220">220dp</dimen>
+    <dimen name="dp265">265dp</dimen>
+    <!--fonts-->
+    <dimen name="sp32">32sp</dimen>
+</resources>
