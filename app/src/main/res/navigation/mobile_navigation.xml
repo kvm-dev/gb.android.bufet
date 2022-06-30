@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navigation_restoran">
+
+    <fragment
+        android:id="@+id/navigation_restoran"
+        android:name="ru.gb.bufet.ui.Restorans"
+        android:label="fragment_restorans"
+        tools:layout="@layout/fragment_restorans" />
+    <fragment
+        android:id="@+id/navigation_favorite"
+        android:name="ru.gb.bufet.ui.Favorite"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/navigation_zakaz"
+        android:name="ru.gb.bufet.ui.Zakaz"
+        android:label="fragment_zakaz"
+        tools:layout="@layout/fragment_zakaz" />
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="ru.gb.bufet.ui.Profile"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

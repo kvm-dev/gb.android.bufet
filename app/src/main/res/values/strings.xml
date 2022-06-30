@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Буфет</string>
     <string name="sp_name">Settings</string>
+    <string name="title_restoran">Заведения</string>
+    <string name="title_favorite">Избранное</string>
+    <string name="title_zakaz">Заказ</string>
+    <string name="title_profile">Профиль</string>
+
+    <string name="hello_blank_fragment">Favorite fragment</string>
     <string name="splash_subtitle">Удобно и быстро</string>
 
     <!-- descriptions and labels-->
