@@ -15,9 +15,6 @@ import ru.gb.bufet.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
-    //shared preference
-//    private val SP: String = resources.getString(R.string.sp_name)
     val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initBottomNavigation(){
         val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_container)
+        val navController = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.navigation_restoran,
