@@ -7,5 +7,12 @@
     <string name="title_profile">Профиль</string>
 
     <string name="hello_blank_fragment">Favorite fragment</string>
+    <string name="splash_subtitle">Удобно и быстро</string>
+
+    <!-- descriptions and labels-->
+    <string name="logo_bufet">logo</string>
+    <string name="splash_item">splashItem</string>
+    <string name="navigation_splash">navigationSplash</string>
+    <!-- /descriptions-->
 
 </resources>
