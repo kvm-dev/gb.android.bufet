@@ -20,13 +20,18 @@ class MainActivity : AppCompatActivity() {
     //shared preference
 //    private val SP: String = resources.getString(R.string.sp_name)
     val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val navView: BottomNavigationView = binding.navView
+        initBottomNavigation()
+    }
 
+    private fun initBottomNavigation(){
+        val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_container)
         val appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -38,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController,appBarConfiguration)
         navView.setupWithNavController(navController)
-
     }
+
 }
+
