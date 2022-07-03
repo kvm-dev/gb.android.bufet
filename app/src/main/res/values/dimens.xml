@@ -17,4 +17,7 @@
     <dimen name="small_corner_radius">8dp</dimen>
     <dimen name="small_margin">8dp</dimen>
     <dimen name="small_padding">8dp</dimen>
+    <dimen name="medium_corner_radius">12dp</dimen>
+    <dimen name="item_table_text_size">14sp</dimen>
+    <dimen name="item_table_stroke_width">1dp</dimen>
 </resources>
