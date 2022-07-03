@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="default_fragment" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:animateLayoutChanges">true</item>
         <item name="android:background">@color/main_background_color</item>
     </style>
+
     <style name="navigation_view" parent="">
         <item name="android:layout_width">@dimen/dp0</item>
         <item name="android:layout_height">wrap_content</item>
@@ -13,35 +15,43 @@
         <item name="android:background">@drawable/menu_background</item>
         <item name="menu">@menu/menu</item>
     </style>
+
     <style name="navigation_fragment" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="defaultNavHost">true</item>
     </style>
+
     <style name="splash_item1" parent="">
         <item name="android:layout_width">@dimen/dp220</item>
         <item name="android:layout_height">@dimen/dp220</item>
     </style>
+
     <style name="splash_item2" parent="">
         <item name="android:layout_width">@dimen/dp265</item>
         <item name="android:layout_height">@dimen/dp265</item>
     </style>
+
     <style name="splash_item3" parent="">
         <item name="android:layout_width">@dimen/dp188</item>
         <item name="android:layout_height">@dimen/dp188</item>
     </style>
+
     <style name="splash_item4" parent="">
         <item name="android:layout_width">@dimen/dp192</item>
         <item name="android:layout_height">@dimen/dp192</item>
     </style>
+
     <style name="splash_item5" parent="">
         <item name="android:layout_width">@dimen/dp154</item>
         <item name="android:layout_height">@dimen/dp179</item>
     </style>
+
     <style name="splash_logo" parent="">
         <item name="android:layout_width">@dimen/dp195</item>
         <item name="android:layout_height">@dimen/dp146</item>
     </style>
+
     <style name="splash_subtitle" parent="">
         <item name="android:layout_marginTop">@dimen/dpm30</item>
         <item name="android:layout_width">wrap_content</item>

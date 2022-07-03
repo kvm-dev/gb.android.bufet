@@ -1,52 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_food_card"
     android:layout_width="320dp"
-    android:layout_height="140dp"
-    android:layout_margin="@dimen/small_margin"
-    android:clickable="true"
-    android:elevation="4dp"
-    android:focusable="true"
-    app:cardCornerRadius="40dp">
+    android:layout_height="140dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/line"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/item_food_image"
-            android:layout_width="135dp"
-            android:layout_height="114dp"
-            android:contentDescription="@string/table_image"
-            android:scaleType="fitCenter"
-            android:src="@drawable/default_food_salad" />
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/small_padding">
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/item_food_card"
+            android:layout_width="320dp"
+            android:layout_height="120dp"
+            android:clickable="true"
+            android:elevation="4dp"
+            android:focusable="true"
+            app:cardCornerRadius="40dp"
+            app:cardElevation="4dp">
 
-            <TextView
-                android:id="@+id/item_food_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Крем-суп из цветной капусты"
-                android:paddingBottom="@dimen/big_margin"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="@dimen/item_food_text_size" />
-
-            <TextView
-                android:id="@+id/item_food_cost"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="350р"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="@dimen/item_food_text_size" />
-        </LinearLayout>
+                android:layout_height="wrap_content"
+                android:layout_marginStart="143dp"
+                android:orientation="vertical"
+                android:padding="@dimen/small_padding">
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/item_food_name_tw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/middle_margin"
+                    android:text="Крем-суп из цветной капусты"
+                    android:textAppearance="?attr/textAppearanceHeadline5"
+                    android:textSize="@dimen/item_food_text_size" />
 
-</com.google.android.material.card.MaterialCardView>
+                <com.google.android.material.button.MaterialButton
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:text="350р"
+                    android:textAppearance="?attr/textAppearanceHeadline6"
+                    android:textSize="@dimen/item_food_text_size"
+                    app:strokeColor="@color/general_color"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+    </FrameLayout>
+
+    <ImageView
+        android:id="@+id/item_food_image"
+        android:layout_width="135dp"
+        android:layout_height="114dp"
+        android:contentDescription="@string/food_image"
+        android:scaleType="centerCrop"
+        android:src="@drawable/default_food_salad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,6 +20,7 @@
     <string name="navigation_profile">navigationProfile</string>
     <string name="table_image">table_image</string>
     <string name="item_table_btn_text_order">Выбрать</string>
+    <string name="food_image">food_image</string>
     <!-- /descriptions -->
 
 </resources>
