@@ -2,6 +2,8 @@
 <resources>
     <!--sizes-->
     <dimen name="dpm30">-30dp</dimen>
+    <dimen name="dp0">0dp</dimen>
+    <dimen name="dp1">1dp</dimen>
     <dimen name="dp146">146dp</dimen>
     <dimen name="dp154">154dp</dimen>
     <dimen name="dp179">179dp</dimen>

@@ -3,7 +3,22 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     tools:ignore="ExtraText">
     <item
-        android:id="@+id/navigation_home"
-        android:icon="@drawable/splash_item1"
-        android:title="@string/splash_subtitle" />
+        android:id="@+id/navigation_restaurants"
+        android:icon="@drawable/menu_restaurants"
+        android:title="@string/menu_restaurants" />
+
+    <item
+        android:id="@+id/navigation_favorites"
+        android:icon="@drawable/menu_favorites"
+        android:title="@string/menu_favorites" />
+
+    <item
+        android:id="@+id/navigation_order"
+        android:icon="@drawable/menu_order"
+        android:title="@string/menu_order" />
+
+    <item
+        android:id="@+id/navigation_profile"
+        android:icon="@drawable/menu_profile"
+        android:title="@string/menu_profile" />
 </menu>

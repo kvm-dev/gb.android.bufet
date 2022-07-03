@@ -1,18 +1,23 @@
 <resources>
     <string name="app_name">Буфет</string>
     <string name="sp_name">Settings</string>
-    <string name="title_restoran">Заведения</string>
-    <string name="title_favorite">Избранное</string>
-    <string name="title_zakaz">Заказ</string>
-    <string name="title_profile">Профиль</string>
-
     <string name="hello_blank_fragment">Favorite fragment</string>
     <string name="splash_subtitle">Удобно и быстро</string>
+    <!-- menu titles -->
+    <string name="menu_restaurants">Заведения</string>
+    <string name="menu_favorites">Избранное</string>
+    <string name="menu_order">Заказ</string>
+    <string name="menu_profile">Профиль</string>
+    <!-- /menu titles -->
 
     <!-- descriptions and labels-->
     <string name="logo_bufet">logo</string>
     <string name="splash_item">splashItem</string>
     <string name="navigation_splash">navigationSplash</string>
-    <!-- /descriptions-->
+    <string name="navigation_restaurants">navigationRestaurants</string>
+    <string name="navigation_favorites">navigationFavorites</string>
+    <string name="navigation_order">navigationOrder</string>
+    <string name="navigation_profile">navigationProfile</string>
+    <!-- /descriptions -->
 
 </resources>

@@ -1,21 +1,23 @@
 package ru.gb.bufet
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.CountDownTimer
+import android.view.View
 import android.view.Window
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.gb.bufet.databinding.ActivityMainBinding
 import ru.gb.bufet.viewModel.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
+    //only for test, delete later!!
+    private var timer: CountDownTimer? = null
+    private val navController by lazy { findNavController(R.id.nav_host_fragment_activity_main_navigate)}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -26,21 +28,27 @@ class MainActivity : AppCompatActivity() {
         Window.FEATURE_NO_TITLE
         supportActionBar?.hide()
 
-        initBottomNavigation()
+        timer = object : CountDownTimer(3000, 1000) {
+            @SuppressLint("ZAZLUSHKA")
+            override fun onTick(millisUntilFinished: Long) {
+                //nothing
+            }
+            override fun onFinish() {
+                timer?.cancel()
+                startApplication()
+            }
+        }.start()
     }
 
-    private fun initBottomNavigation(){
-        val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(androidx.navigation.fragment.R.id.nav_host_fragment_container)
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_restoran,
-                R.id.navigation_favorite,
-                R.id.navigation_zakaz,
-                R.id.navigation_profile
-            )
-        )
-        navView.setupWithNavController(navController)
+    private fun startApplication(){
+        navController.setGraph(R.navigation.navigation)
+        binding.navView.visibility = View.VISIBLE
+        binding.navView.selectedItemId = R.id.navigation_restaurants
+        navController.navigate(R.id.navigation_restaurants)
     }
 
+    override fun onDestroy() {
+        super.onDestroy()
+        timer?.cancel()
+    }
 }

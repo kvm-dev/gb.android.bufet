@@ -6,6 +6,18 @@
         <item name="android:animateLayoutChanges">true</item>
         <item name="android:background">@color/main_background_color</item>
     </style>
+    <style name="navigation_view" parent="">
+        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:animateLayoutChanges">true</item>
+        <item name="android:background">@drawable/menu_background</item>
+        <item name="menu">@menu/menu</item>
+    </style>
+    <style name="navigation_fragment" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp0</item>
+        <item name="defaultNavHost">true</item>
+    </style>
     <style name="splash_item1" parent="">
         <item name="android:layout_width">@dimen/dp220</item>
         <item name="android:layout_height">@dimen/dp220</item>
