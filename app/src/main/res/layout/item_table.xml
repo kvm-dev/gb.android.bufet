@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_dress_card"
+    android:id="@+id/item_table_card"
     android:layout_width="120dp"
     android:layout_height="196dp"
     android:layout_margin="@dimen/small_margin"
@@ -43,7 +43,7 @@
                 android:layout_height="91dp"
                 android:contentDescription="@string/table_image"
                 android:scaleType="fitCenter"
-                android:src="@drawable/dafault_table" />
+                android:src="@drawable/default_table" />
 
             <TextView
                 android:id="@+id/item_table_sits_count_tw"
@@ -58,7 +58,7 @@
             android:layout_width="match_parent"
             android:layout_height="38dp"
             android:background="@drawable/item_table_rounded_button"
-            android:text="@string/item_table_btn_text_zakaz"
+            android:text="@string/item_table_btn_text_order"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
