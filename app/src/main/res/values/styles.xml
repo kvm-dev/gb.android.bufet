@@ -61,4 +61,16 @@
         <item name="android:textColor">@color/general_color</item>
         <item name="android:text">@string/splash_subtitle</item>
     </style>
+
+    // поле поиска
+    <style name="SearchTextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/general_color</item>
+        <item name="startIconDrawable">@drawable/ic_search</item>
+    </style>
+
+    // Tabs Layout
+    <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
 </resources>

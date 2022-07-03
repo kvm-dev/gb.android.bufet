@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Буфет</string>
     <string name="sp_name">Settings</string>
-    <string name="hello_blank_fragment">Favorite fragment</string>
     <string name="splash_subtitle">Удобно и быстро</string>
     <!-- menu titles -->
     <string name="menu_restaurants">Заведения</string>
@@ -22,5 +21,15 @@
     <string name="item_table_btn_text_order">Выбрать</string>
     <string name="food_image">food_image</string>
     <!-- /descriptions -->
+
+    // main display
+    <string name="main_display_title">Удобно и быстро \n в любом ресторане</string>
+    <string name="main_display_search_text">Поиск</string>
+    <string-array name="main_display_title_tabs">
+        <item>Ресторан</item>
+        <item>ФастФуд</item>
+        <item>Кафе</item>
+        <item>Бар</item>
+    </string-array>
 
 </resources>
