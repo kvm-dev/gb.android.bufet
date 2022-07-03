@@ -18,6 +18,7 @@
     <string name="navigation_favorites">navigationFavorites</string>
     <string name="navigation_order">navigationOrder</string>
     <string name="navigation_profile">navigationProfile</string>
+    <string name="table_image">table_image</string>
     <!-- /descriptions -->
 
 </resources>
