@@ -11,7 +11,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
     override fun init(){
         runAnimation()
         //test food
-        viewModel.getFoodList()
+        viewModel.getFoodList(0)
         viewModel.foodListResponse.observe(viewLifecycleOwner, Observer {
             if(it != null){
                 Log.d("ответ", it.toString())
