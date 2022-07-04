@@ -9,5 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <!--bufet colors-->
     <color name="main_background_color">#F6F6F6</color>
-    <color name="general_color">#F50D0D</color>
+    <color name="general_color" >#F50D0D</color>
+
+
 </resources>
