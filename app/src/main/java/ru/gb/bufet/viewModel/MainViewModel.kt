@@ -14,11 +14,11 @@ class  MainViewModel: ViewModel() {
     val error: MutableLiveData<String> = MutableLiveData()
 
     //methods
-    fun getFoodList() {
+    fun getFoodList(restaurantId: Int) {
         val requestData = RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
         viewModelScope.async {
             try{
-                foodListResponse.value = requestData.getFoods()
+                foodListResponse.value = requestData.getFoods(restaurantId)
             }
             catch (e: Exception) {
                 error.value = e.toString()
