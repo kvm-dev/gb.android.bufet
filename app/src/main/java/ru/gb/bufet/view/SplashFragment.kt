@@ -1,5 +1,7 @@
 package ru.gb.bufet.view
 
+import android.util.Log
+import androidx.lifecycle.Observer
 import ru.gb.bufet.databinding.FragmentSplashBinding
 import ru.gb.bufet.model.data.BaseFragment
 import ru.gb.bufet.model.utils.SplashAnimation
@@ -8,6 +10,13 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
     override fun init(){
         runAnimation()
+        //test food
+        viewModel.getFoodList()
+        viewModel.foodListResponse.observe(viewLifecycleOwner, Observer {
+            if(it != null){
+                Log.d("ответ", it.toString())
+            }
+        })
     }
 
     private fun runAnimation(){
