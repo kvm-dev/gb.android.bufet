@@ -26,6 +26,8 @@
     <!-- main display -->
     <string name="main_display_title">Удобно и быстро\nв любом ресторане</string>
     <string name="main_display_search_text">Поиск</string>
+    <string name="adv_title">Еще один вареник !</string>
+    <string name="adv_description">Еще один ресторан в сети пельменных “Вареник”. Лучшие пельмени по самым демократичным ценам</string>
     <string-array name="main_display_title_tabs">
         <item>Все</item>
         <item>Ресторан</item>
