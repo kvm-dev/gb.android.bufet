@@ -2,117 +2,80 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/item_restaurant_card"
-    android:layout_width="296dp"
-    android:layout_height="wrap_content"
-    android:clickable="true"
-    android:elevation="2dp"
-    android:focusable="true"
-    app:cardCornerRadius="@dimen/medium_corner_radius"
-    app:strokeColor="@color/general_color"
-    app:strokeWidth="@dimen/item_table_stroke_width">
+    android:id="@+id/itemRestaurantCard"
+    style="@style/restaurant_card_view">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+       style="@style/base_constraint">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/item_restaurant_vertical_line"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/item_restaurant_image_iv"
-            android:layout_width="match_parent"
-            android:layout_height="124dp"
-            android:contentDescription="@string/table_image"
-            android:scaleType="matrix"
-            android:src="@drawable/default_table"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/item_restaurant_tables_icon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginVertical="@dimen/extra_small_margin"
-            android:layout_marginEnd="@dimen/small_margin"
-            android:src="@drawable/menu_order"
-            app:layout_constraintBottom_toTopOf="@id/item_restaurant_one_dp_image"
-            app:layout_constraintEnd_toStartOf="@id/item_restaurant_sits_count_tv"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_restaurant_image_iv"
-            app:tint="@color/general_color" />
-
-        <TextView
-            android:id="@+id/item_restaurant_sits_count_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/extra_small_margin"
-            android:text="12"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="@dimen/item_table_text_size"
-            app:layout_constraintBottom_toTopOf="@id/item_restaurant_one_dp_image"
-            app:layout_constraintEnd_toStartOf="@id/item_restaurant_vertical_line"
-            app:layout_constraintStart_toEndOf="@id/item_restaurant_tables_icon"
-            app:layout_constraintTop_toBottomOf="@id/item_restaurant_image_iv" />
-
-        <ImageView
-            android:id="@+id/item_restaurant_clock_icon"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginVertical="@dimen/extra_small_margin"
-            android:layout_marginEnd="@dimen/small_margin"
-            android:src="@drawable/ic_time"
-            app:layout_constraintBottom_toTopOf="@id/item_restaurant_one_dp_image"
-            app:layout_constraintEnd_toStartOf="@id/item_restaurant_time_tv"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toEndOf="@id/item_restaurant_vertical_line"
-            app:layout_constraintTop_toBottomOf="@id/item_restaurant_image_iv"
-            app:tint="@color/general_color"
-            tools:ignore="UseAppTint" />
-
-        <TextView
-            android:id="@+id/item_restaurant_time_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/extra_small_margin"
-            android:text="9:00-23:00"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="@dimen/item_table_text_size"
-            app:layout_constraintBottom_toTopOf="@id/item_restaurant_one_dp_image"
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            style="@style/restaurant_card_linear"
+            android:baselineAligned="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/item_restaurant_clock_icon"
-            app:layout_constraintTop_toBottomOf="@id/item_restaurant_image_iv" />
-
-        <TextView
-            android:id="@+id/item_restaurant_one_dp_image"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@drawable/item_restaurant_one_dp_image"
-            app:layout_constraintBottom_toTopOf="@id/item_restaurant_name_tv"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_restaurant_tables_icon" />
+            app:layout_constraintTop_toBottomOf="@+id/restaurantHeader">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/restaurant_card_linear_item">
+
+                <ImageView
+                    android:id="@+id/tableIcon"
+                    style="@style/restaurant_card_table_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/restaurant_item"/>
+
+                <TextView
+                    android:id="@+id/tableCounter"
+                    style="@style/restaurant_card_table_counter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tableIcon"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="12" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/restaurant_card_linear_item">
+
+                <ImageView
+                    android:id="@+id/workTimeIcon"
+                    style="@style/restaurant_card_work_time_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/workTimeData"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/restaurant_item" />
+
+                <TextView
+                    android:id="@+id/workTimeData"
+                    style="@style/restaurant_card_work_time_data"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="12" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/restaurantHeader"
+            style="@style/restaurant_card_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@drawable/image_not_found" />
 
         <TextView
-            android:id="@+id/item_restaurant_name_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="@dimen/extra_small_margin"
-            android:text="Свиные жирные уши"
-            android:textAllCaps="true"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="20sp"
+            android:id="@+id/restaurantTitle"
+            style="@style/restaurant_card_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/item_restaurant_one_dp_image" />
-
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+            tools:text="Свиные жирные уши"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>

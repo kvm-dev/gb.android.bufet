@@ -1,22 +1,25 @@
 package ru.gb.bufet.view
 
+import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
+import android.os.Build
+import android.os.CountDownTimer
 import android.util.Log
 import androidx.lifecycle.Observer
+import ru.gb.bufet.MainActivity
+import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentSplashBinding
 import ru.gb.bufet.model.data.BaseFragment
+import ru.gb.bufet.model.utils.CheckConnection
 import ru.gb.bufet.model.utils.SplashAnimation
 
 class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding::inflate) {
-
+    private var timer: CountDownTimer? = null
     override fun init(){
         runAnimation()
-        //test food
-        viewModel.getFoodList(0)
-        viewModel.foodListResponse.observe(viewLifecycleOwner, Observer {
-            if(it != null){
-                Log.d("ответ", it.toString())
-            }
-        })
+        checkConnection()
     }
 
     private fun runAnimation(){
@@ -24,4 +27,34 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
         playAnimation.splashItemsAnimation()
         playAnimation.subTitleAnimate()
     }
-}
+
+    @Override
+    override fun onDestroy() {
+        super.onDestroy()
+        timer?.cancel()
+    }
+
+    private fun checkConnection(){
+        timer = object : CountDownTimer(5000, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+                //nothing
+            }
+            override fun onFinish() {
+                if(CheckConnection().isNetworkAvailable(requireContext())){
+                    viewModel.getRestaurantsList()
+                    viewModel.restaurantsListResponse.observe(viewLifecycleOwner, Observer {
+                        if(it != null){
+                            timer?.cancel()
+                            (activity as MainActivity).startApplication()
+                        }
+                    })
+                }
+                else{
+                    (activity as MainActivity).toaster(resources.getString(R.string.connection_error))
+                    timer?.cancel()
+                    checkConnection()
+                }
+            }
+        }.start()
+    }
+    }

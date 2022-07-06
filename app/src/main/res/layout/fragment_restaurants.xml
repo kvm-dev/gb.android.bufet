@@ -2,55 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
+    style="@style/main_display_main_container"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/main_display_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:maxLines="2"
-        android:layout_marginTop="24dp"
-        android:text="@string/main_display_title"
-        android:textSize="20sp"
-        />
+        android:id="@+id/mainDisplayTitle"
+        style="@style/main_display_title"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_display_rv_1"
-        android:layout_width="match_parent"
-        android:layout_height="149dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal" />
+        android:id="@+id/advertiseRecycler"
+        style="@style/main_display_advertise_recycler" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/main_display_et"
-        style="@style/SearchTextInputLayoutStyle"
+        style="@style/search_layout_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/main_display_search_text"
         android:padding="8dp">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:id="@+id/search"
+            style="@style/search_input"
+            tools:ignore="TextContrastCheck" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/filterNavigation"
+            style="@style/match_match_container"
+            app:tabGravity="center"
+            app:tabIndicatorColor="@color/general_color"
+            app:tabMode="scrollable"
+            android:contentDescription="@string/item_table_btn_text_order"/>
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tab_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabTextAppearance="@style/MyCustomTextAppearance"
-        app:tabMode="fixed"/>
-
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/pager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/restaurantsRecycler"
+        style="@style/match_match_container" />
 </LinearLayout>

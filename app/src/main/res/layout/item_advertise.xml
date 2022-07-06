@@ -23,7 +23,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:scaleType="centerCrop"
-                android:src="@drawable/rest_4" />
+                android:src="@drawable/most_delete_rest_4" />
 
             <TextView
                 android:id="@+id/adv_description_tv"

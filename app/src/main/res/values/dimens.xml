@@ -4,7 +4,21 @@
     <dimen name="dpm30">-30dp</dimen>
     <dimen name="dp0">0dp</dimen>
     <dimen name="dp1">1dp</dimen>
+    <dimen name="dp2">2dp</dimen>
+    <dimen name="dp3">3dp</dimen>
+    <dimen name="dp4">4dp</dimen>
+    <dimen name="dp8">8dp</dimen>
+    <dimen name="dp10">10dp</dimen>
+    <dimen name="dp12">12dp</dimen>
+    <dimen name="dp16">16dp</dimen>
+    <dimen name="dp18">18dp</dimen>
+    <dimen name="dp24">24dp</dimen>
+    <dimen name="dp25">25dp</dimen>
+    <dimen name="dp30">30dp</dimen>
+    <dimen name="dp45">45dp</dimen>
+    <dimen name="dp133">133dp</dimen>
     <dimen name="dp146">146dp</dimen>
+    <dimen name="dp150">150dp</dimen>
     <dimen name="dp154">154dp</dimen>
     <dimen name="dp179">179dp</dimen>
     <dimen name="dp188">188dp</dimen>
@@ -13,15 +27,9 @@
     <dimen name="dp220">220dp</dimen>
     <dimen name="dp265">265dp</dimen>
     <!--fonts-->
+    <dimen name="sp14">14sp</dimen>
+    <dimen name="sp18">18sp</dimen>
+    <dimen name="sp22">22sp</dimen>
+    <dimen name="sp24">24sp</dimen>
     <dimen name="sp32">32sp</dimen>
-    <dimen name="small_corner_radius">8dp</dimen>
-    <dimen name="small_margin">8dp</dimen>
-    <dimen name="middle_margin">16dp</dimen>
-    <dimen name="big_margin">24dp</dimen>
-    <dimen name="small_padding">8dp</dimen>
-    <dimen name="medium_corner_radius">12dp</dimen>
-    <dimen name="item_table_text_size">14sp</dimen>
-    <dimen name="item_table_stroke_width">1dp</dimen>
-    <dimen name="item_food_text_size">18sp</dimen>
-    <dimen name="extra_small_margin">4dp</dimen>
 </resources>

@@ -2,7 +2,7 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="320dp"
+    android:layout_width="match_parent"
     android:layout_height="140dp">
 
     <androidx.constraintlayout.widget.Guideline
@@ -15,8 +15,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <FrameLayout
+        android:id="@+id/frameLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/line">
 
@@ -35,16 +37,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="143dp"
                 android:orientation="vertical"
-                android:padding="@dimen/small_padding">
+                android:padding="@dimen/dp8">
 
                 <TextView
                     android:id="@+id/item_food_name_tw"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/middle_margin"
+                    android:paddingBottom="@dimen/dp16"
                     android:text="Крем-суп из цветной капусты"
                     android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:textSize="@dimen/item_food_text_size" />
+                    android:textSize="@dimen/sp18" />
 
                 <com.google.android.material.button.MaterialButton
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -54,13 +56,14 @@
                     android:focusable="false"
                     android:text="350р"
                     android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="@dimen/item_food_text_size"
+                    android:textSize="@dimen/sp18"
                     app:strokeColor="@color/general_color"
                     app:strokeWidth="1dp" />
 
             </LinearLayout>
 
         </com.google.android.material.card.MaterialCardView>
+
     </FrameLayout>
 
     <ImageView
@@ -70,7 +73,7 @@
         android:contentDescription="@string/food_image"
         android:scaleType="centerCrop"
         android:src="@drawable/default_food_salad"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
