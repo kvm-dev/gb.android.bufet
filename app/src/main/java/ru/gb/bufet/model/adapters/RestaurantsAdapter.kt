@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
-import ru.gb.bufet.model.responseData.RestaurantListResponse
+import ru.gb.bufet.model.responseData.ResponseData
 import ru.gb.bufet.model.utils.ServerUtils
 import ru.gb.bufet.viewModel.MainViewModel
 
-class RestaurantsAdapter (private val items: List<RestaurantListResponse>) :
+class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>) :
     RecyclerView.Adapter<RestaurantsAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var restaurantItem: CardView? = null
@@ -34,7 +34,7 @@ class RestaurantsAdapter (private val items: List<RestaurantListResponse>) :
             restaurantName = itemView.findViewById(R.id.restaurantTitle)
         }
 
-        fun bind(items: List<RestaurantListResponse>, id: Int) {
+        fun bind(items: List<ResponseData.Restaurant>, id: Int) {
             val context = itemView.context
             val activity : MainActivity = context as MainActivity
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
@@ -43,14 +43,14 @@ class RestaurantsAdapter (private val items: List<RestaurantListResponse>) :
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
                     Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(restaurantImage)
                 } }
-            if(items[id].tables?.size !=null){
-                restaurantTables?.text = items[id].tables?.size.toString()
+            if(items[id].restaurantTables?.size !=null){
+                restaurantTables?.text = items[id].restaurantTables?.size.toString()
             }
             else{
                 restaurantTables?.text = context.resources.getString(R.string.default_value)
             }
-            if(items[id].work_start!!.isNotBlank() && items[id].work_end!!.isNotBlank()){
-                restaurantWorkTime?.text = ServerUtils().checkWorkTime(context, items[id].work_start!!, items[id].work_end!!)
+            if(items[id].work_start!=null && items[id].work_end!= null){
+                restaurantWorkTime?.text = ServerUtils().checkWorkTimeFromTimeStamp(context, items[id].work_start!!, items[id].work_end!!)
             }
             else{
                 restaurantWorkTime?.text = context.resources.getString(R.string.restaurant_not_open)

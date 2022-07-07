@@ -42,6 +42,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
             override fun onFinish() {
                 if(CheckConnection().isNetworkAvailable(requireContext())){
                     viewModel.getRestaurantsList()
+                    viewModel.getAdv()
                     viewModel.restaurantsListResponse.observe(viewLifecycleOwner, Observer {
                         if(it != null){
                             timer?.cancel()
