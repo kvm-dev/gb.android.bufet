@@ -296,7 +296,6 @@
 
     <style name="advertise_image_corners" parent="">
         <item name="cornerSizeTopLeft">@dimen/dp16</item>
-        <item name="cornerSizeBottomLeft">@dimen/dp16</item>
     </style>
 
     <style name="search_not_found_icon" parent="">
