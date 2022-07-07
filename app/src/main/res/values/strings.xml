@@ -26,14 +26,19 @@
     <!-- main display -->
     <string name="main_display_title">Удобно и быстро\nв любом ресторане</string>
     <string name="main_display_search_text">Поиск</string>
-    <string name="adv_title">Еще один вареник !</string>
-    <string name="adv_description">Еще один ресторан в сети пельменных “Вареник”. Лучшие пельмени по самым демократичным ценам</string>
+    <string name="main_display_cancel_search_button">Отмена</string>
+    <string name="main_display_not_found_title">Заведение не найдено</string>
+    <string name="main_display_not_found_text">Попробуйте поискать заведение с другим названием</string>
     <string-array name="main_display_title_tabs">
         <item>Все</item>
-        <item>Ресторан</item>
-        <item>ФастФуд</item>
-        <item>Кафе</item>
-        <item>Бар</item>
+        <item>таверна</item>
+        <item>мультиконцептуальное кафе</item>
+        <item>ресторанчик на углях</item>
+        <item>ресторан</item>
+        <item>ресторан-путешествие</item>
+        <item>бар</item>
+        <item>ресторан кавказской кухни</item>
+        <item>кафе</item>
     </string-array>
     <!-- /main display -->
 

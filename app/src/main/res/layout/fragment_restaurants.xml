@@ -5,37 +5,87 @@
     style="@style/main_display_main_container"
     tools:context=".MainActivity">
 
+    <Space
+        android:id="@+id/searchSpacer"
+        style="@style/search_spacer" />
+
     <TextView
         android:id="@+id/mainDisplayTitle"
         style="@style/main_display_title"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/advertiseRecycler"
-        style="@style/main_display_advertise_recycler" />
+        android:visibility="gone"
+        style="@style/main_display_advertise_recycler" >
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/main_display_et"
-        style="@style/search_layout_style"
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/main_display_search_text"
-        android:padding="8dp">
+        android:layout_height="wrap_content">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/search"
-            style="@style/search_input"
-            tools:ignore="TextContrastCheck" />
+        <TextView
+            android:id="@+id/cancelSearch"
+            style="@style/search_button_cancel"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/searchBox" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/filterNavigation"
-            style="@style/match_match_container"
-            app:tabGravity="center"
-            app:tabIndicatorColor="@color/general_color"
-            app:tabMode="scrollable"
-            android:contentDescription="@string/item_table_btn_text_order"/>
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/searchBox"
+            style="@style/search_layout_style"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/cancelSearch"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search"
+                style="@style/search_input"
+                tools:ignore="TextContrastCheck" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/filterNavigation"
+                style="@style/match_match_container"
+                android:contentDescription="@string/item_table_btn_text_order"
+                app:tabGravity="center"
+                app:tabIndicatorColor="@color/general_color"
+                app:tabMode="scrollable" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/restaurantsRecycler"
         style="@style/match_match_container" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/restaurantNotFound"
+        android:visibility="gone"
+        style="@style/base_constraint">
+
+        <ImageView
+            android:id="@+id/notFoundIcon"
+            style="@style/search_not_found_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_search_big" />
+
+        <TextView
+            android:id="@+id/notFoundTitle"
+            style="@style/not_found_title"
+            app:layout_constraintEnd_toEndOf="@+id/notFoundIcon"
+            app:layout_constraintStart_toStartOf="@+id/notFoundIcon"
+            app:layout_constraintTop_toBottomOf="@+id/notFoundIcon" />
+
+        <TextView
+            android:id="@+id/notFoundText"
+            style="@style/not_found_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/notFoundTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </LinearLayout>

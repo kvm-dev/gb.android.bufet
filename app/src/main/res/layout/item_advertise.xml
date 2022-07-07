@@ -1,51 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/item_marketing"
-    style="@style/CustomCardViewStyle"
-    android:layout_width="296dp"
-    android:layout_height="149dp"
-    android:layout_margin="10dp"
-    android:clickable="true"
-    android:focusable="true">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/advertiseBanner"
+    style="@style/adv_card">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/match_match_container">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:id="@+id/advertiseLinear"
+            style="@style/advertise_linear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
-                android:id="@+id/adv_image_iv"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:scaleType="centerCrop"
-                android:src="@drawable/most_delete_rest_4" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/advertiseImage"
+                style="@style/advertise_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@drawable/image_not_found" />
 
             <TextView
-                android:id="@+id/adv_description_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_weight="1"
-                android:paddingHorizontal="4dp"
-                android:text="@string/adv_description"
-                android:textSize="12sp" />
+                android:id="@+id/advertiseDescription"
+                style="@style/advertise_description" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/adv_title_tv"
-            style="@style/MyButton"
-            android:layout_width="264dp"
-            android:layout_height="31dp"
-            android:layout_gravity="center_horizontal"
-            android:insetTop="0dp"
-            android:text="@string/adv_title"
-            android:textAllCaps="false" />
+        <TextView
+            android:id="@+id/advertiseTitle"
+            style="@style/advertise_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
