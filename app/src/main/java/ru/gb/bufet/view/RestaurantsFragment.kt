@@ -13,7 +13,8 @@ import ru.gb.bufet.databinding.FragmentRestaurantsBinding
 import ru.gb.bufet.model.adapters.AdvertiseAdapter
 import ru.gb.bufet.model.adapters.RestaurantsAdapter
 import ru.gb.bufet.model.data.BaseFragment
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.utils.BufetHelpers
 import ru.gb.bufet.model.utils.SearchAndFilterRestaurant
 
@@ -100,7 +101,7 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
                 binding.advertiseRecycler.layoutManager = sliderLayoutManager
                 val snapHelper = PagerSnapHelper()
                 snapHelper.attachToRecyclerView( binding.advertiseRecycler)
-                binding.advertiseRecycler.adapter = AdvertiseAdapter(advertisement.filter { it.isActive == true } as ArrayList<ResponseData.AdvertiseBanners>)
+                binding.advertiseRecycler.adapter = AdvertiseAdapter(advertisement.filter { it.isActive == true } as ArrayList<AdvertiseBanners>)
             }
         })
     }

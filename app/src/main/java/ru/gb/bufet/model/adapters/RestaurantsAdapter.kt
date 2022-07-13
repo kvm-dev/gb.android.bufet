@@ -13,11 +13,11 @@ import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.ItemRestaurantBinding
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.utils.ServerUtils
 import ru.gb.bufet.viewModel.MainViewModel
 
-class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>) :
+class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
     RecyclerView.Adapter<RestaurantsAdapter.MyViewHolder>() {
     class MyViewHolder(binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root) {
         private var restaurantItem: CardView? = null
@@ -34,7 +34,7 @@ class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>)
             restaurantName = binding.restaurantTitle
         }
 
-        fun bind(items: List<ResponseData.Restaurant>, id: Int) {
+        fun bind(items: List<Restaurant>, id: Int) {
             val context = itemView.context
             val activity : MainActivity = context as MainActivity
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]

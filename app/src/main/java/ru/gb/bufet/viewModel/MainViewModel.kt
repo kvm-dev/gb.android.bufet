@@ -4,17 +4,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.async
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
+import ru.gb.bufet.model.responseData.AdvertiseBanners
 
 class  MainViewModel: ViewModel() {
     //data
-    val responseData: MutableLiveData<List<ResponseData>> = MutableLiveData()
-    val restaurantsListResponse: MutableLiveData<ArrayList<ResponseData.Restaurant>> = MutableLiveData()
-    val currentRestaurants: MutableLiveData<ArrayList<ResponseData.Restaurant>> = MutableLiveData()
-    val currentRestaurant: MutableLiveData<ResponseData.Restaurant> = MutableLiveData()
-    val advertiseBanners: MutableLiveData<ArrayList<ResponseData.AdvertiseBanners>> = MutableLiveData()
+    val responseData: MutableLiveData<List<Restaurant>> = MutableLiveData()
+    val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
+    val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
+    val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
+    val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
 
     //methods
