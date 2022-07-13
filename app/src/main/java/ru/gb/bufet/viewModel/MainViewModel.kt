@@ -13,6 +13,7 @@ class  MainViewModel: ViewModel() {
     val responseData: MutableLiveData<List<ResponseData>> = MutableLiveData()
     val restaurantsListResponse: MutableLiveData<ArrayList<ResponseData.Restaurant>> = MutableLiveData()
     val currentRestaurants: MutableLiveData<ArrayList<ResponseData.Restaurant>> = MutableLiveData()
+    val currentRestaurant: MutableLiveData<ResponseData.Restaurant> = MutableLiveData()
     val advertiseBanners: MutableLiveData<ArrayList<ResponseData.AdvertiseBanners>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
 

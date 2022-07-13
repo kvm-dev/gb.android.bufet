@@ -2,7 +2,6 @@ package ru.gb.bufet.model.adapters
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
@@ -13,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
+import ru.gb.bufet.databinding.ItemRestaurantBinding
 import ru.gb.bufet.model.responseData.ResponseData
 import ru.gb.bufet.model.utils.ServerUtils
 import ru.gb.bufet.viewModel.MainViewModel
 
 class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>) :
     RecyclerView.Adapter<RestaurantsAdapter.MyViewHolder>() {
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder(binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root) {
         private var restaurantItem: CardView? = null
         private var restaurantImage: ImageView? = null
         var restaurantTables: TextView? = null
@@ -27,11 +27,11 @@ class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>)
         var restaurantName: TextView? = null
 
         init {
-            restaurantItem = itemView.findViewById(R.id.itemRestaurantCard)
-            restaurantImage = itemView.findViewById(R.id.restaurantHeader)
-            restaurantTables = itemView.findViewById(R.id.tableCounter)
-            restaurantWorkTime = itemView.findViewById(R.id.workTimeData)
-            restaurantName = itemView.findViewById(R.id.restaurantTitle)
+            restaurantItem = binding.itemRestaurantCard
+            restaurantImage = binding.restaurantHeader
+            restaurantTables = binding.tableCounter
+            restaurantWorkTime = binding.workTimeData
+            restaurantName = binding.restaurantTitle
         }
 
         fun bind(items: List<ResponseData.Restaurant>, id: Int) {
@@ -55,20 +55,30 @@ class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>)
             else{
                 restaurantWorkTime?.text = context.resources.getString(R.string.restaurant_not_open)
             }
+            restaurantItem?.setOnClickListener {
+                viewModel.currentRestaurant.value = null
+                viewModel.currentRestaurant.value = items[id]
+                activity.goToRestaurant()
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_restaurant, parent, false)
-        return MyViewHolder(itemView)
+        val binding = ItemRestaurantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+
+        return MyViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(items, position)
-        holder.restaurantName?.text = "${items[position].name}"
+//        holder.bind(items, position)
+//        holder.restaurantName?.text = "${items[position].name}"
+          with(holder){
+              with(items[position]){
+                  restaurantName?.text = name
+              }
+              bind(items, position)
+          }
     }
 
     override fun getItemCount() = items.size

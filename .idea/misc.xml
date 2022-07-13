@@ -14,6 +14,10 @@
         <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_food.xml" value="0.33" />
         <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_table.xml" value="0.75" />
         <entry key="app/src/main/res/drawable/advertisement_title_background.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/animation_add_to_favorites.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/animation_favorites.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/animation_remove_from_favorites.xml" value="0.155" />
+        <entry key="app/src/main/res/drawable/favorite_selector.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.3165" />
         <entry key="app/src/main/res/drawable/ic_time.xml" value="0.3165" />
         <entry key="app/src/main/res/drawable/item_restaurant_one_dp_image.xml" value="0.3165" />
@@ -28,11 +32,13 @@
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_restaurant.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_restaurants.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_tabs.xml" value="0.18229166666666666" />
-        <entry key="app/src/main/res/layout/item_advertise.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_advertise.xml" value="0.22" />
         <entry key="app/src/main/res/layout/item_food.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/item_gallery.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_restaurant.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_table.xml" value="0.2" />
         <entry key="app/src/main/res/layout/splash_animation.xml" value="0.15006412997007268" />

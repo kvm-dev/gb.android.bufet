@@ -96,8 +96,8 @@
     </style>
 
     <style name="restaurant_header_image_corners" parent="">
-        <item name="cornerSizeTopLeft">12%</item>
-        <item name="cornerSizeTopRight">12%</item>
+        <item name="cornerSizeTopLeft">@dimen/dp12</item>
+        <item name="cornerSizeTopRight">@dimen/dp12</item>
     </style>
 
     <style name="base_constraint" parent="">
@@ -339,5 +339,27 @@
         <item name="cornerSizeBottomRight">10dp</item>
         <item name="cornerSizeTopLeft">0dp</item>
         <item name="cornerSizeBottomLeft">10dp</item>
+    </style>
+
+    <style name="gallery_image_card" parent="">
+        <item name="android:layout_margin">@dimen/dp30</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp250</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="cardCornerRadius">@dimen/dp7</item>
+    </style>
+
+    <style name="gallery_image_picture" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_horizontal|top</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="shapeAppearanceOverlay">@style/restaurant_header_image_corners</item>
+    </style>
+
+    <style name="gallery_image_corners" parent="">
+        <item name="cornerSizeTopLeft">@dimen/dp7</item>
+        <item name="cornerSizeTopRight">@dimen/dp7</item>
     </style>
 </resources>

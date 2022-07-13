@@ -17,9 +17,13 @@
     <string name="navigation_favorites">navigationFavorites</string>
     <string name="navigation_order">navigationOrder</string>
     <string name="navigation_profile">navigationProfile</string>
-    <string name="table_image">table_image</string>
+    <string name="navigation_restaurant">navigationRestaurant</string>
+    <string name="table_image">tableImage</string>
     <string name="item_table_btn_text_order">Выбрать</string>
-    <string name="food_image">food_image</string>
+    <string name="item_gallery">itemGallery</string>
+    <string name="food_image">foodImage</string>
+    <string name="back_button">backButton</string>
+    <string name="favorite_button">favoriteButton</string>
     <string name="restaurant_item">restaurant_item</string>
     <!-- /descriptions -->
 

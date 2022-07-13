@@ -28,4 +28,10 @@
         android:name="ru.gb.bufet.view.ProfileFragment"
         android:label="@string/navigation_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_restaurant"
+        android:name="ru.gb.bufet.view.RestaurantFragment"
+        android:label="@string/navigation_restaurant"
+        tools:layout="@layout/fragment_restaurant" />
 </navigation>

@@ -47,6 +47,10 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.navigation_restaurants)
     }
 
+    fun goToRestaurant(){
+        navController.navigate(R.id.navigation_restaurant)
+    }
+
     fun toaster(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
