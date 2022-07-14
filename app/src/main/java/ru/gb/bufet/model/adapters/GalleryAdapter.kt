@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.ItemGalleryBinding
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.RestaurantPicture
 
-class GalleryAdapter(private val imagesList: List<ResponseData.RestaurantPicture>) :
+class GalleryAdapter(private val imagesList: List<RestaurantPicture>) :
     RecyclerView.Adapter<GalleryAdapter.ViewPagerViewHolder>() {
 
     inner class ViewPagerViewHolder(private val binding: ItemGalleryBinding) :

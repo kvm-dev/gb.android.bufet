@@ -17,7 +17,7 @@
             app:layout_constraintTop_toBottomOf="@+id/restaurantHeader">
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/restaurant_card_linear_item">
+                style="@style/restaurant_card_linear_item_tables">
 
                 <ImageView
                     android:id="@+id/tableIcon"
@@ -38,7 +38,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                style="@style/restaurant_card_linear_item">
+                style="@style/restaurant_card_linear_item_time">
 
                 <ImageView
                     android:id="@+id/workTimeIcon"

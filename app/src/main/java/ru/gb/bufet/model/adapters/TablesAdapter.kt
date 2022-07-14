@@ -10,10 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.ItemTableBinding
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.RestaurantTable
 import ru.gb.bufet.viewModel.MainViewModel
 
-class TablesAdapter (private val items: ArrayList<ResponseData.RestaurantTable>) :
+class TablesAdapter (private val items: List<RestaurantTable>) :
 RecyclerView.Adapter<TablesAdapter.MyViewHolder>() {
     class MyViewHolder(binding: ItemTableBinding) : RecyclerView.ViewHolder(binding.root) {
         private var tabletItem: CardView? = null
@@ -29,12 +29,12 @@ RecyclerView.Adapter<TablesAdapter.MyViewHolder>() {
         }
 
         @SuppressLint("SetTextI18n")
-        fun bind(items: List<ResponseData.RestaurantTable>, id: Int) {
+        fun bind(items: List<RestaurantTable>, id: Int) {
             val context = itemView.context
             val activity : MainActivity = context as MainActivity
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
 
-            items[id].restaurantId.let{
+            items[id].id.let{
                 tableNumber?.text = it?.toString()
             }
             items[id].guestsCount.let{

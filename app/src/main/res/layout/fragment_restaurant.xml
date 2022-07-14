@@ -4,45 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match_container">
 
-    <ScrollView
-        style="@style/base_constraint"
-        android:contentDescription="@string/navigation_restaurant"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBlock"
+        style="@style/restaurant_title_block"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <TextView
+            android:id="@+id/title"
+            style="@style/restaurant_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteButton"
+            app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backButton"
+            style="@style/back_button"
+            android:contentDescription="@string/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/favoriteButton"
+            style="@style/favorite_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        style="@style/base_scrollView"
+        android:contentDescription="@string/navigation_restaurant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBlock">
+
         <LinearLayout
             style="@style/base_constraint"
-            android:orientation="vertical" >
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/titleBlock"
-                style="@style/restaurant_title_block">
-
-                <TextView
-                    android:id="@+id/title"
-                    style="@style/restaurant_title"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/favoriteButton"
-                    app:layout_constraintStart_toEndOf="@+id/backButton"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/backButton"
-                    style="@style/back_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:contentDescription="@string/back_button" />
-
-                <CheckBox
-                    android:id="@+id/favoriteButton"
-                    style="@style/favorite_button"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="vertical">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/galleryTabs"
@@ -51,8 +54,8 @@
                 app:tabBackground="@drawable/selector_gallery_tab"
                 app:tabIndicatorColor="@android:color/transparent"
                 app:tabIndicatorHeight="0dp"
-                app:tabPaddingStart="10dp"
-                app:tabPaddingEnd="10dp"/>
+                app:tabPaddingEnd="10dp"
+                app:tabPaddingStart="10dp" />
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/gallery"
@@ -66,16 +69,15 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/restaurantHeader">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    style="@style/restaurant_card_linear_item">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/restaurant_card_linear_item_tables">
 
                     <ImageView
                         android:id="@+id/tableIcon"
                         style="@style/restaurant_card_table_icon"
+                        android:contentDescription="@string/restaurant_item"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:contentDescription="@string/restaurant_item"/>
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/tableCounter"
@@ -87,16 +89,15 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    style="@style/restaurant_card_linear_item">
+                <androidx.constraintlayout.widget.ConstraintLayout style="@style/restaurant_card_linear_item_time">
 
                     <ImageView
                         android:id="@+id/workTimeIcon"
                         style="@style/restaurant_card_work_time_icon"
+                        android:contentDescription="@string/restaurant_item"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/workTimeData"
-                        app:layout_constraintTop_toTopOf="parent"
-                        android:contentDescription="@string/restaurant_item" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/workTimeData"
@@ -112,16 +113,15 @@
 
             <TextView
                 android:id="@+id/description"
-                style="@style/restaurant_description"
-                />
+                style="@style/restaurant_description" />
 
             <TextView
                 android:id="@+id/tablesTitle"
-                style="@style/restaurant_tables_titles"/>
+                style="@style/restaurant_tables_titles" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/tablesRecycler"
-                style="@style/restaurant_tables_recycler"/>
+                style="@style/restaurant_tables_recycler" />
 
         </LinearLayout>
     </ScrollView>

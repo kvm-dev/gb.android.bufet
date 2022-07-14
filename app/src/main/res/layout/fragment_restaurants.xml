@@ -5,13 +5,9 @@
     style="@style/main_display_main_container"
     tools:context=".MainActivity">
 
-    <Space
+    <android.widget.Space
         android:id="@+id/searchSpacer"
         style="@style/search_spacer" />
-
-    <TextView
-        android:id="@+id/mainDisplayTitle"
-        style="@style/main_display_title"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/advertiseRecycler"
@@ -71,7 +67,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_search_big" />
+            app:srcCompat="@drawable/icon_search_big"
+            android:contentDescription="@string/main_display_not_found_text"/>
 
         <TextView
             android:id="@+id/notFoundTitle"

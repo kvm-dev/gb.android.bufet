@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.viewModel.MainViewModel
 import java.util.*
 import kotlin.collections.ArrayList
@@ -21,7 +21,7 @@ class SearchAndFilterRestaurant(private val context: Context) {
             else{
                 viewModel.currentRestaurants.value = viewModel.restaurantsListResponse.value?.filter {
                     it.type?.lowercase(Locale.getDefault())?.contains(keyword) == true
-                } as ArrayList<ResponseData.Restaurant>?
+                } as ArrayList<Restaurant>?
             }
         }
         else{
@@ -34,11 +34,11 @@ class SearchAndFilterRestaurant(private val context: Context) {
             val keyword = key.lowercase(Locale.getDefault())
                 viewModel.currentRestaurants.value = viewModel.restaurantsListResponse.value?.filter {
                     it.name?.lowercase(Locale.getDefault())?.contains(keyword) == true
-                } as ArrayList<ResponseData.Restaurant>?
+                } as ArrayList<Restaurant>?
         if(viewModel.restaurantsListResponse.value.isNullOrEmpty()){
             viewModel.currentRestaurants.value = viewModel.restaurantsListResponse.value?.filter {
                 it.type?.lowercase(Locale.getDefault())?.contains(keyword) == true
-            } as ArrayList<ResponseData.Restaurant>?
+            } as ArrayList<Restaurant>?
         }
         }
         else{
