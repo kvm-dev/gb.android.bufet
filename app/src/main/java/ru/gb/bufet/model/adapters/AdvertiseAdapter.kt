@@ -13,22 +13,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
+import ru.gb.bufet.databinding.ItemAdvertiseBinding
+import ru.gb.bufet.databinding.ItemRestaurantBinding
 import ru.gb.bufet.model.responseData.ResponseData
 import ru.gb.bufet.viewModel.MainViewModel
 
 class AdvertiseAdapter (private val items: ArrayList<ResponseData.AdvertiseBanners>) :
     RecyclerView.Adapter<AdvertiseAdapter.MyViewHolder>() {
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class MyViewHolder(binding: ItemAdvertiseBinding) : RecyclerView.ViewHolder(binding.root) {
         private var advItem: CardView? = null
         private var advImage: ImageView? = null
         var advTitle: TextView? = null
         var advText: TextView? = null
 
         init {
-            advItem = itemView.findViewById(R.id.advertiseBanner)
-            advImage = itemView.findViewById(R.id.advertiseImage)
-            advTitle = itemView.findViewById(R.id.advertiseTitle)
-            advText = itemView.findViewById(R.id.advertiseDescription)
+            advItem = binding.advertiseBanner
+            advImage = binding.advertiseImage
+            advTitle = binding.advertiseTitle
+            advText = binding.advertiseDescription
         }
 
         fun bind(items: List<ResponseData.AdvertiseBanners>, id: Int) {
@@ -41,20 +43,18 @@ class AdvertiseAdapter (private val items: ArrayList<ResponseData.AdvertiseBanne
                     Picasso.get().load(items[id].image).error(it).placeholder(it1).into(advImage)
                 } }
             //check texts
-            if(items[id].title!=null){
-                advTitle?.text = items[id].title
+            items[id].title.let {
+                advTitle?.text = it
             }
-            if(items[id].description!=null){
-                advText?.text = items[id].description
+            items[id].description.let {
+                advText?.text = it
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView =
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_advertise, parent, false)
-        return MyViewHolder(itemView)
+        val binding = ItemAdvertiseBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return MyViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")

@@ -56,7 +56,8 @@ class ServerUtils {
 
 
     fun checkWorkTimeFromTimeStamp(context: Context, startTime: Long, endTime: Long):String{
-        var result = context.resources.getString(R.string.restaurant_not_open)
+//        var result = context.resources.getString(R.string.restaurant_not_open)
+        var result = ""
         val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         val currentDateTime = timeFormat.format(Date())
         val workStart = timeFormat.format(Date(startTime))

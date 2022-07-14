@@ -2,41 +2,27 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    style="@style/match_match_container">
 
     <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:contentDescription="@string/item_gallery"
+        style="@style/base_constraint"
+        android:contentDescription="@string/navigation_restaurant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/base_constraint"
             android:orientation="vertical" >
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/titleBlock"
-                android:layout_marginTop="@dimen/dp48"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                style="@style/restaurant_title_block">
 
                 <TextView
                     android:id="@+id/title"
-                    android:layout_width="@dimen/dp0"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:layout_marginStart="@dimen/dp12"
-                    android:layout_marginEnd="@dimen/dp12"
-                    android:maxLines="@integer/two"
-                    android:textAllCaps="true"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/sp18"
-                    tools:text="Какой-то супер длинный заголовок"
+                    style="@style/restaurant_title"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/favoriteButton"
                     app:layout_constraintStart_toEndOf="@+id/backButton"
@@ -44,23 +30,15 @@
 
                 <ImageView
                     android:id="@+id/backButton"
-                    android:layout_width="@dimen/dp32"
-                    android:layout_marginStart="@dimen/dp30"
-                    android:layout_height="@dimen/dp32"
+                    style="@style/back_button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/back_button"
                     android:contentDescription="@string/back_button" />
 
                 <CheckBox
                     android:id="@+id/favoriteButton"
-                    android:layout_width="@dimen/dp48"
-                    android:layout_marginEnd="@dimen/dp30"
-                    android:layout_height="@dimen/dp48"
-                    android:minWidth="@dimen/dp48"
-                    android:minHeight="@dimen/dp48"
-                    android:button="@drawable/favorite_selector"
+                    style="@style/favorite_button"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -68,22 +46,82 @@
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/galleryTabs"
-                android:layout_width="match_parent"
-                android:layout_height="4dp"
-                android:layout_marginStart="@dimen/dp30"
-                android:layout_marginTop="@dimen/dp30"
-                android:layout_marginEnd="@dimen/dp30"
-                android:contentDescription="@string/item_gallery"
-                app:tabBackground="@color/disabled_gallery"
-                app:tabIndicatorColor="@color/general_color"
-                app:tabIndicatorHeight="4dp" />
+                style="@style/gallery_tab"
+                android:contentDescription="@string/tabs_gallery"
+                app:tabBackground="@drawable/selector_gallery_tab"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingStart="10dp"
+                app:tabPaddingEnd="10dp"/>
 
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/gallery"
-                android:layout_width="match_parent"
-                android:layout_marginTop="@dimen/dp12"
-                android:layout_height="@dimen/dp250" />
+                style="@style/gallery" />
 
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                style="@style/restaurant_card_linear"
+                android:baselineAligned="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/restaurantHeader">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/restaurant_card_linear_item">
+
+                    <ImageView
+                        android:id="@+id/tableIcon"
+                        style="@style/restaurant_card_table_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/restaurant_item"/>
+
+                    <TextView
+                        android:id="@+id/tableCounter"
+                        style="@style/restaurant_card_table_counter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/tableIcon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="12" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/restaurant_card_linear_item">
+
+                    <ImageView
+                        android:id="@+id/workTimeIcon"
+                        style="@style/restaurant_card_work_time_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/workTimeData"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:contentDescription="@string/restaurant_item" />
+
+                    <TextView
+                        android:id="@+id/workTimeData"
+                        style="@style/restaurant_card_work_time_data"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="12" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/description"
+                style="@style/restaurant_description"
+                />
+
+            <TextView
+                android:id="@+id/tablesTitle"
+                style="@style/restaurant_tables_titles"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tablesRecycler"
+                style="@style/restaurant_tables_recycler"/>
 
         </LinearLayout>
     </ScrollView>

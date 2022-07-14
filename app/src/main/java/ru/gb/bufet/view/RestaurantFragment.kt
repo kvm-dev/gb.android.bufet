@@ -1,5 +1,7 @@
 package ru.gb.bufet.view
 
+import GalleryAdapter
+import com.google.android.material.tabs.TabLayoutMediator
 import ru.gb.bufet.databinding.FragmentRestaurantBinding
 import ru.gb.bufet.model.data.BaseFragment
 
@@ -10,7 +12,12 @@ class RestaurantFragment: BaseFragment<FragmentRestaurantBinding>(FragmentRestau
         binding.backButton.setOnClickListener {
             (activity?.onBackPressed())
         }
-        //some initialization
-        //https://medium.com/@mandvi2346verma/image-slider-with-dot-indicators-using-viewpager-firebase-kotlin-android-735968da76f6
+        viewModel.currentRestaurant.value.let {
+                binding.gallery.adapter = it?.restaurantPictures?.let { it1 -> GalleryAdapter(it1) }
+
+            TabLayoutMediator(binding.galleryTabs, binding.gallery) { tab, position ->
+                tab.text = "${(position + 1)}"
+            }.attach()
+        }
     }
-}
+    }

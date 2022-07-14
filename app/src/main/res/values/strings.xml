@@ -21,6 +21,7 @@
     <string name="table_image">tableImage</string>
     <string name="item_table_btn_text_order">Выбрать</string>
     <string name="item_gallery">itemGallery</string>
+    <string name="tabs_gallery">tabsGallery</string>
     <string name="food_image">foodImage</string>
     <string name="back_button">backButton</string>
     <string name="favorite_button">favoriteButton</string>
@@ -46,8 +47,17 @@
     </string-array>
     <!-- /main display -->
 
+    <!-- restaurant display -->
+    <string name="table_select">Выберите стол</string>
+    <string name="guest_counter_text">Кол-во мест: </string>
+    <string name="table_available">Сейчас свободен</string>
+    <string name="table_unavailable">Сейчас занят</string>
+    <!-- /restaurant display -->
+
     <!-- errors -->
     <string name="connection_error">Отсутствует интернет-соединение. Проверьте подключение</string>
+    <string name="item_available">Сейчас свободен</string>
+    <string name="item_unavailable">Сейчас занят</string>
     <!-- /errors -->
     <!-- default values -->
     <string name="default_value">0</string>

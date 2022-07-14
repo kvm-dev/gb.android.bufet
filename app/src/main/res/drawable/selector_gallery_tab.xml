@@ -1,0 +1,4 @@
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/selected_gallery_tab" android:state_selected="true"/>
+    <item android:drawable="@drawable/unselected_gallery_tab"/>
+</selector>

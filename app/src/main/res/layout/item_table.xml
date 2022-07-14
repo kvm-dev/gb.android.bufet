@@ -1,66 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/item_table_card"
-    android:layout_width="120dp"
-    android:layout_height="196dp"
-    android:layout_margin="@dimen/dp8"
-    android:clickable="true"
-    android:focusable="true"
-    app:cardCornerRadius="@dimen/dp12"
-    app:strokeColor="@color/general_color"
-    app:strokeWidth="@dimen/dp1">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/itemTableCard"
+    style="@style/item_table">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        style="@style/match_match_container">
 
         <TextView
-            android:id="@+id/item_table_number_tw"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="end"
-            android:background="@drawable/item_table_rounded_tw"
-            android:gravity="center"
-            android:text="4"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:textSize="@dimen/sp14"
+            android:id="@+id/tableNumber"
+            style="@style/table_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/dp8"
+        <ImageView
+            android:id="@+id/imageTable"
+            style="@style/table_image"
+            android:contentDescription="@string/table_image"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_table_number_tw">
+            app:layout_constraintTop_toBottomOf="@+id/tableNumber" />
 
-            <ImageView
-                android:id="@+id/item_table_image_iw"
-                android:layout_width="match_parent"
-                android:layout_height="91dp"
-                android:contentDescription="@string/table_image"
-                android:scaleType="fitCenter"
-                android:src="@drawable/default_table" />
+        <TextView
+            android:id="@+id/guestCounter"
+            style="@style/table_counter_guest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageTable" />
 
-            <TextView
-                android:id="@+id/item_table_sits_count_tw"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Кол-во мест: 6"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textSize="@dimen/sp14" />
-        </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:layout_width="match_parent"
-            android:layout_height="38dp"
-            android:background="@drawable/item_table_rounded_button"
-            android:text="@string/item_table_btn_text_order"
+        <TextView
+            android:id="@+id/availableNow"
+            style="@style/table_available_now"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/guestCounter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

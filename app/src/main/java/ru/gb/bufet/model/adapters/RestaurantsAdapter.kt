@@ -43,18 +43,17 @@ class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>)
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
                     Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(restaurantImage)
                 } }
-            if(items[id].restaurantTables?.size !=null){
-                restaurantTables?.text = items[id].restaurantTables?.size.toString()
+
+            items[id].restaurantTables.let {
+                restaurantTables?.text = it?.size.toString()
             }
-            else{
-                restaurantTables?.text = context.resources.getString(R.string.default_value)
-            }
+
             if(items[id].work_start!=null && items[id].work_end!= null){
                 restaurantWorkTime?.text = ServerUtils().checkWorkTimeFromTimeStamp(context, items[id].work_start!!, items[id].work_end!!)
             }
-            else{
-                restaurantWorkTime?.text = context.resources.getString(R.string.restaurant_not_open)
-            }
+//            else{
+//                restaurantWorkTime?.text = context.resources.getString(R.string.restaurant_not_open)
+//            }
             restaurantItem?.setOnClickListener {
                 viewModel.currentRestaurant.value = null
                 viewModel.currentRestaurant.value = items[id]
@@ -71,8 +70,6 @@ class RestaurantsAdapter (private val items: ArrayList<ResponseData.Restaurant>)
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-//        holder.bind(items, position)
-//        holder.restaurantName?.text = "${items[position].name}"
           with(holder){
               with(items[position]){
                   restaurantName?.text = name
