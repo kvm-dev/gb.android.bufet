@@ -13,10 +13,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
-import ru.gb.bufet.model.responseData.ResponseData
+import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.viewModel.MainViewModel
 
-class AdvertiseAdapter (private val items: ArrayList<ResponseData.AdvertiseBanners>) :
+class AdvertiseAdapter (private val items: ArrayList<AdvertiseBanners>) :
     RecyclerView.Adapter<AdvertiseAdapter.MyViewHolder>() {
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private var advItem: CardView? = null
@@ -31,7 +32,7 @@ class AdvertiseAdapter (private val items: ArrayList<ResponseData.AdvertiseBanne
             advText = itemView.findViewById(R.id.advertiseDescription)
         }
 
-        fun bind(items: List<ResponseData.AdvertiseBanners>, id: Int) {
+        fun bind(items: List<AdvertiseBanners>, id: Int) {
             val context = itemView.context
             val activity : MainActivity = context as MainActivity
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
