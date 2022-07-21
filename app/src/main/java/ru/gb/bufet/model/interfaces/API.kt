@@ -1,14 +1,15 @@
 package ru.gb.bufet.model.interfaces
 
 import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Path
 import ru.gb.bufet.model.responseData.AdvertiseBanners
 import ru.gb.bufet.model.responseData.Restaurant
+import ru.gb.bufet.model.responseData.RestaurantFood
 
 class API{
     interface GetFoodsAPI {
-        @GET("food/")
-        suspend fun getFoods(@Query("restaurant_id") restaurantId: Int): ArrayList<Restaurant>
+        @GET("food/{restaurant_id}")
+        suspend fun getFoods(@Path("restaurant_id") restaurantId: Int): ArrayList<RestaurantFood>
     }
 
     interface GetRestaurantsAPI {

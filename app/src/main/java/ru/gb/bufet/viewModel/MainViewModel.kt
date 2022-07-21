@@ -8,10 +8,11 @@ import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
 import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.RestaurantFood
 
 class  MainViewModel: ViewModel() {
     //data
-    val responseData: MutableLiveData<List<Restaurant>> = MutableLiveData()
+    val foodListResponse: MutableLiveData<List<RestaurantFood>> = MutableLiveData()
     val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
@@ -23,7 +24,7 @@ class  MainViewModel: ViewModel() {
         val requestData = RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
         viewModelScope.async {
             try{
-                responseData.value = requestData.getFoods(restaurantId)
+                foodListResponse.value = requestData.getFoods(restaurantId)
                 error.value = null
             }
             catch (e: Exception) {
