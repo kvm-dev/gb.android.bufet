@@ -8,52 +8,59 @@ import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
 import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.RestaurantTable
+import java.util.*
+import kotlin.collections.ArrayList
 import ru.gb.bufet.model.responseData.RestaurantFood
 
-class  MainViewModel: ViewModel() {
+class MainViewModel : ViewModel() {
     //data
     val foodListResponse: MutableLiveData<List<RestaurantFood>> = MutableLiveData()
     val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
+    val currentTable: MutableLiveData<RestaurantTable> = MutableLiveData()
     val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
+    val availableTimeTable: MutableLiveData<List<Int>> = MutableLiveData()
+    val reservedTableTime: MutableLiveData<String> = MutableLiveData()
+    val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData()
 
     //methods
     fun getFoodList(restaurantId: Int) {
-        val requestData = RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
+        val requestData =
+            RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
         viewModelScope.async {
-            try{
+            try {
                 foodListResponse.value = requestData.getFoods(restaurantId)
                 error.value = null
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 error.value = e.toString()
             }
         }
     }
 
     fun getRestaurantsList() {
-        val requestData = RetrofitClient.RetrofitHelper.getInstance().create(API.GetRestaurantsAPI::class.java)
+        val requestData =
+            RetrofitClient.RetrofitHelper.getInstance().create(API.GetRestaurantsAPI::class.java)
         viewModelScope.async {
-            try{
+            try {
                 restaurantsListResponse.value = requestData.getRestaurants()
                 error.value = null
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 error.value = e.toString()
             }
         }
     }
 
     fun getAdv() {
-        val requestData = RetrofitClient.RetrofitHelper.getInstance().create(API.GetAdvertiseAPI::class.java)
+        val requestData =
+            RetrofitClient.RetrofitHelper.getInstance().create(API.GetAdvertiseAPI::class.java)
         viewModelScope.async {
-            try{
+            try {
                 advertiseBanners.value = requestData.getAdv()
                 error.value = null
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 error.value = e.toString()
             }
         }
