@@ -6,9 +6,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
 import ru.gb.bufet.MainActivity
+import ru.gb.bufet.R
 import ru.gb.bufet.databinding.ItemFoodBinding
 import ru.gb.bufet.model.responseData.RestaurantFood
 import ru.gb.bufet.viewModel.MainViewModel
@@ -44,9 +47,11 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
                 foodPrice?.text = it
             }
 
-            items[position].pictures.let {
+            ContextCompat.getDrawable(activity, R.drawable.image_not_found)
+                ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
+                    Picasso.get().load(items[position].pictures).error(it).placeholder(it1).into(foodImage)
+                } }
 
-            }
             foodItem?.setOnClickListener {
                 //todo open food fragment
             }
