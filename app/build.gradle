@@ -13,6 +13,7 @@ ext {
     glide_version = "4.12.0"
     picasso_version = "2.71828"
     interceptor_version = "5.0.0-alpha.2"
+    calendar_version = "1.0"
 }
 android {
     compileSdk 32
@@ -76,4 +77,6 @@ dependencies {
     //navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    //calendar
+    implementation "com.applandeo:material-calendar-view:1.7.0"
 }

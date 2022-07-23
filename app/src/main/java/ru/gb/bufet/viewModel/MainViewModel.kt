@@ -8,6 +8,7 @@ import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
 import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.RestaurantTable
 
 class  MainViewModel: ViewModel() {
     //data
@@ -15,6 +16,7 @@ class  MainViewModel: ViewModel() {
     val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
+    val currentTable: MutableLiveData<RestaurantTable> = MutableLiveData()
     val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
 

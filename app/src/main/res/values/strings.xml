@@ -18,6 +18,7 @@
     <string name="navigation_order">navigationOrder</string>
     <string name="navigation_profile">navigationProfile</string>
     <string name="navigation_restaurant">navigationRestaurant</string>
+    <string name="navigation_reserve">navigationReserveTable</string>
     <string name="table_image">tableImage</string>
     <string name="item_table_btn_text_order">Выбрать</string>
     <string name="item_gallery">itemGallery</string>
@@ -54,12 +55,52 @@
     <string name="table_unavailable">Сейчас занят</string>
     <!-- /restaurant display -->
 
+    <!-- reserve display -->
+    <string name="reserve_title">Детали бронирования</string>
+    <string name="reserve_breakfast">Завтрак</string>
+    <string name="reserve_lunch">Обед</string>
+    <string name="reserve_dinner">Ужин</string>
+    <string name="reserve_today">Сегодняшняя\nдата</string>
+    <string name="reserve_selected_day">Забронировано\nвами</string>
+    <string name="reserved_breakfast">Завтрак\nзабронирован</string>
+    <string name="reserved_lunch">Обед\nзабронирован</string>
+    <string name="reserved_dinner">Ужин\nзабронирован</string>
+    <string name="reserve_table_button">Оплатить бронь (450 ₽)</string>
+
+    <!-- /reserve display -->
+
     <!-- errors -->
     <string name="connection_error">Отсутствует интернет-соединение. Проверьте подключение</string>
     <string name="item_available">Сейчас свободен</string>
     <string name="item_unavailable">Сейчас занят</string>
     <!-- /errors -->
+
     <!-- default values -->
     <string name="default_value">0</string>
+    <string name="rub_value">₽</string>
     <string name="restaurant_not_open">Закрыто</string>
+
+    <!-- calendar month array and week names data -->
+    <string name="material_calendar_monday">Пн</string>
+    <string name="material_calendar_tuesday">Вт</string>
+    <string name="material_calendar_wednesday">Ср</string>
+    <string name="material_calendar_thursday">Чт</string>
+    <string name="material_calendar_friday">Пт</string>
+    <string name="material_calendar_saturday">Сб</string>
+    <string name="material_calendar_sunday">Вс</string>
+    <array name="material_calendar_months_array">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </array>
+    <!-- /calendar month array and week names data -->
 </resources>
