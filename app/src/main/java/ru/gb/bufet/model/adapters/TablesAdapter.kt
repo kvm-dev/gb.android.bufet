@@ -51,7 +51,7 @@ RecyclerView.Adapter<TablesAdapter.MyViewHolder>() {
                 }
             }
             tabletItem?.setOnClickListener {
-             //something
+             (activity).goToReserve()
             }
         }
     }

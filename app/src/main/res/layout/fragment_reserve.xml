@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match_container"
+    tools:ignore="MissingClass">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBlock"
+        style="@style/restaurant_title_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/reserve_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/backButton"
+            style="@style/back_button"
+            android:contentDescription="@string/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        style="@style/reserve_table_scroll_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBlock">
+
+        <LinearLayout
+            style="@style/base_constraint"
+            android:orientation="vertical">
+
+            <com.applandeo.materialcalendarview.CalendarView
+                android:id="@+id/calendar"
+                style="@style/reserve_calendar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleBlock"
+                />
+
+            <LinearLayout
+                android:id="@+id/labelsDescription"
+                style="@style/reserve_table_description_linear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/breakfastDescription"
+                    style="@style/reserve_table_description_container"
+                    android:background="@drawable/reserved_breakfast_description">
+
+                    <TextView
+                        android:id="@+id/breakfastText"
+                        style="@style/reserve_table_description_text"
+                        android:text="@string/reserved_breakfast"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/lunchDescription"
+                    style="@style/reserve_table_description_container"
+                    android:background="@color/reserved_lunch">
+
+                    <TextView
+                        android:id="@+id/lunchText"
+                        style="@style/reserve_table_description_text"
+                        android:text="@string/reserved_lunch"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dinnerDescription"
+                    style="@style/reserve_table_description_container"
+                    android:background="@drawable/reserved_dinner_description">
+
+                    <TextView
+                        android:id="@+id/dinnerText"
+                        style="@style/reserve_table_description_text"
+                        android:text="@string/reserved_dinner"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/selectionDescription"
+                style="@style/reserve_table_description_linear_text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendar">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/todayDescription"
+                    style="@style/reserve_table_description_container"
+                    android:background="@drawable/reserved_today_description">
+
+                    <TextView
+                        android:id="@+id/todayText"
+                        style="@style/reserve_table_description_text"
+                        android:text="@string/reserve_today"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/selectDayDescription"
+                    style="@style/reserve_table_description_container"
+                    android:background="@drawable/reserved_your_description">
+
+                    <TextView
+                        android:id="@+id/selectDayText"
+                        style="@style/reserve_table_description_text"
+                        android:text="@string/reserve_selected_day"
+                        android:textColor="@color/white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="TextContrastCheck" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                style="@style/reserve_table_button"
+                android:enabled="false"/>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

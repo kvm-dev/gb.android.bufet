@@ -34,8 +34,10 @@
         android:name="ru.gb.bufet.view.RestaurantFragment"
         android:label="@string/navigation_restaurant"
         tools:layout="@layout/fragment_restaurant" />
+
     <fragment
-        android:id="@+id/navigation_menu"
-        android:name="ru.gb.bufet.view.MenuFragment"
-        android:label="@string/navigation_menu" />
+        android:id="@+id/navigation_reserve"
+        android:name="ru.gb.bufet.view.ReserveFragment"
+        android:label="@string/navigation_reserve"
+        tools:layout="@layout/fragment_reserve" />
 </navigation>

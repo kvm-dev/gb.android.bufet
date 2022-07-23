@@ -1,0 +1,25 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingLeft="@dimen/dp10">
+    <item
+        android:width="@dimen/dp10"
+        android:gravity="left">
+        <shape>
+            <corners android:radius="@dimen/dp250"/>
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/dp10"
+        android:gravity="center">
+        <shape>
+            <corners android:radius="@dimen/dp250"/>
+        </shape>
+    </item>
+    <item
+        android:width="@dimen/dp10"
+        android:gravity="right">
+        <shape>
+            <corners android:radius="@dimen/dp250"/>
+            <solid android:color="@color/reserved_dinner" />
+        </shape>
+    </item>
+</layer-list>

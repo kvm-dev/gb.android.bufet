@@ -5,5 +5,6 @@ data class RestaurantTable(
     val guestId: Int?,
     val guestsCount: Int?,
     val id: Int?,
-    val restaurantId: Int?
+    val restaurantId: Int?,
+    val reserved: List<ReservedTables>?
 )
