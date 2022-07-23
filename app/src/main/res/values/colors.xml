@@ -11,6 +11,8 @@
     <color name="main_background_color">#F6F6F6</color>
     <color name="disabled_gallery">#959292</color>
     <color name="general_color" >#F50D0D</color>
-
-
+    <color name="selected_color" >#068849</color>
+    <color name="reserved_breakfast" >#00E676</color>
+    <color name="reserved_lunch" >#00E5FF</color>
+    <color name="reserved_dinner" >#FFEA00</color>
 </resources>
