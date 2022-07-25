@@ -1,6 +1,7 @@
 package ru.gb.bufet.view
 
 import ru.gb.bufet.MainActivity
+import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentReserveBinding
 import ru.gb.bufet.model.data.BaseFragment
 import ru.gb.bufet.model.data.ReserveTables
@@ -27,6 +28,13 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
             setDate(ReserveTables(requireContext(), viewModel.currentTable.value).currentDate())
             setEvents(ReserveTables(requireContext(), viewModel.currentTable.value).getReservedTables())
             setMinimumDate(ReserveTables(requireContext(), viewModel.currentTable.value).currentDate())
+        }
+        binding.calendar.setOnDayClickListener {
+            val bottomSheet = ReserveTimeTableDialog()
+            bottomSheet.show(
+                requireActivity().supportFragmentManager,
+                getString(R.string.dialog_select_time_reserve_table)
+            )
         }
         binding.backButton.setOnClickListener {
             (activity as MainActivity).onBackPressed()

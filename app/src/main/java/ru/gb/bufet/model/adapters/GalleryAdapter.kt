@@ -8,9 +8,9 @@ import ru.gb.bufet.databinding.ItemGalleryBinding
 import ru.gb.bufet.model.responseData.RestaurantPicture
 
 class GalleryAdapter(private val imagesList: List<RestaurantPicture>) :
-    RecyclerView.Adapter<GalleryAdapter.ViewPagerViewHolder>() {
+    RecyclerView.Adapter<GalleryAdapter.GalleryViewHolder>() {
 
-    inner class ViewPagerViewHolder(private val binding: ItemGalleryBinding) :
+    inner class GalleryViewHolder(private val binding: ItemGalleryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setData(imageUrl: String) {
             //check images
@@ -23,16 +23,16 @@ class GalleryAdapter(private val imagesList: List<RestaurantPicture>) :
 
     override fun getItemCount(): Int = imagesList.size
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewPagerViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GalleryViewHolder {
         val binding = ItemGalleryBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return ViewPagerViewHolder(binding)
+        return GalleryViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: ViewPagerViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: GalleryViewHolder, position: Int) {
 
         imagesList[position].imagePath?.let { holder.setData(it) }
     }

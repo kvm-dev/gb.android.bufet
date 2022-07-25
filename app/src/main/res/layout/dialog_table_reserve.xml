@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="@dimen/dp7"
+    android:layout_marginTop="@dimen/dp30"
+    android:layout_marginStart="@dimen/dp7"
+    android:layout_marginEnd="@dimen/dp7"
+    android:background="@drawable/dialog_background"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialogTitle"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"
+        android:textSize="@dimen/sp24"
+        android:textColor="@color/general_color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reserve_time_title" />
+
+    <RadioGroup
+        android:id="@+id/radioButtons"
+        android:layout_marginHorizontal="@dimen/dp7"
+        android:layout_marginTop="@dimen/dp30"
+        android:weightSum="@integer/three"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/breakfast"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp48"
+            android:layout_weight="1"
+            android:background="@drawable/selector_radio_buttons"
+            android:button="@null"
+            android:checked="false"
+            android:text="@string/reserve_breakfast"
+            android:textAlignment="center"
+            android:textColor="@color/radio_button_text_color_selector"
+            android:textSize="@dimen/sp18"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/lunch"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp48"
+            android:layout_weight="1"
+            android:background="@drawable/selector_radio_buttons"
+            android:button="@null"
+            android:checked="true"
+            android:text="@string/reserve_lunch"
+            android:textAlignment="center"
+            android:textColor="@color/radio_button_text_color_selector"
+            android:textSize="@dimen/sp18"
+            tools:ignore="TextContrastCheck" />
+
+        <RadioButton
+            android:id="@+id/dinner"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="@dimen/dp48"
+            android:layout_weight="1"
+            android:background="@drawable/selector_radio_buttons"
+            android:button="@null"
+            android:checked="false"
+            android:text="@string/reserve_dinner"
+            android:textAlignment="center"
+            android:textColor="@color/radio_button_text_color_selector"
+            android:textSize="@dimen/sp18"
+            tools:ignore="TextContrastCheck" />
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/generalButtons"
+        android:weightSum="@integer/two"
+        android:layout_marginHorizontal="@dimen/dp7"
+        android:layout_marginTop="@dimen/dp30"
+        android:layout_marginBottom="@dimen/dp30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/acceptButton"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/no_active_buttons"
+            android:text="@string/reserve_accept_time"
+            tools:ignore="ButtonStyle,TextContrastCheck"
+            />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="@dimen/dp0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/no_active_buttons"
+            android:text="@string/reserve_cancel_time"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

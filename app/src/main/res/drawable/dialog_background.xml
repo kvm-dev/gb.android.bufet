@@ -1,0 +1,9 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:right="8dp" android:left="8dp">
+        <shape>
+            <solid android:color="@color/dialog_background" />
+            <corners android:topLeftRadius="@dimen/dp12" android:topRightRadius="@dimen/dp12" />
+            <stroke android:width="@dimen/dp2" android:color="@color/general_color"/>
+        </shape>
+    </item>
+</layer-list>

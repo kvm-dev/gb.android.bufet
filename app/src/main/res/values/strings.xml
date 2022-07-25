@@ -27,6 +27,7 @@
     <string name="back_button">backButton</string>
     <string name="favorite_button">favoriteButton</string>
     <string name="restaurant_item">restaurant_item</string>
+    <string name="dialog_select_time_reserve_table">timeTableReserve</string>
     <!-- /descriptions -->
 
     <!-- main display -->
@@ -66,7 +67,9 @@
     <string name="reserved_lunch">Обед\nзабронирован</string>
     <string name="reserved_dinner">Ужин\nзабронирован</string>
     <string name="reserve_table_button">Оплатить бронь (450 ₽)</string>
-
+    <string name="reserve_time_title">Доступное время</string>
+    <string name="reserve_accept_time">Ок</string>
+    <string name="reserve_cancel_time">Отменить</string>
     <!-- /reserve display -->
 
     <!-- errors -->
