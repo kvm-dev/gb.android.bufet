@@ -14,19 +14,8 @@ import ru.gb.bufet.model.responseData.RestaurantTable
 import ru.gb.bufet.viewModel.MainViewModel
 
 class TablesAdapter (private val items: List<RestaurantTable>) :
-RecyclerView.Adapter<TablesAdapter.MyViewHolder>() {
-    class MyViewHolder(binding: ItemTableBinding) : RecyclerView.ViewHolder(binding.root) {
-        private var tabletItem: CardView? = null
-        var tableNumber: TextView? = null
-        var guestCounter: TextView? = null
-        var availableNow: TextView? = null
-
-        init {
-            tabletItem = binding.itemTableCard
-            tableNumber = binding.tableNumber
-            guestCounter = binding.guestCounter
-            availableNow = binding.availableNow
-        }
+RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
+    class TablesViewHolder(val binding: ItemTableBinding) : RecyclerView.ViewHolder(binding.root) {
 
         @SuppressLint("SetTextI18n")
         fun bind(items: List<RestaurantTable>, id: Int) {
@@ -35,34 +24,34 @@ RecyclerView.Adapter<TablesAdapter.MyViewHolder>() {
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
 
             items[id].id.let{
-                tableNumber?.text = it?.toString()
+                binding.tableNumber.text = it?.toString()
             }
             items[id].guestsCount.let{
-                guestCounter?.text = "${context.resources.getString(R.string.guest_counter_text)} ${it?.toString()}"
+                binding.guestCounter.text = "${context.resources.getString(R.string.guest_counter_text)} ${it?.toString()}"
             }
             items[id].availability.let {
             }
             items[id].availability.let{
                 if (it != 0){
-                    availableNow?.text = context.resources.getString(R.string.table_available)
+                    binding.availableNow.text = context.resources.getString(R.string.table_available)
                 }
                 else{
-                    availableNow?.text = context.resources.getString(R.string.table_available)
+                    binding.availableNow.text = context.resources.getString(R.string.table_available)
                 }
             }
-            tabletItem?.setOnClickListener {
+            binding.itemTableCard.setOnClickListener {
              (activity).goToReserve()
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TablesViewHolder {
         val binding = ItemTableBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyViewHolder(binding)
+        return TablesViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TablesViewHolder, position: Int) {
         with(holder){
             bind(items, position)
         }

@@ -19,21 +19,8 @@ import ru.gb.bufet.model.utils.ServerUtils
 import ru.gb.bufet.viewModel.MainViewModel
 
 class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
-    RecyclerView.Adapter<RestaurantsAdapter.MyViewHolder>() {
-    class MyViewHolder(binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root) {
-        private var restaurantItem: CardView? = null
-        private var restaurantImage: ImageView? = null
-        var restaurantTables: TextView? = null
-        var restaurantWorkTime: TextView? = null
-        var restaurantName: TextView? = null
-
-        init {
-            restaurantItem = binding.itemRestaurantCard
-            restaurantImage = binding.restaurantHeader
-            restaurantTables = binding.tableCounter
-            restaurantWorkTime = binding.workTimeData
-            restaurantName = binding.restaurantTitle
-        }
+    RecyclerView.Adapter<RestaurantsAdapter.RestaurantsViewHolder>() {
+    class RestaurantsViewHolder(val binding: ItemRestaurantBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(items: List<Restaurant>, id: Int) {
             val context = itemView.context
@@ -42,17 +29,17 @@ class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
             //check images
             ContextCompat.getDrawable(activity, R.drawable.image_not_found)
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
-                    Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(restaurantImage)
+                    Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(binding.restaurantHeader)
                 } }
 
             items[id].restaurantTables.let {
-                restaurantTables?.text = it?.size.toString()
+                binding.tableCounter.text = it?.size.toString()
             }
 
             if(items[id].work_start!=null && items[id].work_end!= null){
-                restaurantWorkTime?.text = ServerUtils().checkWorkTimeFromTimeStamp(items[id].work_start!!, items[id].work_end!!)
+                binding.workTimeData.text = ServerUtils().checkWorkTimeFromTimeStamp(items[id].work_start!!, items[id].work_end!!)
             }
-            restaurantItem?.setOnClickListener {
+            binding.itemRestaurantCard.setOnClickListener {
                 viewModel.currentRestaurant.value = null
                 viewModel.currentRestaurant.value = items[id]
                 activity.goToRestaurant()
@@ -60,17 +47,17 @@ class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantsViewHolder {
         val binding = ItemRestaurantBinding.inflate(LayoutInflater.from(parent.context), parent, false)
 
-        return MyViewHolder(binding)
+        return RestaurantsViewHolder(binding)
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RestaurantsViewHolder, position: Int) {
           with(holder){
               with(items[position]){
-                  restaurantName?.text = name
+                  binding.restaurantTitle.text = name
               }
               bind(items, position)
           }
