@@ -1,17 +1,16 @@
 package ru.gb.bufet.model.data
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.gb.bufet.viewModel.MainViewModel
 
-abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layoutInflater: LayoutInflater) -> T) :
-    Fragment() {
-    // Bindings
+abstract class BaseBottomSheetDialog <T : ViewBinding>(private val bindingInflater: (layoutInflater: LayoutInflater) -> T) : BottomSheetDialogFragment() {
     private var _binding: T? = null
     // ViewModel
     protected lateinit var viewModel: MainViewModel
@@ -25,12 +24,12 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layou
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-
+        (view.parent as View).setBackgroundColor(Color.TRANSPARENT)//transparent background
         init()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
+    override fun onDestroy() {
+        super.onDestroy()
         _binding = null
     }
 

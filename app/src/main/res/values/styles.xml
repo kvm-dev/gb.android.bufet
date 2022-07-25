@@ -417,11 +417,11 @@
     </style>
 
     <style name="restaurant_title" parent="">
-        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:layout_marginStart">@dimen/dp12</item>
-        <item name="android:layout_marginEnd">@dimen/dp12</item>
+        <item name="android:layout_marginStart">@dimen/dp24</item>
+        <item name="android:layout_marginEnd">@dimen/dp24</item>
         <item name="android:maxLines">@integer/two</item>
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
@@ -431,14 +431,16 @@
     <style name="back_button" parent="">
         <item name="android:layout_width">@dimen/dp32</item>
         <item name="android:layout_height">@dimen/dp32</item>
-        <item name="android:layout_marginStart">@dimen/dp30</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
         <item name="android:src">@drawable/back_button</item>
     </style>
 
     <style name="favorite_button" parent="">
         <item name="android:layout_width">@dimen/dp48</item>
         <item name="android:layout_height">@dimen/dp48</item>
-        <item name="android:layout_marginEnd">@dimen/dp30</item>
+        <item name="android:layout_marginEnd">@dimen/dp24</item>
+        <item name="android:layout_marginStart">@dimen/dp24</item>
         <item name="android:minHeight">@dimen/dp48</item>
         <item name="android:minWidth">@dimen/dp48</item>
         <item name="android:button">@drawable/favorite_selector</item>
