@@ -1,11 +1,13 @@
 package ru.gb.bufet.model.data
 
+import android.annotation.SuppressLint
 import android.content.Context
 import androidx.core.content.ContextCompat
 import com.applandeo.materialcalendarview.EventDay
 import ru.gb.bufet.R
 import ru.gb.bufet.model.responseData.ReservedTables
 import ru.gb.bufet.model.responseData.RestaurantTable
+import java.text.SimpleDateFormat
 import java.util.*
 
 class ReserveTables(val context: Context, private val table: RestaurantTable?) {
@@ -35,11 +37,8 @@ class ReserveTables(val context: Context, private val table: RestaurantTable?) {
         val breakfastDinner = ContextCompat.getDrawable(context, R.drawable.reserved_breakfast_dinner)
         val lunchDinner = ContextCompat.getDrawable(context, R.drawable.reserved_lunch_dinner)
         val fullDay = ContextCompat.getDrawable(context, R.drawable.reserved_full_day)
-        val date = reserveTables.reservedDate?.let { reservedDate -> Date(reservedDate*1000) }
-        date.let {
-            if (date != null) {
-                calendar.time = date
-            }
+        reserveTables.reservedDate?.let {
+            calendar.time = dateFromTimeStamp(it)
         }
         when("${reserveTables.breakfast}${reserveTables.lunch}${reserveTables.dinner}"){
             "100"-> {
@@ -65,5 +64,54 @@ class ReserveTables(val context: Context, private val table: RestaurantTable?) {
             }
         }
         return  eventDay
+    }
+
+    private fun dateFromTimeStamp(timeStamp: Long): Date{
+        val date = Date(timeStamp*1000)
+        date.let {
+            return it
+        }
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    fun checkReservationTime(eventDay: EventDay): List<Int>{
+        var result = listOf(0, 0, 0)
+        val sdf = SimpleDateFormat("yyyy.MM.dd")
+        val selectedEventDay = sdf.format(eventDay.calendar.time)
+        table?.reserved?.forEach { reserved ->
+            val currentReservedDate = reserved.reservedDate?.let { dateFromTimeStamp(it) }
+                ?.let { sdf.format(it) }
+            if(selectedEventDay==currentReservedDate){
+                result = listOf( reserved.breakfast!!, reserved.lunch!!, reserved.dinner!!)
+            }
+        }
+        return result
+    }
+    fun availabilityTimeDialog(timeReserveInformation: List<Int>?): List<Boolean>{
+        var result = listOf(true, true, true)
+        when("${timeReserveInformation?.get(0)}${timeReserveInformation?.get(1)}${timeReserveInformation?.get(2)}"){
+            "100"-> {
+                result = listOf(false, true, true)
+            }
+            "110"-> {
+                result = listOf(false, false, true)
+            }
+            "101"-> {
+                result = listOf(false, true, false)
+            }
+            "010"-> {
+                result = listOf(true, false, true)
+            }
+            "011"-> {
+                result = listOf(true, false, false)
+            }
+            "001"-> {
+                result = listOf(true, true, false)
+            }
+            "111"-> {
+                result = listOf(false, false, false)
+            }
+        }
+        return result
     }
 }

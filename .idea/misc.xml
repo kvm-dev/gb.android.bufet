@@ -22,6 +22,7 @@
         <entry key="app/src/main/res/drawable/animation_remove_from_favorites.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/breakfase_reserved.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/dialog_background.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/disabled_buttons.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/favorite_selector.xml" value="0.155" />
         <entry key="app/src/main/res/drawable/full_reserved_background.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.202" />
@@ -34,6 +35,7 @@
         <entry key="app/src/main/res/drawable/menu_background.xml" value="0.18" />
         <entry key="app/src/main/res/drawable/menu_selector.xml" value="0.191" />
         <entry key="app/src/main/res/drawable/no_active_button.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/no_active_buttons.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/partially_reserved_background.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/reserve_table_active.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/reserve_table_unactive.xml" value="0.1905" />
@@ -54,11 +56,12 @@
         <entry key="app/src/main/res/drawable/selector_button_reserve_table.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/selector_gallery_tab.xml" value="0.202" />
         <entry key="app/src/main/res/drawable/selector_radio_buttons.xml" value="0.1905" />
+        <entry key="app/src/main/res/drawable/selector_radio_buttons_state.xml" value="0.1905" />
         <entry key="app/src/main/res/drawable/splash_move_up.xml" value="0.191" />
         <entry key="app/src/main/res/drawable/table_card_background.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/unselected_gallery_tab.xml" value="0.202" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.75" />
-        <entry key="app/src/main/res/layout/dialog_table_reserve.xml" value="0.67" />
+        <entry key="app/src/main/res/layout/dialog_table_reserve.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
