@@ -562,6 +562,15 @@
         <item name="android:textAlignment">center</item>
     </style>
 
+    <style name="reserve_warning">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/general_color</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+    </style>
+
     <style name="reserve_table_button" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -571,7 +580,7 @@
         <item name="android:text">@string/reserve_table_button</item>
         <item name="android:layout_marginStart">@dimen/dp12</item>
         <item name="android:layout_marginEnd">@dimen/dp12</item>
-        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
         <item name="android:layout_marginBottom">@dimen/dp30</item>
         <item name="android:background">@drawable/selector_button_reserve_table</item>
     </style>
@@ -635,7 +644,5 @@
         <item name="android:layout_weight">@integer/one</item>
         <item name="android:background">@drawable/selector_radio_buttons_state</item>
     </style>
-
-
 
 </resources>

@@ -156,6 +156,12 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/reserveWarning"
+                style="@style/reserve_warning"
+                android:text="@string/reserve_time_warning"
+                tools:ignore="TextContrastCheck" />
+
             <Button
                 android:id="@+id/buttonPayment"
                 style="@style/reserve_table_button"

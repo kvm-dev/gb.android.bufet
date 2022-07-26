@@ -65,7 +65,7 @@
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_reserve.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_reserve.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_restaurant.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_restaurants.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18" />
