@@ -1,7 +1,6 @@
 package ru.gb.bufet.view
 
 import android.annotation.SuppressLint
-import android.util.Log
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentReserveBinding
@@ -9,13 +8,13 @@ import ru.gb.bufet.model.data.BaseFragment
 import ru.gb.bufet.model.data.ReserveTables
 import ru.gb.bufet.model.responseData.ReservedTables
 import ru.gb.bufet.model.responseData.RestaurantTable
-import java.util.*
 
 class ReserveFragment : BaseFragment<FragmentReserveBinding>(
     FragmentReserveBinding::inflate) {
 
     @SuppressLint("SimpleDateFormat")
     override fun init() {
+
         //test table data, delete this part in the future
         run{
             val reserved1 = ReservedTables(1, 1658672209, 0, 0, 1, 1)

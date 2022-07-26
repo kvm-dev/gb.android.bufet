@@ -574,7 +574,68 @@
         <item name="android:layout_marginTop">@dimen/dp30</item>
         <item name="android:layout_marginBottom">@dimen/dp30</item>
         <item name="android:background">@drawable/selector_button_reserve_table</item>
-
     </style>
+
+    <style name="dialog">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:background">@drawable/dialog_background</item>
+        <item name="android:padding">@dimen/dp7</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+    </style>
+
+    <style name="dialog_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:textColor">@color/general_color</item>
+    </style>
+
+    <style name="dialog_radio_group">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+    </style>
+
+    <style name="dialog_radio_button">
+        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_height">@dimen/dp48</item>
+        <item name="android:layout_weight">@integer/one</item>
+        <item name="android:background">@drawable/selector_radio_buttons_state</item>
+        <item name="android:button">@null</item>
+        <item name="android:checked">false</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/radio_button_text_color_selector</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="dialog_general_buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:layout_marginBottom">@dimen/dp30</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+    </style>
+
+    <style name="dialog_general_button">
+        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">@integer/one</item>
+        <item name="android:background">@drawable/selector_radio_buttons_state</item>
+    </style>
+
+
 
 </resources>

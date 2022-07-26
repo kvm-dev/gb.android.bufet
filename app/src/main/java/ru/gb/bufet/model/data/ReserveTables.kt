@@ -2,15 +2,12 @@ package ru.gb.bufet.model.data
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.view.View
 import androidx.core.content.ContextCompat
 import com.applandeo.materialcalendarview.EventDay
-import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.model.responseData.ReservedTables
 import ru.gb.bufet.model.responseData.RestaurantTable
 import java.text.SimpleDateFormat
-import java.time.Year
 import java.util.*
 
 class ReserveTables(val context: Context, private val table: RestaurantTable?) {
