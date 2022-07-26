@@ -61,7 +61,7 @@
         <entry key="app/src/main/res/drawable/table_card_background.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/unselected_gallery_tab.xml" value="0.202" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.75" />
-        <entry key="app/src/main/res/layout/dialog_table_reserve.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/dialog_table_reserve.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_order.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
