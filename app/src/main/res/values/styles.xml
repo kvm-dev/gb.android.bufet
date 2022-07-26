@@ -522,8 +522,10 @@
         <item name="previousButtonSrc">@drawable/ic_baseline_arrow_back_ios_24</item>
         <item name="headerColor">@color/white</item>
         <item name="headerLabelColor">@color/general_color</item>
-        <item name="selectionColor">@color/general_color</item>
         <item name="todayLabelColor">@color/selected_color</item>
+        <item name="type">one_day_picker</item>
+        <item name="eventsEnabled">true</item>
+        <item name="selectionColor">@color/general_color</item>
     </style>
 
     <style name="reserve_table_description_linear" parent="">

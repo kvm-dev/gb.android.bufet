@@ -63,7 +63,7 @@
     <string name="reserve_lunch">Обед</string>
     <string name="reserve_dinner">Ужин</string>
     <string name="reserve_today">Сегодняшняя\nдата</string>
-    <string name="reserve_selected_day">Забронировано\nвами</string>
+    <string name="reserve_selected_day">Выбрано\nвами</string>
     <string name="reserved_breakfast">Завтрак\nзабронирован</string>
     <string name="reserved_lunch">Обед\nзабронирован</string>
     <string name="reserved_dinner">Ужин\nзабронирован</string>
@@ -77,6 +77,7 @@
     <string name="connection_error">Отсутствует интернет-соединение. Проверьте подключение</string>
     <string name="item_available">Сейчас свободен</string>
     <string name="item_unavailable">Сейчас занят</string>
+    <string name="table_today_unavailable">К сожалению, стол забронирован на весь день</string>
     <!-- /errors -->
 
     <!-- default values -->
