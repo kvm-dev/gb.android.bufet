@@ -70,6 +70,7 @@
     <string name="reserve_time_title">Доступное время</string>
     <string name="reserve_accept_time">Ок</string>
     <string name="reserve_cancel_time">Отменить</string>
+    <string name="reserve_time_warning">Необходимо выбрать дату и время</string>
     <!-- /reserve display -->
 
     <!-- errors -->

@@ -1,6 +1,7 @@
 package ru.gb.bufet.view
 
 import android.annotation.SuppressLint
+import android.view.View
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentReserveBinding
@@ -54,9 +55,11 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
                     if (it != null) {
                         viewModel.reservedTableDate.value = eventDay.calendar
                         binding.buttonPayment.isEnabled = true
+                        binding.reserveWarning.visibility = View.INVISIBLE
                     }
                     else{
                         binding.buttonPayment.isEnabled = false
+                        binding.reserveWarning.visibility = View.VISIBLE
                     }
                 }
             }
