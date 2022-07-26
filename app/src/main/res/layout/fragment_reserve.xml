@@ -157,7 +157,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonPayment"
                 style="@style/reserve_table_button"
                 android:enabled="false"/>
         </LinearLayout>

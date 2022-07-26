@@ -9,6 +9,8 @@ import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
 import ru.gb.bufet.model.responseData.AdvertiseBanners
 import ru.gb.bufet.model.responseData.RestaurantTable
+import java.util.*
+import kotlin.collections.ArrayList
 
 class  MainViewModel: ViewModel() {
     //data
@@ -19,6 +21,9 @@ class  MainViewModel: ViewModel() {
     val currentTable: MutableLiveData<RestaurantTable> = MutableLiveData()
     val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
+    val availableTimeTable: MutableLiveData<List<Int>> = MutableLiveData()
+    val reservedTableTime: MutableLiveData<String> = MutableLiveData()
+    val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData()
 
     //methods
     fun getFoodList(restaurantId: Int) {

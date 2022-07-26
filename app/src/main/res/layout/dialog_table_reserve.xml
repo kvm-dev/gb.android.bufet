@@ -35,7 +35,7 @@
             android:layout_width="@dimen/dp0"
             android:layout_height="@dimen/dp48"
             android:layout_weight="1"
-            android:background="@drawable/selector_radio_buttons"
+            android:background="@drawable/selector_radio_buttons_state"
             android:button="@null"
             android:checked="false"
             android:text="@string/reserve_breakfast"
@@ -49,9 +49,9 @@
             android:layout_width="@dimen/dp0"
             android:layout_height="@dimen/dp48"
             android:layout_weight="1"
-            android:background="@drawable/selector_radio_buttons"
+            android:background="@drawable/selector_radio_buttons_state"
             android:button="@null"
-            android:checked="true"
+            android:checked="false"
             android:text="@string/reserve_lunch"
             android:textAlignment="center"
             android:textColor="@color/radio_button_text_color_selector"
@@ -63,7 +63,7 @@
             android:layout_width="@dimen/dp0"
             android:layout_height="@dimen/dp48"
             android:layout_weight="1"
-            android:background="@drawable/selector_radio_buttons"
+            android:background="@drawable/selector_radio_buttons_state"
             android:button="@null"
             android:checked="false"
             android:text="@string/reserve_dinner"
@@ -85,10 +85,11 @@
 
         <Button
             android:id="@+id/acceptButton"
+            android:enabled="false"
             android:layout_width="@dimen/dp0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/no_active_buttons"
+            android:background="@drawable/selector_radio_buttons_state"
             android:text="@string/reserve_accept_time"
             tools:ignore="ButtonStyle,TextContrastCheck"
             />
@@ -98,7 +99,7 @@
             android:layout_width="@dimen/dp0"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@drawable/no_active_buttons"
+            android:background="@drawable/selector_radio_buttons_state"
             android:text="@string/reserve_cancel_time"
             tools:ignore="ButtonStyle,TextContrastCheck" />
     </LinearLayout>
