@@ -117,6 +117,20 @@
                 android:id="@+id/description"
                 style="@style/restaurant_description" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/buttonMenuRestaurant"
+                style="@style/restaurant_menu_button">
+
+                <TextView
+                    android:id="@+id/menuButtonRestaurantContent"
+                    style="@style/restaurant_menu_button_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
             <TextView
                 android:id="@+id/tablesTitle"
                 style="@style/restaurant_tables_titles" />

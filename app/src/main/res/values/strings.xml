@@ -55,6 +55,7 @@
     <string name="guest_counter_text">Кол-во мест: </string>
     <string name="table_available">Сейчас свободен</string>
     <string name="table_unavailable">Сейчас занят</string>
+    <string name="menu_button_text">Посмотреть меню</string>
     <!-- /restaurant display -->
 
     <!-- reserve display -->
