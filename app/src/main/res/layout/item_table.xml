@@ -18,9 +18,9 @@
             android:id="@+id/imageTable"
             style="@style/table_image"
             android:contentDescription="@string/table_image"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tableNumber"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tableNumber" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/guestCounter"

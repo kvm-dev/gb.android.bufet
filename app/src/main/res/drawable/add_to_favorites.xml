@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:drawable="@drawable/add_to_favorites_icon"
+        android:width="@dimen/dp38"
+        android:height="@dimen/dp38"
+        />
+
+</layer-list >

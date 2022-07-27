@@ -31,11 +31,9 @@ class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
                     Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(binding.restaurantHeader)
                 } }
-
             items[id].restaurantTables.let {
                 binding.tableCounter.text = it?.size.toString()
             }
-
             if(items[id].work_start!=null && items[id].work_end!= null){
                 binding.workTimeData.text = ServerUtils().checkWorkTimeFromTimeStamp(items[id].work_start!!, items[id].work_end!!)
             }
