@@ -9,21 +9,7 @@
         android:id="@+id/navigation_restaurants"
         android:name="ru.gb.bufet.view.RestaurantsFragment"
         android:label="@string/navigation_restaurants"
-        tools:layout="@layout/fragment_restaurants" >
-        <action
-            android:id="@+id/action_navigation_restaurants_to_navigation_restaurant"
-            app:destination="@id/navigation_restaurant" />
-    </fragment>
-
-    <fragment
-        android:id="@+id/navigation_order"
-        android:name="ru.gb.bufet.view.OrderFragment"
-        android:label="@string/navigation_order"
-        tools:layout="@layout/fragment_order" >
-        <action
-            android:id="@+id/action_navigation_order_to_navigation_reserve"
-            app:destination="@id/navigation_reserve" />
-    </fragment>
+        tools:layout="@layout/fragment_restaurants" />
 
     <fragment
         android:id="@+id/navigation_favorites"
@@ -40,15 +26,14 @@
     <fragment
         android:id="@+id/navigation_restaurant"
         android:name="ru.gb.bufet.view.RestaurantFragment"
-        android:label="@string/navigation_restaurant"
-        tools:layout="@layout/fragment_restaurant" >
-        <action
-            android:id="@+id/action_navigation_restaurant_to_navigation_order"
-            app:destination="@id/navigation_order" />
-        <action
-            android:id="@+id/action_navigation_restaurant_to_navigation_menu"
-            app:destination="@id/navigation_menu" />
-    </fragment>
+        android:label="@string/navigation_profile"
+        tools:layout="@layout/fragment_restaurant" />
+
+    <fragment
+        android:id="@+id/navigation_food_menu"
+        android:name="ru.gb.bufet.view.MenuFragment"
+        android:label="@string/navigation_food_menu"
+        tools:layout="@layout/fragment_menu" />
 
     <fragment
         android:id="@+id/navigation_reserve"
@@ -56,13 +41,49 @@
         android:label="@string/navigation_reserve"
         tools:layout="@layout/fragment_reserve" />
 
-    <fragment
-        android:id="@+id/navigation_menu"
-        android:name="ru.gb.bufet.view.MenuFragment"
-        android:label="@string/navigation_menu" >
-        <argument
-            android:name="restId"
-            app:argType="integer" />
-    </fragment>
+    <!-- на мой взгляд тумач, я бы предложил реализовать более гибко, по аналогии с тем, что выше каждый фрагмент можем использовать т.к. нам нужно в соответствующих методах MainActivity, пометил комментом navigation methods-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_restaurants"-->
+<!--        android:name="ru.gb.bufet.view.RestaurantsFragment"-->
+<!--        android:label="@string/navigation_restaurants"-->
+<!--        tools:layout="@layout/fragment_restaurants" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_restaurants_to_navigation_restaurant"-->
+<!--            app:destination="@id/navigation_restaurant" />-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_order"-->
+<!--        android:name="ru.gb.bufet.view.OrderFragment"-->
+<!--        android:label="@string/navigation_order"-->
+<!--        tools:layout="@layout/fragment_order" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_order_to_navigation_reserve"-->
+<!--            app:destination="@id/navigation_reserve" />-->
+<!--    </fragment>-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_restaurant"-->
+<!--        android:name="ru.gb.bufet.view.RestaurantFragment"-->
+<!--        android:label="@string/navigation_restaurant"-->
+<!--        tools:layout="@layout/fragment_restaurant" >-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_restaurant_to_navigation_order"-->
+<!--            app:destination="@id/navigation_order" />-->
+<!--        <action-->
+<!--            android:id="@+id/action_navigation_restaurant_to_navigation_menu"-->
+<!--            app:destination="@id/navigation_menu" />-->
+<!--    </fragment>-->
+
+
+<!--    <fragment-->
+<!--        android:id="@+id/navigation_menu"-->
+<!--        android:name="ru.gb.bufet.view.MenuFragment"-->
+<!--        android:label="@string/navigation_menu" >-->
+<!--        <argument-->
+<!--            android:name="restId"-->
+<!--            app:argType="integer" />-->
+<!--    </fragment>-->
 
 </navigation>

@@ -4,6 +4,7 @@ import GalleryAdapter
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
+import ru.gb.bufet.MainActivity
 import ru.gb.bufet.databinding.FragmentRestaurantBinding
 import ru.gb.bufet.model.adapters.TablesAdapter
 import ru.gb.bufet.model.data.BaseFragment
@@ -44,12 +45,18 @@ class RestaurantFragment :
             binding.title.text = it?.name
 
             binding.fragmentRestMenuBtn.setOnClickListener {
-                foodModel = FoodViewModel()
-                val restId = viewModel.currentRestaurant.value!!.id ?: 0
-                foodModel.getFoodList(restId)
-                val action =
-                    RestaurantFragmentDirections.actionNavigationRestaurantToNavigationMenu(5)
-                findNavController().navigate(action)
+
+//                foodModel = FoodViewModel()
+//                val restId = viewModel.currentRestaurant.value!!.id ?: 0 //скорее всего здесь у тебя null, а затем 0
+//                foodModel.getFoodList(restId)
+//                val action =
+//                    RestaurantFragmentDirections.actionNavigationRestaurantToNavigationMenu(5)
+//                findNavController().navigate(action)
+
+
+                //я бы предложил ничего не передавать и просто открывать нужный нам фрагмент, например так:
+                (activity as MainActivity).goToFoodMenu()
+
             }
         }
     }

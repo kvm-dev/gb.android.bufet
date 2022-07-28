@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         binding.navView.selectedItemId = R.id.navigation_restaurants
         navController.navigate(R.id.navigation_restaurants)
     }
-
+    //navigation methods
     fun goToRestaurant(){
         navController.navigate(R.id.navigation_restaurant)
     }
@@ -54,6 +54,10 @@ class MainActivity : AppCompatActivity() {
     fun goToReserve(){
         navController.navigate(R.id.navigation_reserve)
     }
+    fun goToFoodMenu(){
+        navController.navigate(R.id.navigation_food_menu)
+    }
+
 
     fun toaster(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

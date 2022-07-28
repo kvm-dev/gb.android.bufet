@@ -20,6 +20,7 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
     class MenuViewHolder(binding: ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
+        //я кст по рекомендации преподавателя поубирал отложенную инициализацию) но эт как говорится не обязательно, я просто к тому, либо нам в другие адаптеры ее вернуть либо тут убрать)
         private var foodItem: CardView? = null
         private var foodPrice: TextView? = null
         private var foodName: TextView? = null
@@ -35,6 +36,7 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
         @SuppressLint("SetTextI18n")
         fun bind(items: List<RestaurantFood>, position: Int) {
             //todo зачем тут контекст?
+            //todo контекст здесь для того, чтоб получить доступ к активити, а именно для того, чтобы дергать навигационные методы, например открывать конкретное блюдо ну и использовать вьюмодел если требуется
             val context = itemView.context
             val activity: MainActivity = context as MainActivity
             //-----
