@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.viewbinding.ViewBinding
+import ru.gb.bufet.viewModel.FoodViewModel
 import ru.gb.bufet.viewModel.MainViewModel
 
 abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layoutInflater: LayoutInflater) -> T) :
@@ -15,9 +16,14 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layou
     private var _binding: T? = null
     // ViewModel
     protected lateinit var viewModel: MainViewModel
+    protected lateinit var foodModel: FoodViewModel
     protected val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = bindingInflater.invoke(inflater)
         return binding.root
     }

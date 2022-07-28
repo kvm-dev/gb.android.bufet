@@ -507,7 +507,7 @@
         <item name="android:background">@drawable/selector_button_reserve_table</item>
     </style>
 
-    <style name="restaurant_menu_button_content" parent="">
+    <style name="fragmentRestMenuBtn" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:drawablePadding">@dimen/dp4</item>

@@ -11,6 +11,10 @@ class API{
         @GET("food/{restaurant_id}")
         suspend fun getFoods(@Path("restaurant_id") restaurantId: Int): ArrayList<RestaurantFood>
     }
+    interface GetAllFoodsAPI {
+        @GET("food/")
+        suspend fun getAllFoods(): ArrayList<RestaurantFood>
+    }
 
     interface GetRestaurantsAPI {
         @GET("fullrest/")

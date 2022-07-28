@@ -121,9 +121,9 @@
                 android:id="@+id/buttonMenuRestaurant"
                 style="@style/restaurant_menu_button">
 
-                <TextView
-                    android:id="@+id/menuButtonRestaurantContent"
-                    style="@style/restaurant_menu_button_content"
+                <Button
+                    android:id="@+id/fragmentRestMenuBtn"
+                    style="@style/fragmentRestMenuBtn"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

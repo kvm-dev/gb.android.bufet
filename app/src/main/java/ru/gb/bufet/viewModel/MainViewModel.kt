@@ -4,18 +4,15 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.async
-import ru.gb.bufet.model.responseData.Restaurant
-import ru.gb.bufet.model.retrofit.RetrofitClient
 import ru.gb.bufet.model.interfaces.API
 import ru.gb.bufet.model.responseData.AdvertiseBanners
+import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.responseData.RestaurantTable
+import ru.gb.bufet.model.retrofit.RetrofitClient
 import java.util.*
-import kotlin.collections.ArrayList
-import ru.gb.bufet.model.responseData.RestaurantFood
 
 class MainViewModel : ViewModel() {
     //data
-    val foodListResponse: MutableLiveData<List<RestaurantFood>> = MutableLiveData()
     val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
     val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
@@ -27,18 +24,6 @@ class MainViewModel : ViewModel() {
     val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData()
 
     //methods
-    fun getFoodList(restaurantId: Int) {
-        val requestData =
-            RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
-        viewModelScope.async {
-            try {
-                foodListResponse.value = requestData.getFoods(restaurantId)
-                error.value = null
-            } catch (e: Exception) {
-                error.value = e.toString()
-            }
-        }
-    }
 
     fun getRestaurantsList() {
         val requestData =
