@@ -14,7 +14,7 @@ class FoodViewModel: ViewModel() {
     val foodListResponse: MutableLiveData<List<RestaurantFood>> = MutableLiveData()
     val error: MutableLiveData<String> = MutableLiveData()
 
-    fun getFoodList(restaurantId: Int) : LiveData<List<RestaurantFood>> {
+    fun getFoodList(restaurantId: Int)  {
         val restFoodData =
             RetrofitClient.RetrofitHelper.getInstance().create(API.GetFoodsAPI::class.java)
         viewModelScope.async {
@@ -25,6 +25,6 @@ class FoodViewModel: ViewModel() {
                 error.value = e.toString()
             }
         }
-        return foodListResponse
+
     }
 }

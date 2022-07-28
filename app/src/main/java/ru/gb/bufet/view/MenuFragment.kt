@@ -25,10 +25,9 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(
             false
         )
 
-        foodModel = FoodViewModel()
-
         binding.fragmentMenuMenuRecycler.layoutManager = verticalLayoutManager
-        foodModel.getFoodList(5).observe(
+        foodModel = FoodViewModel()
+        foodModel.foodListResponse.observe(
             this
         ) { foods ->
             adapter = MenuAdapter(foods)
