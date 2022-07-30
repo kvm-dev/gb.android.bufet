@@ -9,7 +9,6 @@ import ru.gb.bufet.databinding.FragmentRestaurantBinding
 import ru.gb.bufet.model.adapters.TablesAdapter
 import ru.gb.bufet.model.data.BaseFragment
 import ru.gb.bufet.model.utils.ServerUtils
-import ru.gb.bufet.viewModel.FoodViewModel
 
 class RestaurantFragment :
     BaseFragment<FragmentRestaurantBinding>(FragmentRestaurantBinding::inflate) {
@@ -45,16 +44,6 @@ class RestaurantFragment :
             binding.title.text = it?.name
 
             binding.fragmentRestMenuBtn.setOnClickListener {
-
-//                foodModel = FoodViewModel()
-//                val restId = viewModel.currentRestaurant.value!!.id ?: 0 //скорее всего здесь у тебя null, а затем 0
-//                foodModel.getFoodList(restId)
-//                val action =
-//                    RestaurantFragmentDirections.actionNavigationRestaurantToNavigationMenu(5)
-//                findNavController().navigate(action)
-
-
-                //я бы предложил ничего не передавать и просто открывать нужный нам фрагмент, например так:
                 (activity as MainActivity).goToFoodMenu()
 
             }
