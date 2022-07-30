@@ -1,8 +1,6 @@
 package ru.gb.bufet.view
 
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.isNotEmpty
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.gb.bufet.databinding.FragmentMenuBinding
 import ru.gb.bufet.model.adapters.MenuAdapter
@@ -16,9 +14,9 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(
 
     override fun init() {
         val restModel = getCurrentRestOrDefault()
-        loadRestaurantMenu(restModel)
-        bindingHeader(restModel)
 
+        bindingHeader(restModel)
+        loadRestaurantMenu(restModel)
     }
 
 
@@ -39,23 +37,14 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(
 
         binding.fragmentMenuMenuRecycler.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        if (binding.fragmentMenuSearchView.query.isEmpty()) {
-            val adapter = restModel.restaurantFood?.let {
-                MenuAdapter(it)
-            }
-            adapter!!.notifyDataSetChanged()
-            binding.fragmentMenuMenuRecycler.adapter = adapter
-        } else {
-            search(restModel)
+        binding.fragmentMenuMenuRecycler.adapter = restModel.restaurantFood?.let {
+            MenuAdapter(it)
         }
+        bindSearchView(restModel)
     }
 
-    private fun search(restModel: Restaurant) {
-
+    private fun bindSearchView(restModel: Restaurant) {
         binding.fragmentMenuSearchView.clearFocus()
-
-//        if (binding.fragmentMenuSearchView.query.isNotEmpty()) {
-
         binding.fragmentMenuSearchView.setOnQueryTextListener(object :
             SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String): Boolean {
@@ -63,25 +52,21 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(
             }
 
             override fun onQueryTextChange(searchText: String): Boolean {
-                val filteredList = ArrayList<RestaurantFood>()
-                for (restFood in restModel.restaurantFood!!) {
-                    if (restFood.name!!.lowercase().contains(searchText.lowercase()))
-                        filteredList.add(restFood)
-                }
-
-                val adapter = MenuAdapter(filteredList)
-                adapter.notifyDataSetChanged()
-                binding.fragmentMenuMenuRecycler.adapter = adapter
-
+                searchByName(restModel, searchText)
                 return true
             }
         })
-//        } else {
-//            val adapter = restModel.restaurantFood?.let {
-//                MenuAdapter(it)
-//            }
-//            adapter!!.notifyDataSetChanged()
-//            binding.fragmentMenuMenuRecycler.adapter = adapter
-//        }
+    }
+
+    private fun searchByName(restModel: Restaurant, searchText: String) {
+        val filteredList = ArrayList<RestaurantFood>()
+        for (restFood in restModel.restaurantFood!!) {
+            if (restFood.name!!.lowercase().contains(searchText.lowercase()))
+                filteredList.add(restFood)
+        }
+
+        val adapter = MenuAdapter(filteredList)
+        adapter.notifyDataSetChanged()
+        binding.fragmentMenuMenuRecycler.adapter = adapter
     }
 }
