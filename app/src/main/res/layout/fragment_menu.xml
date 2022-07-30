@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/main_display_main_container"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBlock"
+        style="@style/restaurant_title_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/fragmentMenuTitle"
+            style="@style/restaurant_title"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/fragmentMenuBackButton"
+            style="@style/back_button"
+            android:contentDescription="@string/back_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/fragmentMenuTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/fragmentMenuFavoriteButton"
+            style="@style/favorite_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragmentMenuTitle"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/fragmentMenuCancelSearch"-->
+<!--            style="@style/search_button_cancel"-->
+<!--            android:visibility="gone"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/fragmentMenuSearchBox" />-->
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/fragmentMenuSearchBox"-->
+<!--            style="@style/search_layout_style"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/fragmentMenuCancelSearch"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/fragmentMenuSearch"-->
+<!--                style="@style/search_input"-->
+<!--                tools:ignore="TextContrastCheck" />-->
+
+<!--            <com.google.android.material.tabs.TabLayout-->
+<!--                android:id="@+id/fragmentMenuFilterNavigation"-->
+<!--                style="@style/match_match_container"-->
+<!--                android:contentDescription="@string/item_table_btn_text_order"-->
+<!--                app:tabGravity="center"-->
+<!--                app:tabIndicatorColor="@color/general_color"-->
+<!--                app:tabMode="scrollable" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/fragmentMenuSearchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/search_layout_style"
+        app:queryHint="Search food..."
+        app:iconifiedByDefault="false"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/fragmentMenuMenuRecycler"
+        style="@style/match_match_container" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragmentMenuNotFoundBlock"
+        android:visibility="gone"
+        style="@style/base_constraint">
+
+        <ImageView
+            android:id="@+id/fragmentMenuNotFoundIcon"
+            style="@style/search_not_found_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_search_big"
+            android:contentDescription="@string/main_display_not_found_text"/>
+
+        <TextView
+            android:id="@+id/fragmentMenuNotFoundTitle"
+            style="@style/not_found_title"
+            app:layout_constraintEnd_toEndOf="@+id/fragmentMenuNotFoundIcon"
+            app:layout_constraintStart_toStartOf="@+id/fragmentMenuNotFoundIcon"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentMenuNotFoundIcon" />
+
+        <TextView
+            android:id="@+id/fragmentMenuNotFoundText"
+            style="@style/not_found_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentMenuNotFoundTitle" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

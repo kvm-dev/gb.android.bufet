@@ -433,7 +433,6 @@
         <item name="android:textSize">@dimen/sp18</item>
     </style>
 
-    // my
     <style name="food_card_title" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -537,7 +536,6 @@
         <item name="drawableLeftCompat">@drawable/restaurant_menu_icon</item>
     </style>
 
-
     <style name="food_card_button_content" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -557,7 +555,6 @@
         <item name="android:textColor">@color/general_color</item>
         <item name="android:textSize">@dimen/sp14</item>
     </style>
-
 
     <style name="reserve_title" parent="">
         <item name="android:text">@string/reserve_title</item>

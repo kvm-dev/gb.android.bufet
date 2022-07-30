@@ -17,7 +17,11 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layou
     protected lateinit var viewModel: MainViewModel
     protected val binding get() = _binding!!
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         _binding = bindingInflater.invoke(inflater)
         return binding.root
     }
@@ -25,7 +29,6 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layou
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-
         init()
     }
 

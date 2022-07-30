@@ -3,59 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/drawable/add_to_favorites.xml" value="0.1955" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/drawable/remove_from_favorites.xml" value="0.1955" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/drawable/reserved_breakfast_description.xml" value="0.232" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_favorite.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_favorites.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_food_card.xml" value="0.365625" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_main_display_tabs.xml" value="0.18802083333333333" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_order.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_reserve.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_restaurant.xml" value="0.25" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_restaurants.xml" value="0.33" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_restorans.xml" value="0.30833333333333335" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_splash.xml" value="0.36102564102564105" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/fragment_tabs.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_advertise.xml" value="0.3194444444444444" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_food.xml" value="0.33" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_gallery.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_restaurant.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/User.HARRIER/AndroidStudioProjects/gb.android.bufet/app/src/main/res/layout/item_table.xml" value="0.75" />
-        <entry key="app/src/main/res/drawable/advertisement_title_background.xml" value="0.155" />
-        <entry key="app/src/main/res/drawable/ic_search.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/ic_time.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/item_restaurant_one_dp_image.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/item_table_rounded_button.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/item_table_rounded_tw.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/menu_background.xml" value="0.18" />
-        <entry key="app/src/main/res/drawable/menu_selector.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/restaurant_title_background.xml" value="0.3165" />
-        <entry key="app/src/main/res/drawable/searh_input_background.xml" value="0.191" />
-        <entry key="app/src/main/res/drawable/splash_move_up.xml" value="0.191" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.75" />
-        <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_order.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_restaurants.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_splash.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/fragment_tabs.xml" value="0.18229166666666666" />
-        <entry key="app/src/main/res/layout/item_advertise.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/item_food.xml" value="0.5" />
-        <entry key="app/src/main/res/layout/item_restaurant.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/item_table.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/splash_animation.xml" value="0.15006412997007268" />
-        <entry key="app/src/main/res/layout/splash_move_up.xml" value="0.15006412997007268" />
-        <entry key="app/src/main/res/menu/menu.xml" value="0.2" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_restaurant.xml" value="0.3578125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/build/classes" />
-  </component>
-  <component name="ProjectType">
-    <option name="id" value="Android" />
-  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16_PREVIEW" project-jdk-name="16" project-jdk-type="JavaSDK" />
 </project>

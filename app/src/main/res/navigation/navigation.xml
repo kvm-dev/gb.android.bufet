@@ -12,12 +12,6 @@
         tools:layout="@layout/fragment_restaurants" />
 
     <fragment
-        android:id="@+id/navigation_order"
-        android:name="ru.gb.bufet.view.OrderFragment"
-        android:label="@string/navigation_order"
-        tools:layout="@layout/fragment_order" />
-
-    <fragment
         android:id="@+id/navigation_favorites"
         android:name="ru.gb.bufet.view.FavoritesFragment"
         android:label="@string/navigation_favorites"
@@ -32,8 +26,14 @@
     <fragment
         android:id="@+id/navigation_restaurant"
         android:name="ru.gb.bufet.view.RestaurantFragment"
-        android:label="@string/navigation_restaurant"
+        android:label="@string/navigation_profile"
         tools:layout="@layout/fragment_restaurant" />
+
+    <fragment
+        android:id="@+id/navigation_food_menu"
+        android:name="ru.gb.bufet.view.MenuFragment"
+        android:label="@string/navigation_food_menu"
+        tools:layout="@layout/fragment_menu" />
 
     <fragment
         android:id="@+id/navigation_reserve"
