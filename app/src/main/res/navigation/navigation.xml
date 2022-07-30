@@ -40,5 +40,4 @@
         android:name="ru.gb.bufet.view.ReserveFragment"
         android:label="@string/navigation_reserve"
         tools:layout="@layout/fragment_reserve" />
-
 </navigation>

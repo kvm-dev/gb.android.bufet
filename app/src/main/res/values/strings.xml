@@ -110,4 +110,9 @@
         <item>Декабрь</item>
     </array>
     <!-- /calendar month array and week names data -->
+
+    <string name="food_card_order_button">Заказать за 350 руб.</string>
+    <string name="food_card_description_btn">Описание</string>
+    <string name="food_card_components_btn">Состав</string>
+    <string name="food_card_feedback_btn">Отзывы</string>
 </resources>

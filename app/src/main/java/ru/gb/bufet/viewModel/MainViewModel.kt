@@ -10,6 +10,7 @@ import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.responseData.RestaurantTable
 import ru.gb.bufet.model.retrofit.RetrofitClient
 import java.util.*
+import kotlin.collections.ArrayList
 
 class MainViewModel : ViewModel() {
     //data

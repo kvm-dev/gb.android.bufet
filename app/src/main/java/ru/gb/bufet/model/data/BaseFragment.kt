@@ -29,7 +29,6 @@ abstract class BaseFragment<T : ViewBinding>(private val bindingInflater: (layou
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
-
         init()
     }
 

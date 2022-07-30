@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/match_match_container">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBlock"
+        style="@style/restaurant_title_block"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/food_card_title_tv"
+                    style="@style/food_card_title"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Крем суп из цветной капусты"/>
+
+                <ImageView
+                    android:id="@+id/backButton"
+                    style="@style/back_button"
+                    android:contentDescription="@string/back_button"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/food_card_title_tv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        style="@style/base_scrollView_food_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBlock">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/gallery_tab_food_card"
+                style="@style/gallery_tab"
+                android:contentDescription="@string/tabs_gallery"
+                app:tabBackground="@drawable/selector_gallery_tab"
+                app:tabIndicatorColor="@android:color/transparent"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingEnd="10dp"
+                app:tabPaddingStart="10dp" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/gallery_food_card"
+                style="@style/gallery" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/soup"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/food_card_order_btn"
+                style="@style/restaurant_menu_button">
+
+                <TextView
+                    android:id="@+id/food_card_order_tv"
+                    style="@style/food_card_button_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/food_card_description_btn"
+                    style="@style/food_card_button_select"
+                    android:background="@android:color/transparent"
+                    android:text="@string/food_card_description_btn"/>
+
+                <Button
+                    android:id="@+id/food_card_components_btn"
+                    style="@style/food_card_button_select"
+                    android:background="@android:color/transparent"
+                    android:text="@string/food_card_components_btn"/>
+
+                <Button
+                    android:id="@+id/food_card_feedback_btn"
+                    style="@style/food_card_button_select"
+                    android:background="@android:color/transparent"
+                    android:text="@string/food_card_feedback_btn"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/food_card_text_container_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="контейнер Описание + Состав + Отзывы, в зависимости от нажатия кнопок"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
