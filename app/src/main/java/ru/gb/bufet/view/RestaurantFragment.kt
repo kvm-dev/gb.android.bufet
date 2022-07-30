@@ -43,7 +43,7 @@ class RestaurantFragment :
             binding.description.text = it?.description
             binding.title.text = it?.name
 
-            binding.fragmentRestMenuBtn.setOnClickListener {
+            binding.menuButtonRestaurantContent.setOnClickListener {
                 (activity as MainActivity).goToFoodMenu()
 
             }
