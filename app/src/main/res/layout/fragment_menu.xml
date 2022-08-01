@@ -38,41 +38,6 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/fragmentMenuCancelSearch"-->
-<!--            style="@style/search_button_cancel"-->
-<!--            android:visibility="gone"-->
-<!--            app:layout_constraintEnd_toEndOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="@+id/fragmentMenuSearchBox" />-->
-
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            android:id="@+id/fragmentMenuSearchBox"-->
-<!--            style="@style/search_layout_style"-->
-<!--            app:layout_constraintBottom_toBottomOf="parent"-->
-<!--            app:layout_constraintEnd_toStartOf="@+id/fragmentMenuCancelSearch"-->
-<!--            app:layout_constraintStart_toStartOf="parent"-->
-<!--            app:layout_constraintTop_toTopOf="parent">-->
-
-<!--            <com.google.android.material.textfield.TextInputEditText-->
-<!--                android:id="@+id/fragmentMenuSearch"-->
-<!--                style="@style/search_input"-->
-<!--                tools:ignore="TextContrastCheck" />-->
-
-<!--            <com.google.android.material.tabs.TabLayout-->
-<!--                android:id="@+id/fragmentMenuFilterNavigation"-->
-<!--                style="@style/match_match_container"-->
-<!--                android:contentDescription="@string/item_table_btn_text_order"-->
-<!--                app:tabGravity="center"-->
-<!--                app:tabIndicatorColor="@color/general_color"-->
-<!--                app:tabMode="scrollable" />-->
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
-
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
-
     <androidx.appcompat.widget.SearchView
         android:id="@+id/fragmentMenuSearchView"
         android:layout_width="match_parent"
@@ -80,6 +45,15 @@
         style="@style/search_layout_style"
         app:queryHint="Search food..."
         app:iconifiedByDefault="false"/>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/fragmentMenuFilterFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/item_table_btn_text_order"
+        app:tabGravity="center"
+        app:tabIndicatorColor="@color/general_color"
+        app:tabMode="scrollable" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragmentMenuMenuRecycler"
