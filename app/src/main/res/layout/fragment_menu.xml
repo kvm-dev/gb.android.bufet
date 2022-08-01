@@ -48,7 +48,8 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/fragmentMenuFilterFood"
-        style="@style/match_match_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:contentDescription="@string/item_table_btn_text_order"
         app:tabGravity="center"
         app:tabIndicatorColor="@color/general_color"
