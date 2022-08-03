@@ -76,8 +76,8 @@
     <!-- /reserve display -->
 
     <!-- food list fragment -->
-    <string name="food_list_not_found_food_text">Попробуйте поискать блюдо с другим названием</string>
-    <string name="food_list_not_found_food_title">Блюдо не найдено</string>
+    <string name="food_list_not_found_food_text">Попробуйте поискать с другим названием</string>
+    <string name="food_list_not_found_food_title">Ничего не найдено</string>
     <!-- /food list fragment -->
 
     <!-- errors -->
