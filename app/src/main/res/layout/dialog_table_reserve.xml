@@ -4,41 +4,41 @@
     style="@style/dialog">
 
     <TextView
-        android:id="@+id/dialogTitle"
+        android:id="@+id/dialogReserveTitleTv"
         style="@style/dialog_title"
         android:text="@string/reserve_time_title" />
 
     <RadioGroup
-        android:id="@+id/radioButtons"
+        android:id="@+id/dialogReserveTimeRG"
         style="@style/dialog_radio_group"
         android:weightSum="@integer/three">
 
         <RadioButton
-            android:id="@+id/breakfast"
+            android:id="@+id/dialogReserveBreakfastBtn"
             style="@style/dialog_radio_button"
             android:text="@string/reserve_breakfast"
             tools:ignore="TextContrastCheck" />
 
         <RadioButton
-            android:id="@+id/lunch"
+            android:id="@+id/dialogReserveLunchBtn"
             style="@style/dialog_radio_button"
             android:text="@string/reserve_lunch"
             tools:ignore="TextContrastCheck" />
 
         <RadioButton
-            android:id="@+id/dinner"
+            android:id="@+id/dialogReserveDinnerBtn"
             style="@style/dialog_radio_button"
             android:text="@string/reserve_dinner"
             tools:ignore="TextContrastCheck" />
     </RadioGroup>
 
     <LinearLayout
-        android:id="@+id/generalButtons"
+        android:id="@+id/dialogReserveGeneralButtons"
         style="@style/dialog_general_buttons"
         android:weightSum="@integer/two">
 
         <Button
-            android:id="@+id/acceptButton"
+            android:id="@+id/dialogReserveAcceptBtn"
             style="@style/dialog_general_button"
             android:text="@string/reserve_accept_time"
             android:enabled="false"
@@ -46,7 +46,7 @@
             />
 
         <Button
-            android:id="@+id/cancelButton"
+            android:id="@+id/dialogReserveCancelBtn"
             style="@style/dialog_general_button"
             android:text="@string/reserve_cancel_time"
             tools:ignore="ButtonStyle,TextContrastCheck" />
