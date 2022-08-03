@@ -463,6 +463,17 @@
         <item name="android:button">@drawable/favorite_selector</item>
     </style>
 
+
+    <style name="favorite_food_button" parent="">
+        <item name="android:layout_width">@dimen/dp48</item>
+        <item name="android:layout_height">@dimen/dp48</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:minHeight">@dimen/dp48</item>
+        <item name="android:minWidth">@dimen/dp48</item>
+        <item name="android:button">@drawable/favorite_selector</item>
+    </style>
+
     <style name="gallery_tab" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp4</item>

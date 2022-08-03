@@ -31,10 +31,10 @@ class MenuFragment : BaseFragment<FragmentMenuBinding>(
     }
 
     private fun bindingHeader(restModel: Restaurant) {
-        binding.fragmentMenuBackButton.setOnClickListener {
+        binding.fragmentMenuBackBtn.setOnClickListener {
             (activity?.onBackPressed())
         }
-        binding.fragmentMenuTitle.text = restModel.name
+        binding.fragmentMenuTitleTv.text = restModel.name
     }
 
     private fun loadRestaurantMenu(restModel: Restaurant) {

@@ -5,46 +5,39 @@
     style="@style/main_display_main_container"
     tools:context=".MainActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleBlock"
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/fragmentMenuTitleBlock"
         style="@style/restaurant_title_block"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/fragmentMenuTitle"
-            style="@style/restaurant_title"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center_horizontal">
 
         <ImageView
-            android:id="@+id/fragmentMenuBackButton"
+            android:id="@+id/fragmentMenuBackBtn"
             style="@style/back_button"
-            android:contentDescription="@string/back_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/fragmentMenuTitle"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/back_button" />
+
+        <TextView
+            android:id="@+id/fragmentMenuTitleTv"
+            style="@style/restaurant_title"
+            android:layout_gravity="center_vertical"
+            android:text="ыфвфыв" />
 
         <CheckBox
             android:id="@+id/fragmentMenuFavoriteButton"
-            style="@style/favorite_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/fragmentMenuTitle"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            style="@style/favorite_food_button"
+            android:layout_gravity="center_vertical" />
 
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!--todo сделать в стиле приложения!!! -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/fragmentMenuSearchView"
+        style="@style/search_layout_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/search_layout_style"
-        app:queryHint="Search food..."
-        app:iconifiedByDefault="false"/>
+        app:iconifiedByDefault="false"
+        app:queryHint="Search food..." />
+    <!--/todo сделать в стиле приложения!!! -->
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/fragmentMenuFilterFood"
@@ -59,34 +52,28 @@
         android:id="@+id/fragmentMenuMenuRecycler"
         style="@style/match_match_container" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:id="@+id/fragmentMenuNotFoundBlock"
-        android:visibility="gone"
-        style="@style/base_constraint">
+        style="@style/base_constraint"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/fragmentMenuNotFoundIcon"
             style="@style/search_not_found_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_search_big"
-            android:contentDescription="@string/main_display_not_found_text"/>
+            android:contentDescription="@string/food_list_not_found_food_title"
+            app:srcCompat="@drawable/icon_search_big" />
 
         <TextView
             android:id="@+id/fragmentMenuNotFoundTitle"
             style="@style/not_found_title"
-            app:layout_constraintEnd_toEndOf="@+id/fragmentMenuNotFoundIcon"
-            app:layout_constraintStart_toStartOf="@+id/fragmentMenuNotFoundIcon"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentMenuNotFoundIcon" />
+            android:text="@string/food_list_not_found_food_title" />
 
         <TextView
             android:id="@+id/fragmentMenuNotFoundText"
             style="@style/not_found_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/fragmentMenuNotFoundTitle" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/food_list_not_found_food_text" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </LinearLayout>
