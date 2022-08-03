@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
+        android:id="@+id/activityMainNavView"
         style="@style/navigation_view"
         android:visibility="gone"
         app:labelVisibilityMode="unlabeled"
@@ -17,10 +17,10 @@
         app:layout_constraintRight_toRightOf="parent" />
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/nav_host_fragment_activity_main_navigate"
+        android:id="@+id/activityMainNavHostFragmentNavigate"
         android:name="androidx.navigation.fragment.NavHostFragment"
         style="@style/navigation_fragment"
-        app:layout_constraintBottom_toTopOf="@+id/nav_view"
+        app:layout_constraintBottom_toTopOf="@+id/activityMainNavView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
