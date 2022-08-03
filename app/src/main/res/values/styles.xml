@@ -105,7 +105,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="base_scrollView" parent="">
+    <style name="fragmentRestaurantBaseScrollView" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="android:layout_marginTop">@dimen/dp8</item>
@@ -463,6 +463,17 @@
         <item name="android:button">@drawable/favorite_selector</item>
     </style>
 
+
+    <style name="favorite_food_button" parent="">
+        <item name="android:layout_width">@dimen/dp48</item>
+        <item name="android:layout_height">@dimen/dp48</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:minHeight">@dimen/dp48</item>
+        <item name="android:minWidth">@dimen/dp48</item>
+        <item name="android:button">@drawable/favorite_selector</item>
+    </style>
+
     <style name="gallery_tab" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp4</item>
@@ -568,7 +579,7 @@
         <item name="android:textSize">@dimen/sp18</item>
     </style>
 
-    <style name="reserve_table_scroll_view" parent="">
+    <style name="fragmentReserveScrollView" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="android:orientation">vertical</item>
@@ -614,7 +625,7 @@
         <item name="android:layout_weight">@integer/one</item>
     </style>
 
-    <style name="reserve_table_description_text" parent="">
+    <style name="fragmentReserveDescriptionText" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLines">@integer/two</item>

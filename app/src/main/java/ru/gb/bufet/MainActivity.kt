@@ -1,10 +1,8 @@
 package ru.gb.bufet
 
-import android.annotation.SuppressLint
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.CountDownTimer
 import android.view.MotionEvent
 import android.view.View
 import android.view.Window
@@ -21,7 +19,7 @@ import ru.gb.bufet.viewModel.MainViewModel
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     val viewModel by lazy { ViewModelProvider(this)[MainViewModel::class.java] }
-    private val navController by lazy { findNavController(R.id.nav_host_fragment_activity_main_navigate)}
+    private val navController by lazy { findNavController(R.id.activityMainNavHostFragmentNavigate)}
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -42,8 +40,8 @@ class MainActivity : AppCompatActivity() {
 
      fun startApplication(){
         navController.setGraph(R.navigation.navigation)
-        binding.navView.visibility = View.VISIBLE
-        binding.navView.selectedItemId = R.id.navigation_restaurants
+        binding.activityMainNavView.visibility = View.VISIBLE
+        binding.activityMainNavView.selectedItemId = R.id.navigation_restaurants
         navController.navigate(R.id.navigation_restaurants)
     }
     //navigation methods

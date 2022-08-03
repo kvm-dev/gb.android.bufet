@@ -5,6 +5,7 @@
     style="@style/match_match_container"
     tools:ignore="MissingClass">
 
+<!--    todo заменить шапку на инклюйд -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleBlock"
         style="@style/restaurant_title_block"
@@ -31,8 +32,10 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+<!--    /todo-->
+
     <ScrollView
-        style="@style/reserve_table_scroll_view"
+        style="@style/fragmentReserveScrollView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,7 +46,7 @@
             android:orientation="vertical">
 
             <com.applandeo.materialcalendarview.CalendarView
-                android:id="@+id/calendar"
+                android:id="@+id/fragmentReserveCalendar"
                 style="@style/reserve_calendar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -52,20 +55,20 @@
                 />
 
             <LinearLayout
-                android:id="@+id/labelsDescription"
+                android:id="@+id/fragmentReserveLabelsDescription"
                 style="@style/reserve_table_description_linear"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/calendar">
+                app:layout_constraintTop_toBottomOf="@+id/fragmentReserveCalendar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/breakfastDescription"
+                    android:id="@+id/fragmentReserveBreakfastDescription"
                     style="@style/reserve_table_description_container"
                     android:background="@drawable/reserved_breakfast_description">
 
                     <TextView
                         android:id="@+id/breakfastText"
-                        style="@style/reserve_table_description_text"
+                        style="@style/fragmentReserveDescriptionText"
                         android:text="@string/reserved_breakfast"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -76,13 +79,13 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/lunchDescription"
+                    android:id="@+id/fragmentReserveLunchDescription"
                     style="@style/reserve_table_description_container"
                     android:background="@color/reserved_lunch">
 
                     <TextView
-                        android:id="@+id/lunchText"
-                        style="@style/reserve_table_description_text"
+                        android:id="@+id/fragmentReserveLunchText"
+                        style="@style/fragmentReserveDescriptionText"
                         android:text="@string/reserved_lunch"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +96,13 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/dinnerDescription"
+                    android:id="@+id/fragmentReserveDinnerDescription"
                     style="@style/reserve_table_description_container"
                     android:background="@drawable/reserved_dinner_description">
 
                     <TextView
-                        android:id="@+id/dinnerText"
-                        style="@style/reserve_table_description_text"
+                        android:id="@+id/fragmentReserveDinnerText"
+                        style="@style/fragmentReserveDescriptionText"
                         android:text="@string/reserved_dinner"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -112,20 +115,20 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/selectionDescription"
+                android:id="@+id/fragmentReserveSelectionDescription"
                 style="@style/reserve_table_description_linear_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/calendar">
+                app:layout_constraintTop_toBottomOf="@+id/fragmentReserveCalendar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/todayDescription"
+                    android:id="@+id/fragmentReserveTodayDescription"
                     style="@style/reserve_table_description_container"
                     android:background="@drawable/reserved_today_description">
 
                     <TextView
-                        android:id="@+id/todayText"
-                        style="@style/reserve_table_description_text"
+                        android:id="@+id/fragmentReserveTodayText"
+                        style="@style/fragmentReserveDescriptionText"
                         android:text="@string/reserve_today"
                         android:textAlignment="center"
                         android:textColor="@color/white"
@@ -137,13 +140,13 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/selectDayDescription"
+                    android:id="@+id/fragmentReserveSelectDayDescription"
                     style="@style/reserve_table_description_container"
                     android:background="@drawable/reserved_your_description">
 
                     <TextView
-                        android:id="@+id/selectDayText"
-                        style="@style/reserve_table_description_text"
+                        android:id="@+id/fragmentReserveSelectDayText"
+                        style="@style/fragmentReserveDescriptionText"
                         android:text="@string/reserve_selected_day"
                         android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -157,13 +160,13 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/reserveWarning"
+                android:id="@+id/fragmentReserveWarning"
                 style="@style/reserve_warning"
                 android:text="@string/reserve_time_warning"
                 tools:ignore="TextContrastCheck" />
 
             <Button
-                android:id="@+id/buttonPayment"
+                android:id="@+id/fragmentReservePaymentBtn"
                 style="@style/reserve_table_button"
                 android:enabled="false"/>
         </LinearLayout>

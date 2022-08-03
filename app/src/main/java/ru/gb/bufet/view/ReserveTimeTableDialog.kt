@@ -14,24 +14,24 @@ class ReserveTimeTableDialog : BaseBottomSheetDialog<DialogTableReserveBinding>(
         dialog?.setCanceledOnTouchOutside(false)
         viewModel.availableTimeTable.value.let { 
             val info = ReserveTables(requireContext(), viewModel.currentTable.value).availabilityTimeDialog(it)
-            binding.breakfast.isEnabled = info[0]
-            binding.lunch.isEnabled = info[1]
-            binding.dinner.isEnabled = info[2]
+            binding.dialogReserveBreakfastBtn.isEnabled = info[0]
+            binding.dialogReserveLunchBtn.isEnabled = info[1]
+            binding.dialogReserveDinnerBtn.isEnabled = info[2]
             if(info == listOf(false, false, false)){
                 (activity as MainActivity).toaster(resources.getString(R.string.table_today_unavailable))
             }
         }
-        binding.cancelButton.setOnClickListener {
+        binding.dialogReserveCancelBtn.setOnClickListener {
             viewModel.reservedTableTime.value = null
             viewModel.reservedTableDate.value = null
             dismiss()
         }
-        binding.radioButtons.setOnCheckedChangeListener { _, checkedId ->
+        binding.dialogReserveTimeRG.setOnCheckedChangeListener { _, checkedId ->
             if(checkedId != -1){
-                binding.acceptButton.isEnabled = true
-                binding.acceptButton.setOnClickListener {
-                    for (i in 0 until binding.radioButtons.childCount){
-                        val radioButton = binding.radioButtons.getChildAt(i) as RadioButton
+                binding.dialogReserveAcceptBtn.isEnabled = true
+                binding.dialogReserveAcceptBtn.setOnClickListener {
+                    for (i in 0 until binding.dialogReserveTimeRG.childCount){
+                        val radioButton = binding.dialogReserveTimeRG.getChildAt(i) as RadioButton
                         if(radioButton.isChecked){
                             viewModel.reservedTableTime.value = radioButton.text.toString()
                         }

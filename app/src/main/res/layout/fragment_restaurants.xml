@@ -16,6 +16,7 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 
+    <!--todo заменить на searchView?-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -48,41 +49,44 @@
                 app:tabIndicatorColor="@color/general_color"
                 app:tabMode="scrollable" />
         </com.google.android.material.textfield.TextInputLayout>
-
+        <!--/todo заменить на searchView?-->
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/restaurantsRecycler"
+        android:id="@+id/fragmentRestaurantsRecycler"
         style="@style/match_match_container" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/restaurantNotFound"
-        android:visibility="gone"
-        style="@style/base_constraint">
+    <include android:id="@+id/fragmentRestaurantsItemNotFound"
+        layout="@layout/item_not_found"/>
 
-        <ImageView
-            android:id="@+id/notFoundIcon"
-            style="@style/search_not_found_icon"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/icon_search_big"
-            android:contentDescription="@string/main_display_not_found_text"/>
+<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--        android:id="@+id/restaurantNotFound"-->
+<!--        android:visibility="gone"-->
+<!--        style="@style/base_constraint">-->
 
-        <TextView
-            android:id="@+id/notFoundTitle"
-            style="@style/not_found_title"
-            app:layout_constraintEnd_toEndOf="@+id/notFoundIcon"
-            app:layout_constraintStart_toStartOf="@+id/notFoundIcon"
-            app:layout_constraintTop_toBottomOf="@+id/notFoundIcon" />
+<!--        <ImageView-->
+<!--            android:id="@+id/notFoundIcon"-->
+<!--            style="@style/search_not_found_icon"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:srcCompat="@drawable/icon_search_big"-->
+<!--            android:contentDescription="@string/main_display_not_found_text"/>-->
 
-        <TextView
-            android:id="@+id/notFoundText"
-            style="@style/not_found_text"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/notFoundTitle" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--        <TextView-->
+<!--            android:id="@+id/notFoundTitle"-->
+<!--            style="@style/not_found_title"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/notFoundIcon"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/notFoundIcon"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/notFoundIcon" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/notFoundText"-->
+<!--            style="@style/not_found_text"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/notFoundTitle" />-->
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </LinearLayout>

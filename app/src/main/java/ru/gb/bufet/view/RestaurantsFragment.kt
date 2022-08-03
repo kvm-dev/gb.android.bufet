@@ -29,53 +29,85 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
         loadBanners()
     }
 
-    private fun loadRestaurants(){
-        if(viewModel.restaurantsListResponse.value != null){
+    private fun loadRestaurants() {
+        if (viewModel.restaurantsListResponse.value != null) {
             viewModel.currentRestaurants.value = viewModel.restaurantsListResponse.value
         }
         val verticalLayoutManager = LinearLayoutManager(
             requireContext(),
             LinearLayoutManager.VERTICAL,
-            false)
-        binding.restaurantsRecycler.layoutManager = verticalLayoutManager
+            false
+        )
+        binding.fragmentRestaurantsRecycler.layoutManager = verticalLayoutManager
         adapter = viewModel.currentRestaurants.value?.let {
             RestaurantsAdapter(it)
         }!!
-        binding.restaurantsRecycler.adapter = adapter
+        binding.fragmentRestaurantsRecycler.adapter = adapter
         val testFilterList = resources.getStringArray(R.array.main_display_title_tabs)
         loadFilterNavigation(testFilterList)
     }
 
-    private fun loadFilterNavigation(filters:Array<String>){
+    private fun loadFilterNavigation(filters: Array<String>) {
         filters.forEach {
             binding.filterNavigation.addTab(binding.filterNavigation.newTab().setText(it))
         }
         binding.filterNavigation.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab) {
                 //filtration
-                if(!binding.filterNavigation.getTabAt(tab.position)?.text.isNullOrEmpty()){
-                    SearchAndFilterRestaurant(requireContext()).filter(binding.filterNavigation.getTabAt(tab.position)?.text as String)
-                    binding.restaurantsRecycler.adapter = viewModel.currentRestaurants.value?.let {
-                        RestaurantsAdapter(it)}
+                if (!binding.filterNavigation.getTabAt(tab.position)?.text.isNullOrEmpty()) {
+                    SearchAndFilterRestaurant(requireContext()).filter(
+                        binding.filterNavigation.getTabAt(
+                            tab.position
+                        )?.text as String
+                    )
+                    binding.fragmentRestaurantsRecycler.adapter =
+                        viewModel.currentRestaurants.value?.let {
+                            RestaurantsAdapter(it)
+                        }
                 }
             }
+
             override fun onTabUnselected(tab: TabLayout.Tab) {}
             override fun onTabReselected(tab: TabLayout.Tab) {}
         })
     }
 
-    private fun searchFoodByKeyWord(){
+    private fun searchFoodByKeyWord() {
         binding.search.doOnTextChanged { text, _, _, _ ->
             SearchAndFilterRestaurant(requireContext()).search(text.toString())
-            binding.restaurantsRecycler.adapter = viewModel.currentRestaurants.value?.let {
+            binding.fragmentRestaurantsRecycler.adapter = viewModel.currentRestaurants.value?.let {
                 RestaurantsAdapter(it)
             }
             if (viewModel.currentRestaurants.value.isNullOrEmpty()) {
-                BufetHelpers(requireContext()).makeVisible(arrayListOf(binding.searchSpacer, binding.cancelSearch, binding.restaurantNotFound))
-                BufetHelpers(requireContext()).makeInvisible(arrayListOf(binding.filterNavigation, binding.advertiseRecycler, binding.restaurantsRecycler))
+                BufetHelpers(requireContext()).makeVisible(
+                    arrayListOf(
+                        binding.searchSpacer,
+                        binding.cancelSearch,
+                        binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                    )
+                )
+                BufetHelpers(requireContext()).makeInvisible(
+                    arrayListOf(
+                        binding.filterNavigation,
+                        binding.advertiseRecycler,
+                        binding.fragmentRestaurantsRecycler
+                    )
+                )
             } else {
-                BufetHelpers(requireContext()).makeVisible(arrayListOf(binding.filterNavigation, binding.advertiseRecycler, binding.restaurantsRecycler))
-                BufetHelpers(requireContext()).makeInvisible(arrayListOf(binding.searchSpacer, binding.cancelSearch, binding.restaurantNotFound))
+                BufetHelpers(requireContext()).makeVisible(
+                    arrayListOf(
+                        binding.filterNavigation,
+                        binding.advertiseRecycler,
+                        binding.fragmentRestaurantsRecycler
+                    )
+                )
+                BufetHelpers(requireContext()).makeInvisible(
+                    arrayListOf(
+                        binding.searchSpacer,
+                        binding.cancelSearch,
+                        binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                    )
+                )
             }
             binding.cancelSearch.setOnClickListener {
                 binding.search.text?.clear()
@@ -84,24 +116,26 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
                 imm.hideSoftInputFromWindow(binding.search.windowToken, 0)
                 binding.filterNavigation.getTabAt(0)?.select()
             }
-            if(binding.search.text.isNullOrEmpty()){
+            if (binding.search.text.isNullOrEmpty()) {
                 binding.filterNavigation.visibility = View.VISIBLE
-            }
-            else{
+            } else {
                 binding.filterNavigation.visibility = View.GONE
                 binding.filterNavigation.getTabAt(0)?.select()
             }
         }
-}
-    private fun loadBanners(){
+    }
+
+    private fun loadBanners() {
         viewModel.advertiseBanners.observe(viewLifecycleOwner, Observer { advertisement ->
-            if(advertisement!= null){
+            if (advertisement != null) {
                 binding.advertiseRecycler.visibility = View.VISIBLE
-                val sliderLayoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+                val sliderLayoutManager =
+                    LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 binding.advertiseRecycler.layoutManager = sliderLayoutManager
                 val snapHelper = PagerSnapHelper()
-                snapHelper.attachToRecyclerView( binding.advertiseRecycler)
-                binding.advertiseRecycler.adapter = AdvertiseAdapter(advertisement.filter { it.isActive == true } as ArrayList<AdvertiseBanners>)
+                snapHelper.attachToRecyclerView(binding.advertiseRecycler)
+                binding.advertiseRecycler.adapter =
+                    AdvertiseAdapter(advertisement.filter { it.isActive == true } as ArrayList<AdvertiseBanners>)
             }
         })
     }

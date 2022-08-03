@@ -14,13 +14,13 @@
             android:baselineAligned="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/restaurantHeader">
+            app:layout_constraintTop_toBottomOf="@+id/itemRestaurantHeader">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 style="@style/restaurant_card_linear_item_tables">
 
                 <ImageView
-                    android:id="@+id/tableIcon"
+                    android:id="@+id/itemRestaurantTableIcon"
                     style="@style/restaurant_card_table_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -28,10 +28,10 @@
                     android:contentDescription="@string/restaurant_item"/>
 
                 <TextView
-                    android:id="@+id/tableCounter"
+                    android:id="@+id/itemRestaurantTableCounter"
                     style="@style/restaurant_card_table_counter"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/tableIcon"
+                    app:layout_constraintStart_toEndOf="@+id/itemRestaurantTableIcon"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:text="12" />
 
@@ -41,15 +41,15 @@
                 style="@style/restaurant_card_linear_item_time">
 
                 <ImageView
-                    android:id="@+id/workTimeIcon"
+                    android:id="@+id/itemRestaurantWorkTimeIcon"
                     style="@style/restaurant_card_work_time_icon"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/workTimeData"
+                    app:layout_constraintEnd_toStartOf="@+id/itemRestaurantWorkTime"
                     app:layout_constraintTop_toTopOf="parent"
                     android:contentDescription="@string/restaurant_item" />
 
                 <TextView
-                    android:id="@+id/workTimeData"
+                    android:id="@+id/itemRestaurantWorkTime"
                     style="@style/restaurant_card_work_time_data"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -61,7 +61,7 @@
         </LinearLayout>
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/restaurantHeader"
+            android:id="@+id/itemRestaurantHeader"
             style="@style/restaurant_card_header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +69,7 @@
             tools:srcCompat="@drawable/image_not_found" />
 
         <TextView
-            android:id="@+id/restaurantTitle"
+            android:id="@+id/itemRestaurantTitle"
             style="@style/restaurant_card_title"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

@@ -29,13 +29,13 @@ class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
             //check images
             ContextCompat.getDrawable(activity, R.drawable.image_not_found)
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
-                    Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(binding.restaurantHeader)
+                    Picasso.get().load(items[id].headerImage).error(it).placeholder(it1).into(binding.itemRestaurantHeader)
                 } }
             items[id].restaurantTables.let {
-                binding.tableCounter.text = it?.size.toString()
+                binding.itemRestaurantTableCounter.text = it?.size.toString()
             }
             if(items[id].work_start!=null && items[id].work_end!= null){
-                binding.workTimeData.text = ServerUtils().checkWorkTimeFromTimeStamp(items[id].work_start!!, items[id].work_end!!)
+                binding.itemRestaurantWorkTime.text = ServerUtils().checkWorkTimeFromTimeStamp(items[id].work_start!!, items[id].work_end!!)
             }
             binding.itemRestaurantCard.setOnClickListener {
                 viewModel.currentRestaurant.value = null
@@ -55,7 +55,7 @@ class RestaurantsAdapter (private val items: ArrayList<Restaurant>) :
     override fun onBindViewHolder(holder: RestaurantsViewHolder, position: Int) {
           with(holder){
               with(items[position]){
-                  binding.restaurantTitle.text = name
+                  binding.itemRestaurantTitle.text = name
               }
               bind(items, position)
           }

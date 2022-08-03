@@ -1,0 +1,24 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/itemNotFoundCard"
+    style="@style/base_constraint"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:visibility="gone">
+
+    <ImageView
+        android:id="@+id/itemNotFoundIcon"
+        style="@style/search_not_found_icon"
+        android:contentDescription="@string/food_list_not_found_food_title"
+        app:srcCompat="@drawable/icon_search_big" />
+
+    <TextView
+        android:id="@+id/itemNotFoundTitle"
+        style="@style/not_found_title"
+        android:text="@string/food_list_not_found_food_title" />
+
+    <TextView
+        android:id="@+id/itemNotFoundText"
+        style="@style/not_found_text"
+        android:text="@string/food_list_not_found_food_text" />
+</androidx.appcompat.widget.LinearLayoutCompat>

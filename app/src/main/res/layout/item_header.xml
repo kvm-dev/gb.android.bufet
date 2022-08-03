@@ -1,0 +1,21 @@
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/restaurant_title_block"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:id="@+id/headerBackBtn"
+        style="@style/back_button"
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/back_button" />
+
+    <TextView
+        android:id="@+id/headerTitleTv"
+        style="@style/restaurant_title"
+        android:layout_gravity="center_vertical" />
+
+    <CheckBox
+        android:id="@+id/headerFavoriteBtn"
+        style="@style/favorite_food_button"
+        android:layout_gravity="center_vertical" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
