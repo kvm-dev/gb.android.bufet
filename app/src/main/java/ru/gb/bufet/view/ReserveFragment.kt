@@ -31,12 +31,12 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
             viewModel.currentTable.value = testTable
 
         }
-        binding.calendar.apply {
+        binding.fragmentReserveCalendar.apply {
             setDate(ReserveTables(requireContext(), viewModel.currentTable.value).currentDate())
             setEvents(ReserveTables(requireContext(), viewModel.currentTable.value).getReservedTables())
             setMinimumDate(ReserveTables(requireContext(), viewModel.currentTable.value).currentDate())
         }
-        binding.calendar.setOnDayClickListener { eventDay ->
+        binding.fragmentReserveCalendar.setOnDayClickListener { eventDay ->
             if(!eventDay.isEnabled){
                 //nothing, because the day is in the past
             }
@@ -54,12 +54,12 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
                 viewModel.reservedTableTime.observe(viewLifecycleOwner) {
                     if (it != null) {
                         viewModel.reservedTableDate.value = eventDay.calendar
-                        binding.buttonPayment.isEnabled = true
-                        binding.reserveWarning.visibility = View.INVISIBLE
+                        binding.fragmentReservePaymentBtn.isEnabled = true
+                        binding.fragmentReserveWarning.visibility = View.INVISIBLE
                     }
                     else{
-                        binding.buttonPayment.isEnabled = false
-                        binding.reserveWarning.visibility = View.VISIBLE
+                        binding.fragmentReservePaymentBtn.isEnabled = false
+                        binding.fragmentReserveWarning.visibility = View.VISIBLE
                     }
                 }
             }

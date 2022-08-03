@@ -579,7 +579,7 @@
         <item name="android:textSize">@dimen/sp18</item>
     </style>
 
-    <style name="reserve_table_scroll_view" parent="">
+    <style name="fragmentReserveScrollView" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="android:orientation">vertical</item>
@@ -625,7 +625,7 @@
         <item name="android:layout_weight">@integer/one</item>
     </style>
 
-    <style name="reserve_table_description_text" parent="">
+    <style name="fragmentReserveDescriptionText" parent="">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:maxLines">@integer/two</item>
