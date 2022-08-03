@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match_container">
 
+    <!--    todo заменить шапку на инклюйд -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleBlock"
         style="@style/restaurant_title_block"
@@ -36,9 +37,10 @@
             app:layout_constraintStart_toEndOf="@+id/title"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--    /todo-->
 
     <ScrollView
-        style="@style/base_scrollView"
+        style="@style/fragmentRestaurantBaseScrollView"
         android:contentDescription="@string/navigation_restaurant"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -50,7 +52,7 @@
             android:orientation="vertical">
 
             <com.google.android.material.tabs.TabLayout
-                android:id="@+id/galleryTabs"
+                android:id="@+id/fragmentRestaurantGalleryTabs"
                 style="@style/gallery_tab"
                 android:contentDescription="@string/tabs_gallery"
                 app:tabBackground="@drawable/selector_gallery_tab"
@@ -60,7 +62,7 @@
                 app:tabPaddingStart="10dp" />
 
             <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/gallery"
+                android:id="@+id/fragmentRestaurantGallery"
                 style="@style/gallery" />
 
             <LinearLayout
@@ -75,7 +77,7 @@
                     style="@style/restaurant_card_linear_item_tables">
 
                     <ImageView
-                        android:id="@+id/tableIcon"
+                        android:id="@+id/fragmentRestaurantTableIcon"
                         style="@style/restaurant_card_table_icon"
                         android:contentDescription="@string/restaurant_item"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -83,27 +85,28 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tableCounter"
+                        android:id="@+id/fragmentRestaurantTableCounter"
                         style="@style/restaurant_card_table_counter"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/tableIcon"
+                        app:layout_constraintStart_toEndOf="@+id/fragmentRestaurantTableIcon"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:text="12" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout style="@style/restaurant_card_linear_item_time">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    style="@style/restaurant_card_linear_item_time">
 
                     <ImageView
-                        android:id="@+id/workTimeIcon"
+                        android:id="@+id/fragmentRestaurantWorkTimeIcon"
                         style="@style/restaurant_card_work_time_icon"
                         android:contentDescription="@string/restaurant_item"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/workTimeData"
+                        app:layout_constraintEnd_toStartOf="@+id/fragmentRestaurantWorkTime"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/workTimeData"
+                        android:id="@+id/fragmentRestaurantWorkTime"
                         style="@style/restaurant_card_work_time_data"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +118,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/description"
+                android:id="@+id/fragmentRestaurantDescription"
                 style="@style/restaurant_description" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -123,7 +126,7 @@
                 style="@style/restaurant_menu_button">
 
                 <TextView
-                    android:id="@+id/menuButtonRestaurantContent"
+                    android:id="@+id/fragmentRestaurantMenuBtn"
                     style="@style/restaurant_menu_button_content"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -133,11 +136,11 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
-                android:id="@+id/tablesTitle"
+                android:id="@+id/fragmentRestaurantTablesChoiceTv"
                 style="@style/restaurant_tables_titles" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/tablesRecycler"
+                android:id="@+id/fragmentRestaurantTablesRecycler"
                 style="@style/restaurant_tables_recycler" />
 
         </LinearLayout>

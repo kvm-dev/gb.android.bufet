@@ -105,7 +105,7 @@
         <item name="android:layout_height">wrap_content</item>
     </style>
 
-    <style name="base_scrollView" parent="">
+    <style name="fragmentRestaurantBaseScrollView" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="android:layout_marginTop">@dimen/dp8</item>

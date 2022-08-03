@@ -18,32 +18,32 @@ class RestaurantFragment :
             (activity?.onBackPressed())
         }
         viewModel.currentRestaurant.value.let {
-            binding.gallery.adapter =
+            binding.fragmentRestaurantGallery.adapter =
                 it?.restaurantPictures?.let { pictures -> GalleryAdapter(pictures) }
 
-            TabLayoutMediator(binding.galleryTabs, binding.gallery) { tab, position ->
+            TabLayoutMediator(binding.fragmentRestaurantGalleryTabs, binding.fragmentRestaurantGallery) { tab, position ->
                 tab.text = "${(position + 1)}"
             }.attach()
-            binding.tablesRecycler.apply {
+            binding.fragmentRestaurantTablesRecycler.apply {
                 layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
                 adapter = it?.restaurantTables?.let { tables ->
                     TablesAdapter(tables)
                 }
             }
             it?.restaurantTables.let { tables ->
-                binding.tableCounter.text = tables?.size.toString()
+                binding.fragmentRestaurantTableCounter.text = tables?.size.toString()
             }
             if (it != null) {
                 if (it.work_start != null && it.work_end != null) {
-                    binding.workTimeData.text =
+                    binding.fragmentRestaurantWorkTime.text =
                         ServerUtils().checkWorkTimeFromTimeStamp(it.work_start, it.work_end)
 
                 }
             }
-            binding.description.text = it?.description
+            binding.fragmentRestaurantDescription.text = it?.description
             binding.title.text = it?.name
 
-            binding.menuButtonRestaurantContent.setOnClickListener {
+            binding.fragmentRestaurantMenuBtn.setOnClickListener {
                 (activity as MainActivity).goToFoodMenu()
 
             }
