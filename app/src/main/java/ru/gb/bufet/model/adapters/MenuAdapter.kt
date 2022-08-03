@@ -3,9 +3,11 @@ package ru.gb.bufet.model.adapters
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
@@ -21,16 +23,16 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
 
     class MenuViewHolder(binding: ItemFoodBinding) : RecyclerView.ViewHolder(binding.root) {
         //я кст по рекомендации преподавателя поубирал отложенную инициализацию) но эт как говорится не обязательно, я просто к тому, либо нам в другие адаптеры ее вернуть либо тут убрать)
-        private var foodItem: CardView? = null
-        private var foodPrice: TextView? = null
+        private var foodItem: ConstraintLayout? = null
+        private var foodPrice: Button? = null
         private var foodName: TextView? = null
         private var foodImage: ImageView? = null
 
         init {
-            foodItem = binding.itemFoodCard
-            foodPrice = binding.itemFoodPriceBtn
-            foodName = binding.itemFoodNameTv
-            foodImage = binding.itemFoodImage
+            foodItem = binding.foodItem
+            foodPrice = binding.addToCartButton
+            foodName = binding.foodTitle
+            foodImage = binding.foodImage
         }
 
         @SuppressLint("SetTextI18n")
@@ -46,7 +48,7 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
                 foodName?.text = it
             }
             items[position].price.let {
-                foodPrice?.text = it
+                foodPrice?.text = " $it ${context.resources.getString(R.string.rub_value)}"
             }
 
             ContextCompat.getDrawable(activity, R.drawable.image_not_found)

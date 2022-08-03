@@ -1,17 +1,11 @@
 package ru.gb.bufet.view
 
-import android.annotation.SuppressLint
-import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkCapabilities
-import android.os.Build
 import android.os.CountDownTimer
-import android.util.Log
 import androidx.lifecycle.Observer
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentSplashBinding
-import ru.gb.bufet.model.data.BaseFragment
+import ru.gb.bufet.view.base.BaseFragment
 import ru.gb.bufet.model.utils.CheckConnection
 import ru.gb.bufet.model.utils.SplashAnimation
 

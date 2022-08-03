@@ -716,4 +716,84 @@
         <item name="android:background">@drawable/selector_radio_buttons_state</item>
     </style>
 
+    <style name="food_image" parent="">
+        <item name="android:layout_width">@dimen/dp133</item>
+        <item name="itemPaddingTop">@dimen/dp7</item>
+        <item name="android:layout_height">@dimen/dp133</item>
+        <item name="android:layout_marginStart">@dimen/dp12</item>
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:elevation">@dimen/dp7</item>
+        <item name="shapeAppearanceOverlay">@style/food_image_corners</item>
+    </style>
+
+    <style name="food_image_corners" parent="">
+        <item name="cornerSize">@dimen/dp52</item>
+    </style>
+
+    <style name="food_item" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:elevation">@dimen/dp7</item>
+        <item name="android:layout_margin">@dimen/dp10</item>
+        <item name="android:padding">@dimen/dp7</item>
+    </style>
+
+    <style name="food_item_inner_container" parent="">
+        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">@dimen/dp150</item>
+        <item name="android:layout_marginTop">@dimen/dp25</item>
+        <item name="android:background">@drawable/food_item_background</item>
+    </style>
+
+    <style name="food_item_counter" parent="">
+        <item name="android:layout_width">@dimen/dp62</item>
+        <item name="android:layout_height">@dimen/dp0</item>
+        <item name="android:background">@drawable/food_counter_background</item>
+    </style>
+
+    <style name="food_item_counter_value" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dp10</item>
+        <item name="android:maxLength">@integer/three</item>
+        <item name="android:maxLines">@integer/three</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:text">@string/food_counter_default_value</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="food_item_plus_minus" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dp10</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp32</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="food_item_title" parent="">
+        <item name="android:layout_width">@dimen/dp0</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/dp10</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp18</item>
+        <item name="android:maxLines">@integer/three</item>
+    </style>
+
+    <style name="food_item_add_cart_button" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp25</item>
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:layout_marginTop">@dimen/dp32</item>
+        <item name="android:background">@drawable/no_active_buttons</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/general_color</item>
+    </style>
+
+
 </resources>

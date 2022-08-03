@@ -1,4 +1,4 @@
-package ru.gb.bufet.model.data
+package ru.gb.bufet.view.base
 
 import android.graphics.Color
 import android.os.Bundle

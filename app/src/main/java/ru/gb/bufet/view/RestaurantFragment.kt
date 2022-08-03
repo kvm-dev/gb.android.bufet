@@ -1,13 +1,12 @@
 package ru.gb.bufet.view
 
 import GalleryAdapter
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayoutMediator
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.databinding.FragmentRestaurantBinding
 import ru.gb.bufet.model.adapters.TablesAdapter
-import ru.gb.bufet.model.data.BaseFragment
+import ru.gb.bufet.view.base.BaseFragment
 import ru.gb.bufet.model.utils.ServerUtils
 
 class RestaurantFragment :

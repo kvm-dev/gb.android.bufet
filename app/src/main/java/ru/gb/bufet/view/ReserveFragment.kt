@@ -5,8 +5,8 @@ import android.view.View
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentReserveBinding
-import ru.gb.bufet.model.data.BaseFragment
-import ru.gb.bufet.model.data.ReserveTables
+import ru.gb.bufet.view.base.BaseFragment
+import ru.gb.bufet.model.utils.ReserveTables
 import ru.gb.bufet.model.responseData.ReservedTables
 import ru.gb.bufet.model.responseData.RestaurantTable
 

@@ -1,4 +1,4 @@
-package ru.gb.bufet.model.data
+package ru.gb.bufet.model.utils
 
 import android.annotation.SuppressLint
 import android.content.Context

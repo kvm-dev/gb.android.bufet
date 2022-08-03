@@ -9,7 +9,7 @@ import ru.gb.bufet.viewModel.MainViewModel
 import java.util.*
 import kotlin.collections.ArrayList
 
-class SearchAndFilterRestaurant(private val context: Context) {
+class RestaurantUtils(private val context: Context) {
     private val activity : MainActivity = context as MainActivity
     private val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
     fun filter(key: String){
@@ -45,6 +45,20 @@ class SearchAndFilterRestaurant(private val context: Context) {
             if(viewModel.restaurantsListResponse.value !=null){
                 viewModel.currentRestaurants.value = viewModel.restaurantsListResponse.value
             }
+        }
+    }
+
+    fun getRestaurantsTypes():Array<String>{
+        val types = ArrayList<String>()
+        viewModel.restaurantsListResponse.value.let { restaurant ->
+            restaurant?.forEach {
+                if(it.type != null){
+                    types.add(it.type)
+                }
+            }
+        }
+        return types.toTypedArray().also {
+            viewModel.restaurantsTypes.value  = it
         }
     }
 }

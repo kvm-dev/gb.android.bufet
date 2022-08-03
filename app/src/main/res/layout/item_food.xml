@@ -1,80 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="140dp">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/foodItem"
+    style="@style/food_item">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/line"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/innerContainer"
+        style="@style/food_item_inner_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/foodCounter"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478">
 
-    <FrameLayout
-        android:id="@+id/itemFoodFrameLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/foodCounter"
+        style="@style/food_item_counter"
+        app:layout_constraintBottom_toBottomOf="@+id/innerContainer"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/line">
+        app:layout_constraintTop_toTopOf="@+id/innerContainer">
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/itemFoodCard"
-            android:layout_width="320dp"
-            android:layout_height="120dp"
-            android:clickable="true"
-            android:elevation="4dp"
-            android:focusable="true"
-            app:cardCornerRadius="40dp"
-            app:cardElevation="4dp">
+        <TextView
+            android:id="@+id/foodCounterValue"
+            style="@style/food_item_counter_value"
+            app:layout_constraintBottom_toTopOf="@+id/minusFoodCounter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/plusFoodCounter" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="143dp"
-                android:orientation="vertical"
-                android:padding="@dimen/dp8">
+        <TextView
+            android:id="@+id/plusFoodCounter"
+            style="@style/food_item_plus_minus"
+            android:text="@string/food_counter_plus"
+            android:layout_marginTop="@dimen/dp7"
+            android:layout_marginBottom="@dimen/dp7"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-                <TextView
-                    android:id="@+id/itemFoodNameTv"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/dp16"
-                    android:text="Крем-суп из цветной капусты"
-                    android:textAppearance="?attr/textAppearanceHeadline5"
-                    android:textSize="@dimen/sp18" />
+        <TextView
+            android:id="@+id/minusFoodCounter"
+            style="@style/food_item_plus_minus"
+            android:text="@string/food_counter_minus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <com.google.android.material.button.MaterialButton
-                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                    android:id="@+id/itemFoodPriceBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:clickable="false"
-                    android:focusable="false"
-                    android:text="350р"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textSize="@dimen/sp18"
-                    app:strokeColor="@color/general_color"
-                    app:strokeWidth="1dp" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/foodImage"
+        style="@style/food_image"
+        app:layout_constraintStart_toStartOf="@+id/innerContainer"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/image_not_found" />
 
-            </LinearLayout>
+    <TextView
+        android:id="@+id/foodTitle"
+        style="@style/food_item_title"
+        app:layout_constraintEnd_toEndOf="@+id/innerContainer"
+        app:layout_constraintStart_toEndOf="@+id/foodImage"
+        app:layout_constraintTop_toTopOf="@+id/innerContainer"
+        tools:text="Ну очень вкусный суп, однако не харчо" />
 
-        </com.google.android.material.card.MaterialCardView>
-
-    </FrameLayout>
-
-    <ImageView
-        android:id="@+id/itemFoodImage"
-        android:layout_width="135dp"
-        android:layout_height="114dp"
-        android:contentDescription="@string/food_image"
-        android:scaleType="centerCrop"
-        android:src="@drawable/default_food_salad"
-        app:layout_constraintStart_toStartOf="@+id/itemFoodFrameLayout"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/addToCartButton"
+        style="@style/food_item_add_cart_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/foodTitle"
+        app:layout_constraintStart_toStartOf="@+id/foodTitle"
+        app:layout_constraintTop_toBottomOf="@+id/foodTitle"
+        tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
+        tools:text="350 р" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

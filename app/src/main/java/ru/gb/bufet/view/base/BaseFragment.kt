@@ -1,4 +1,4 @@
-package ru.gb.bufet.model.data
+package ru.gb.bufet.view.base
 
 import android.os.Bundle
 import android.view.LayoutInflater

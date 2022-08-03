@@ -5,7 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.tabs.TabLayout
 import ru.gb.bufet.databinding.FragmentMenuBinding
 import ru.gb.bufet.model.adapters.MenuAdapter
-import ru.gb.bufet.model.data.BaseFragment
+import ru.gb.bufet.view.base.BaseFragment
 import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.responseData.RestaurantFood
 

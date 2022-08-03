@@ -14,15 +14,16 @@ import kotlin.collections.ArrayList
 
 class MainViewModel : ViewModel() {
     //data
-    val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
-    val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData()
-    val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData()
-    val currentTable: MutableLiveData<RestaurantTable> = MutableLiveData()
-    val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData()
-    val error: MutableLiveData<String> = MutableLiveData()
-    val availableTimeTable: MutableLiveData<List<Int>> = MutableLiveData()
-    val reservedTableTime: MutableLiveData<String> = MutableLiveData()
-    val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData()
+    val restaurantsListResponse: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData() //full rest api response, default response
+    val currentRestaurants: MutableLiveData<ArrayList<Restaurant>> = MutableLiveData() // restaurants in adapter of RestaurantsFragment
+    val currentRestaurant: MutableLiveData<Restaurant> = MutableLiveData() // selected restaurant of restaurants recycler view
+    val currentTable: MutableLiveData<RestaurantTable> = MutableLiveData() // selected table of restaurant's table recycler view
+    val restaurantsTypes: MutableLiveData<Array<String>> = MutableLiveData() // all restaurant's type from server response
+    val advertiseBanners: MutableLiveData<ArrayList<AdvertiseBanners>> = MutableLiveData() // advertise list
+    val error: MutableLiveData<String> = MutableLiveData() // responses error
+    val availableTimeTable: MutableLiveData<List<Int>> = MutableLiveData() // available time's list for reserve table
+    val reservedTableTime: MutableLiveData<String> = MutableLiveData() // unavailable time's list for reserve table
+    val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData() // reserved table date by our customer
 
     //methods
 

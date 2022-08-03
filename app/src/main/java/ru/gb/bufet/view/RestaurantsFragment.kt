@@ -8,15 +8,13 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import com.google.android.material.tabs.TabLayout
-import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentRestaurantsBinding
 import ru.gb.bufet.model.adapters.AdvertiseAdapter
 import ru.gb.bufet.model.adapters.RestaurantsAdapter
-import ru.gb.bufet.model.data.BaseFragment
+import ru.gb.bufet.view.base.BaseFragment
 import ru.gb.bufet.model.responseData.AdvertiseBanners
-import ru.gb.bufet.model.responseData.Restaurant
 import ru.gb.bufet.model.utils.BufetHelpers
-import ru.gb.bufet.model.utils.SearchAndFilterRestaurant
+import ru.gb.bufet.model.utils.RestaurantUtils
 
 
 class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
@@ -43,8 +41,7 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
             RestaurantsAdapter(it)
         }!!
         binding.fragmentRestaurantsRecycler.adapter = adapter
-        val testFilterList = resources.getStringArray(R.array.main_display_title_tabs)
-        loadFilterNavigation(testFilterList)
+        loadFilterNavigation(RestaurantUtils(requireContext()).getRestaurantsTypes())
     }
 
     private fun loadFilterNavigation(filters: Array<String>) {
@@ -55,7 +52,7 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
             override fun onTabSelected(tab: TabLayout.Tab) {
                 //filtration
                 if (!binding.filterNavigation.getTabAt(tab.position)?.text.isNullOrEmpty()) {
-                    SearchAndFilterRestaurant(requireContext()).filter(
+                    RestaurantUtils(requireContext()).filter(
                         binding.filterNavigation.getTabAt(
                             tab.position
                         )?.text as String
@@ -74,7 +71,7 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
 
     private fun searchFoodByKeyWord() {
         binding.search.doOnTextChanged { text, _, _, _ ->
-            SearchAndFilterRestaurant(requireContext()).search(text.toString())
+            RestaurantUtils(requireContext()).search(text.toString())
             binding.fragmentRestaurantsRecycler.adapter = viewModel.currentRestaurants.value?.let {
                 RestaurantsAdapter(it)
             }

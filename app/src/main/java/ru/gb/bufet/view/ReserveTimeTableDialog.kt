@@ -4,8 +4,8 @@ import android.widget.RadioButton
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.DialogTableReserveBinding
-import ru.gb.bufet.model.data.BaseBottomSheetDialog
-import ru.gb.bufet.model.data.ReserveTables
+import ru.gb.bufet.view.base.BaseBottomSheetDialog
+import ru.gb.bufet.model.utils.ReserveTables
 
 class ReserveTimeTableDialog : BaseBottomSheetDialog<DialogTableReserveBinding>(
     DialogTableReserveBinding::inflate) {
