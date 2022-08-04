@@ -29,10 +29,10 @@ class MenuAdapter(private val items: List<RestaurantFood>) :
         private var foodImage: ImageView? = null
 
         init {
-            foodItem = binding.foodItem
-            foodPrice = binding.addToCartButton
-            foodName = binding.foodTitle
-            foodImage = binding.foodImage
+            foodItem = binding.itemFoodCard
+            foodPrice = binding.itemFoodAddToCartBtn
+            foodName = binding.itemFoodTitle
+            foodImage = binding.itemFoodImage
         }
 
         @SuppressLint("SetTextI18n")
