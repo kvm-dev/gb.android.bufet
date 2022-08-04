@@ -418,7 +418,7 @@
     </style>
 
     <style name="restaurant_title_block" parent="base_constraint">
-        <item name="android:layout_marginTop">@dimen/dp48</item>
+        <item name="android:paddingTop">@dimen/dp48</item>
     </style>
 
     <style name="restaurant_title" parent="">

@@ -15,13 +15,14 @@
         <entry key="app/src/main/res/drawable/reserved_your_description.xml" value="0.191" />
         <entry key="app/src/main/res/drawable/selected_gallery_tab.xml" value="0.359" />
         <entry key="app/src/main/res/drawable/selector_radio_buttons.xml" value="0.191" />
+        <entry key="app/src/main/res/layout/fragment_menu.xml" value="0.18229166666666666" />
         <entry key="app/src/main/res/layout/fragment_restaurant.xml" value="0.3578125" />
         <entry key="app/src/main/res/layout/fragment_restaurants.xml" value="0.11481481481481481" />
         <entry key="app/src/main/res/layout/item_advertise.xml" value="0.33" />
         <entry key="app/src/main/res/layout/item_food.xml" value="0.5" />
         <entry key="app/src/main/res/layout/item_header.xml" value="0.3578125" />
         <entry key="app/src/main/res/layout/item_not_found.xml" value="0.3578125" />
-        <entry key="app/src/main/res/layout/item_restaurant.xml" value="0.11481481481481481" />
+        <entry key="app/src/main/res/layout/item_restaurant.xml" value="0.33" />
       </map>
     </option>
   </component>

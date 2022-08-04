@@ -4,40 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     style="@style/match_match_container">
 
-    <!--    todo заменить шапку на инклюйд -->
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleBlock"
-        style="@style/restaurant_title_block"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/title"
-            style="@style/restaurant_title"
-            app:layout_constraintBottom_toBottomOf="parent"
+        <include
+            android:id="@+id/header"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/backButton"
-            style="@style/back_button"
-            android:contentDescription="@string/back_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/favoriteButton"
-            style="@style/favorite_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/title"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-    <!--    /todo-->
+            app:layout_constraintTop_toTopOf="parent"
+            layout="@layout/item_header" />
 
     <ScrollView
         style="@style/fragmentRestaurantBaseScrollView"
@@ -45,7 +17,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleBlock">
+        app:layout_constraintTop_toBottomOf="@+id/header">
 
         <LinearLayout
             style="@style/base_constraint"

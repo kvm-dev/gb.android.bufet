@@ -13,7 +13,7 @@ class RestaurantFragment :
     BaseFragment<FragmentRestaurantBinding>(FragmentRestaurantBinding::inflate) {
 
     override fun init() {
-        binding.backButton.setOnClickListener {
+        binding.header.headerBackBtn.setOnClickListener {
             (activity?.onBackPressed())
         }
         viewModel.currentRestaurant.value.let {
@@ -36,11 +36,10 @@ class RestaurantFragment :
                 if (it.work_start != null && it.work_end != null) {
                     binding.fragmentRestaurantWorkTime.text =
                         ServerUtils().checkWorkTimeFromTimeStamp(it.work_start, it.work_end)
-
                 }
             }
             binding.fragmentRestaurantDescription.text = it?.description
-            binding.title.text = it?.name
+            binding.header.headerTitleTv.text = it?.name
 
             binding.fragmentRestaurantMenuBtn.setOnClickListener {
                 (activity as MainActivity).goToFoodMenu()

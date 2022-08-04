@@ -1,14 +1,16 @@
 package ru.gb.bufet.view
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.View
 import ru.gb.bufet.MainActivity
 import ru.gb.bufet.R
 import ru.gb.bufet.databinding.FragmentReserveBinding
-import ru.gb.bufet.view.base.BaseFragment
-import ru.gb.bufet.model.utils.ReserveTables
 import ru.gb.bufet.model.responseData.ReservedTables
 import ru.gb.bufet.model.responseData.RestaurantTable
+import ru.gb.bufet.model.utils.ReserveTables
+import ru.gb.bufet.view.base.BaseFragment
+import java.util.*
 
 class ReserveFragment : BaseFragment<FragmentReserveBinding>(
     FragmentReserveBinding::inflate) {
@@ -27,8 +29,7 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
             val reserved7 = ReservedTables(1, 1659334710, 1, 1, 0, 7)
             val reserved8 = ReservedTables(1, 1659507510, 0, 1, 1, 8)
             val reservedTables = listOf(reserved1, reserved2, reserved3, reserved4, reserved5, reserved6, reserved7, reserved8)
-            var testTable = RestaurantTable(1, null, 3, 8, 2, reservedTables)
-            viewModel.currentTable.value = testTable
+            viewModel.currentTable.value = RestaurantTable(1, null, 3, 8, 2, reservedTables)
 
         }
         binding.fragmentReserveCalendar.apply {
@@ -37,8 +38,10 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
             setMinimumDate(ReserveTables(requireContext(), viewModel.currentTable.value).currentDate())
         }
         binding.fragmentReserveCalendar.setOnDayClickListener { eventDay ->
-            if(!eventDay.isEnabled){
-                //nothing, because the day is in the past
+            Log.d("текущий",    "${Calendar.getInstance().get(Calendar.MONTH)} ${Calendar.getInstance().get(Calendar.YEAR)}")
+            Log.d("выбранный", "${eventDay.calendar.get(Calendar.MONTH)} ${eventDay.calendar.get(Calendar.YEAR)}")
+            if(!eventDay.isEnabled || "${Calendar.getInstance().get(Calendar.MONTH)} ${Calendar.getInstance().get(Calendar.YEAR)}" != "${eventDay.calendar.get(Calendar.MONTH)} ${eventDay.calendar.get(Calendar.YEAR)}"){
+                //nothing, because the day is in the past or in the future month
             }
             else{
                 viewModel.currentTable.value.run {
