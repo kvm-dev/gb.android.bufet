@@ -23,7 +23,7 @@ RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
             val activity : MainActivity = context as MainActivity
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
 
-            items[id].id.let{
+            items[id].tableNumber.let{
                 binding.itemTableNumber.text = it?.toString()
             }
             items[id].guestsCount.let{

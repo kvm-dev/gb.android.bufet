@@ -29,7 +29,7 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
             val reserved7 = ReservedTables(1, 1659334710, 1, 1, 0, 7)
             val reserved8 = ReservedTables(1, 1659507510, 0, 1, 1, 8)
             val reservedTables = listOf(reserved1, reserved2, reserved3, reserved4, reserved5, reserved6, reserved7, reserved8)
-            viewModel.currentTable.value = RestaurantTable(1, null, 3, 8, 2, reservedTables)
+            viewModel.currentTable.value = RestaurantTable(1, null, 3, 8, 2, 3, reservedTables)
 
         }
         binding.fragmentReserveCalendar.apply {
