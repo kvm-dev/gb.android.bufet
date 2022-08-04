@@ -3,6 +3,8 @@ package ru.gb.bufet.view
 import android.content.Context
 import android.view.View
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
+import androidx.appcompat.widget.SearchView
 import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -70,56 +72,75 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
     }
 
     private fun searchFoodByKeyWord() {
-        binding.search.doOnTextChanged { text, _, _, _ ->
-            RestaurantUtils(requireContext()).search(text.toString())
-            binding.fragmentRestaurantsRecycler.adapter = viewModel.currentRestaurants.value?.let {
-                RestaurantsAdapter(it)
+
+        binding.fragmentRestaurantsSearchView.setOnQueryTextListener(object :
+            SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
             }
-            if (viewModel.currentRestaurants.value.isNullOrEmpty()) {
-                BufetHelpers(requireContext()).makeVisible(
-                    arrayListOf(
-                        binding.searchSpacer,
-                        binding.cancelSearch,
-                        binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
-                    )
-                )
-                BufetHelpers(requireContext()).makeInvisible(
-                    arrayListOf(
-                        binding.filterNavigation,
-                        binding.advertiseRecycler,
-                        binding.fragmentRestaurantsRecycler
-                    )
-                )
-            } else {
-                BufetHelpers(requireContext()).makeVisible(
-                    arrayListOf(
-                        binding.filterNavigation,
-                        binding.advertiseRecycler,
-                        binding.fragmentRestaurantsRecycler
-                    )
-                )
-                BufetHelpers(requireContext()).makeInvisible(
-                    arrayListOf(
-                        binding.searchSpacer,
-                        binding.cancelSearch,
-                        binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
-                    )
-                )
+
+            override fun onQueryTextChange(text: String?): Boolean {
+                RestaurantUtils(requireContext()).search(text.toString())
+                binding.fragmentRestaurantsRecycler.adapter =
+                    viewModel.currentRestaurants.value?.let {
+                        RestaurantsAdapter(it)
+                    }
+                return true
             }
-            binding.cancelSearch.setOnClickListener {
-                binding.search.text?.clear()
-                val imm: InputMethodManager =
-                    requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-                imm.hideSoftInputFromWindow(binding.search.windowToken, 0)
-                binding.filterNavigation.getTabAt(0)?.select()
-            }
-            if (binding.search.text.isNullOrEmpty()) {
-                binding.filterNavigation.visibility = View.VISIBLE
-            } else {
-                binding.filterNavigation.visibility = View.GONE
-                binding.filterNavigation.getTabAt(0)?.select()
-            }
+        })
+
+
+        if (viewModel.currentRestaurants.value.isNullOrEmpty()) {
+            BufetHelpers(requireContext()).makeVisible(
+                arrayListOf(
+                    binding.searchSpacer,
+//                    binding.cancelSearch,
+                    binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                )
+            )
+            BufetHelpers(requireContext()).makeInvisible(
+                arrayListOf(
+                    binding.filterNavigation,
+                    binding.advertiseRecycler,
+                    binding.fragmentRestaurantsRecycler
+                )
+            )
+        } else {
+            BufetHelpers(requireContext()).makeVisible(
+                arrayListOf(
+                    binding.filterNavigation,
+                    binding.advertiseRecycler,
+                    binding.fragmentRestaurantsRecycler
+                )
+            )
+            BufetHelpers(requireContext()).makeInvisible(
+                arrayListOf(
+                    binding.searchSpacer,
+//                    binding.cancelSearch,
+                    binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                )
+            )
         }
+
+        binding.fragmentRestaurantsSearchView.setOnCloseListener {
+            binding.filterNavigation.getTabAt(0)?.select()
+            Toast.makeText(requireContext(), "clear", Toast.LENGTH_SHORT).show()
+            true
+        }
+
+//        binding.cancelSearch.setOnClickListener {
+//            binding.search.text?.clear()
+//            val imm: InputMethodManager =
+//                requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+//            imm.hideSoftInputFromWindow(binding.search.windowToken, 0)
+//            binding.filterNavigation.getTabAt(0)?.select()
+//        }
+//        if (binding.search.text.isNullOrEmpty()) {
+//            binding.filterNavigation.visibility = View.VISIBLE
+//        } else {
+//            binding.filterNavigation.visibility = View.GONE
+//            binding.filterNavigation.getTabAt(0)?.select()
+//        }
     }
 
     private fun loadBanners() {

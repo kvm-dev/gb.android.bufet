@@ -27,14 +27,14 @@ class AdvertiseAdapter (private val items: ArrayList<AdvertiseBanners>) :
             //check images
             ContextCompat.getDrawable(activity, R.drawable.image_not_found)
                 ?.let { ContextCompat.getDrawable(activity, R.drawable.image_not_found)?.let { it1 ->
-                    Picasso.get().load(items[id].image).error(it).placeholder(it1).into(binding.advertiseImage)
+                    Picasso.get().load(items[id].image).error(it).placeholder(it1).into(binding.itemAdvertiseImage)
                 } }
             //check texts
             items[id].title.let {
-                binding.advertiseTitle.text = it
+                binding.itemAdvertiseTitle.text = it
             }
             items[id].description.let {
-                binding.advertiseDescription.text = it
+                binding.itemAdvertiseDescription.text = it
             }
         }
     }

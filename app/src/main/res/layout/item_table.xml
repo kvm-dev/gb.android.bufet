@@ -9,32 +9,32 @@
         style="@style/match_match_container">
 
         <TextView
-            android:id="@+id/tableNumber"
+            android:id="@+id/itemTableNumber"
             style="@style/table_number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/imageTable"
+            android:id="@+id/itemTableImageTable"
             style="@style/table_image"
             android:contentDescription="@string/table_image"
-            app:layout_constraintEnd_toStartOf="@+id/tableNumber"
+            app:layout_constraintEnd_toStartOf="@+id/itemTableNumber"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/guestCounter"
+            android:id="@+id/itemTableGuestCounter"
             style="@style/table_counter_guest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageTable" />
+            app:layout_constraintTop_toBottomOf="@+id/itemTableImageTable" />
 
         <TextView
-            android:id="@+id/availableNow"
+            android:id="@+id/itemTableAvailableNow"
             style="@style/table_available_now"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/guestCounter" />
+            app:layout_constraintTop_toBottomOf="@+id/itemTableGuestCounter" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

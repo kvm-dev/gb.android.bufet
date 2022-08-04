@@ -24,19 +24,19 @@ RecyclerView.Adapter<TablesAdapter.TablesViewHolder>() {
             val viewModel = ViewModelProvider(activity)[MainViewModel::class.java]
 
             items[id].id.let{
-                binding.tableNumber.text = it?.toString()
+                binding.itemTableNumber.text = it?.toString()
             }
             items[id].guestsCount.let{
-                binding.guestCounter.text = "${context.resources.getString(R.string.guest_counter_text)} ${it?.toString()}"
+                binding.itemTableGuestCounter.text = "${context.resources.getString(R.string.guest_counter_text)} ${it?.toString()}"
             }
             items[id].availability.let {
             }
             items[id].availability.let{
                 if (it != 0){
-                    binding.availableNow.text = context.resources.getString(R.string.table_available)
+                    binding.itemTableAvailableNow.text = context.resources.getString(R.string.table_available)
                 }
                 else{
-                    binding.availableNow.text = context.resources.getString(R.string.table_available)
+                    binding.itemTableAvailableNow.text = context.resources.getString(R.string.table_available)
                 }
             }
             binding.itemTableCard.setOnClickListener {

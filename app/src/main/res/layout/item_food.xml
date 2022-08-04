@@ -2,14 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/foodItem"
+    android:id="@+id/itemFoodCard"
     style="@style/food_item">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/innerContainer"
         style="@style/food_item_inner_container"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/foodCounter"
+        app:layout_constraintEnd_toStartOf="@+id/itemFoodCounter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.478">
@@ -17,22 +17,22 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/foodCounter"
+        android:id="@+id/itemFoodCounter"
         style="@style/food_item_counter"
         app:layout_constraintBottom_toBottomOf="@+id/innerContainer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/innerContainer">
 
         <TextView
-            android:id="@+id/foodCounterValue"
+            android:id="@+id/itemFoodCounterValue"
             style="@style/food_item_counter_value"
-            app:layout_constraintBottom_toTopOf="@+id/minusFoodCounter"
+            app:layout_constraintBottom_toTopOf="@+id/itemFoodMinus"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/plusFoodCounter" />
+            app:layout_constraintTop_toBottomOf="@+id/itemFoodPlus" />
 
         <TextView
-            android:id="@+id/plusFoodCounter"
+            android:id="@+id/itemFoodPlus"
             style="@style/food_item_plus_minus"
             android:text="@string/food_counter_plus"
             android:layout_marginTop="@dimen/dp7"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/minusFoodCounter"
+            android:id="@+id/itemFoodMinus"
             style="@style/food_item_plus_minus"
             android:text="@string/food_counter_minus"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -51,27 +51,27 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/foodImage"
+        android:id="@+id/itemFoodImage"
         style="@style/food_image"
         app:layout_constraintStart_toStartOf="@+id/innerContainer"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@drawable/image_not_found" />
 
     <TextView
-        android:id="@+id/foodTitle"
+        android:id="@+id/itemFoodTitle"
         style="@style/food_item_title"
         app:layout_constraintEnd_toEndOf="@+id/innerContainer"
-        app:layout_constraintStart_toEndOf="@+id/foodImage"
+        app:layout_constraintStart_toEndOf="@+id/itemFoodImage"
         app:layout_constraintTop_toTopOf="@+id/innerContainer"
         tools:text="Ну очень вкусный суп, однако не харчо" />
 
     <Button
-        android:id="@+id/addToCartButton"
+        android:id="@+id/itemFoodAddToCartBtn"
         style="@style/food_item_add_cart_button"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/foodTitle"
-        app:layout_constraintStart_toStartOf="@+id/foodTitle"
-        app:layout_constraintTop_toBottomOf="@+id/foodTitle"
+        app:layout_constraintEnd_toEndOf="@+id/itemFoodTitle"
+        app:layout_constraintStart_toStartOf="@+id/itemFoodTitle"
+        app:layout_constraintTop_toBottomOf="@+id/itemFoodTitle"
         tools:ignore="TouchTargetSizeCheck,TextContrastCheck"
         tools:text="350 р" />
 
