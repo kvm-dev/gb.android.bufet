@@ -2,14 +2,14 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/advertiseBanner"
+    android:id="@+id/itemAdvertiseBannerCard"
     style="@style/adv_card">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         style="@style/match_match_container">
 
         <androidx.appcompat.widget.LinearLayoutCompat
-            android:id="@+id/advertiseLinear"
+            android:id="@+id/itemAdvertiseLinear"
             style="@style/advertise_linear"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -17,7 +17,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/advertiseImage"
+                android:id="@+id/itemAdvertiseImage"
                 style="@style/advertise_image"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -25,13 +25,13 @@
                 tools:srcCompat="@drawable/image_not_found" />
 
             <TextView
-                android:id="@+id/advertiseDescription"
+                android:id="@+id/itemAdvertiseDescription"
                 style="@style/advertise_description" />
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <TextView
-            android:id="@+id/advertiseTitle"
+            android:id="@+id/itemAdvertiseTitle"
             style="@style/advertise_title"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
