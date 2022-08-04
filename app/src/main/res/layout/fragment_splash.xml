@@ -5,46 +5,46 @@
     style="@style/default_fragment">
 
     <ImageView
-        android:id="@+id/splashItem1"
+        android:id="@+id/fragmentSplashImage1"
         style="@style/splash_item1"
-        app:layout_constraintBottom_toTopOf="@+id/splashItem4"
-        app:layout_constraintEnd_toStartOf="@+id/subTitle"
-        app:layout_constraintTop_toTopOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentSplashImage4"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentSplashSubTitle"
+        app:layout_constraintTop_toTopOf="@+id/fragmentSplashLogo"
         app:srcCompat="@drawable/splash_item1"
         tools:ignore="ImageContrastCheck"
         android:contentDescription="@string/splash_item"/>
 
     <ImageView
-        android:id="@+id/splashItem2"
+        android:id="@+id/fragmentSplashImage2"
         style="@style/splash_item2"
         android:contentDescription="@string/splash_item"
-        app:layout_constraintBottom_toTopOf="@+id/logo"
+        app:layout_constraintBottom_toTopOf="@+id/fragmentSplashLogo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/logo"
+        app:layout_constraintStart_toEndOf="@+id/fragmentSplashLogo"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/splash_item2"
         tools:ignore="ImageContrastCheck" />
 
     <ImageView
-        android:id="@+id/splashItem3"
+        android:id="@+id/fragmentSplashImage3"
         style="@style/splash_item3"
-        app:layout_constraintStart_toEndOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/subTitle"
+        app:layout_constraintStart_toEndOf="@+id/fragmentSplashLogo"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentSplashSubTitle"
         app:srcCompat="@drawable/splash_item3"
         android:contentDescription="@string/splash_item"/>
 
     <ImageView
-        android:id="@+id/splashItem4"
+        android:id="@+id/fragmentSplashImage4"
         style="@style/splash_item4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/splashItem3"
+        app:layout_constraintEnd_toStartOf="@+id/fragmentSplashImage3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/subTitle"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentSplashSubTitle"
         app:srcCompat="@drawable/splash_item4"
         android:contentDescription="@string/splash_item"/>
 
     <ImageView
-        android:id="@+id/splashItem5"
+        android:id="@+id/fragmentSplashImage5"
         style="@style/splash_item5"
         android:contentDescription="@string/splash_item"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,7 +52,7 @@
         app:srcCompat="@drawable/splash_item5" />
 
     <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/fragmentSplashLogo"
         style="@style/splash_logo"
         android:contentDescription="@string/logo_bufet"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -62,9 +62,9 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:id="@+id/subTitle"
+        android:id="@+id/fragmentSplashSubTitle"
         style="@style/splash_subtitle"
-        app:layout_constraintEnd_toEndOf="@+id/logo"
-        app:layout_constraintStart_toStartOf="@+id/logo"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        app:layout_constraintEnd_toEndOf="@+id/fragmentSplashLogo"
+        app:layout_constraintStart_toStartOf="@+id/fragmentSplashLogo"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentSplashLogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
