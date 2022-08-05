@@ -57,6 +57,10 @@ class MainActivity : AppCompatActivity() {
         navController.navigate(R.id.navigation_food_menu)
     }
 
+    fun goToTableReserved(){
+        navController.navigate(R.id.navigation_table_reserved)
+    }
+
 
     fun toaster(message: String){
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()

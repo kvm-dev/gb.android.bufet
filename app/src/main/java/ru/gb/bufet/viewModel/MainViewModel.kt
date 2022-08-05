@@ -24,9 +24,12 @@ class MainViewModel : ViewModel() {
     val availableTimeTable: MutableLiveData<List<Int>> = MutableLiveData() // available time's list for reserve table
     val reservedTableTime: MutableLiveData<String> = MutableLiveData() // unavailable time's list for reserve table
     val reservedTableDate: MutableLiveData<Calendar> = MutableLiveData() // reserved table date by our customer
+    val paymentCardNumberValid : MutableLiveData<Boolean> = MutableLiveData() //for payment reserve table validation
+    val paymentCardExpirationValid : MutableLiveData<Boolean> = MutableLiveData() //for payment reserve table validation
+    val paymentCardCvvValid : MutableLiveData<Boolean> = MutableLiveData() //for payment reserve table validation
+    val paymentCodeValid : MutableLiveData<Boolean> = MutableLiveData() //for payment reserve table validation
 
     //methods
-
     fun getRestaurantsList() {
         val requestData =
             RetrofitClient.RetrofitHelper.getInstance().create(API.GetRestaurantsAPI::class.java)

@@ -1,11 +1,9 @@
 package ru.gb.bufet.view
 
-import android.content.Context
+import android.util.Log
 import android.view.View
-import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.widget.doOnTextChanged
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
@@ -13,10 +11,10 @@ import com.google.android.material.tabs.TabLayout
 import ru.gb.bufet.databinding.FragmentRestaurantsBinding
 import ru.gb.bufet.model.adapters.AdvertiseAdapter
 import ru.gb.bufet.model.adapters.RestaurantsAdapter
-import ru.gb.bufet.view.base.BaseFragment
 import ru.gb.bufet.model.responseData.AdvertiseBanners
 import ru.gb.bufet.model.utils.BufetHelpers
 import ru.gb.bufet.model.utils.RestaurantUtils
+import ru.gb.bufet.view.base.BaseFragment
 
 
 class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(

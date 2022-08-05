@@ -40,4 +40,10 @@
         android:name="ru.gb.bufet.view.ReserveFragment"
         android:label="@string/navigation_reserve"
         tools:layout="@layout/fragment_reserve" />
+
+    <fragment
+        android:id="@+id/navigation_table_reserved"
+        android:name="ru.gb.bufet.view.TableReservedFragment"
+        android:label="@string/navigation_reserved_table"
+        tools:layout="@layout/fragment_table_reserved" />
 </navigation>

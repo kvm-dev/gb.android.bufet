@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/dialog">
+
+    <TextView
+        android:id="@+id/dialogTableVerificationTitleTv"
+        style="@style/dialog_title"
+        android:text="@string/dialog_payment_table_title" />
+
+    <TextView
+        android:id="@+id/dialogTableVerificationCodeViewHolderTv"
+        style="@style/input_payment_view_holders"
+        android:text="@string/dialog_payment_table_verification_code"/>
+
+    <EditText
+        android:id="@+id/dialogTableVerificationCodeEt"
+        style="@style/card_little_input"
+        android:inputType="number|text"
+        android:maxLength="@integer/four"
+        tools:ignore="Autofill,LabelFor,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
+
+    <LinearLayout
+        android:id="@+id/dialogTablePaymentGeneralButtons"
+        style="@style/dialog_general_buttons"
+        android:weightSum="@integer/two">
+
+        <Button
+            android:id="@+id/dialogTableVerificationAcceptBtn"
+            style="@style/dialog_general_button"
+            android:text="@string/reserve_accept_time"
+            android:enabled="false"
+            tools:ignore="ButtonStyle,TextContrastCheck"
+            />
+
+        <Button
+            android:id="@+id/dialogTableVerificationCancelBtn"
+            style="@style/dialog_general_button"
+            android:text="@string/reserve_cancel_time"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

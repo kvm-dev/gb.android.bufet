@@ -8,6 +8,7 @@
     <integer name="six">6</integer>
     <integer name="seven">7</integer>
     <integer name="ten">10</integer>
+    <integer name="twenty_four">24</integer>
     <integer name="ninety">90</integer>
     <integer name="two_hundred">200</integer>
 </resources>
