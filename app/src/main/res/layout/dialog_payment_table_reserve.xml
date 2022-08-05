@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/dialog">
+
+    <TextView
+        android:id="@+id/dialogTablePaymentTitleTv"
+        style="@style/dialog_title"
+        android:text="@string/dialog_payment_table_title" />
+
+    <TextView
+        android:id="@+id/dialogTablePaymentCardViewHolderTv"
+        style="@style/input_payment_view_holders"
+        android:text="@string/dialog_payment_table_card_number"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/dialogTablePaymentCardNumberEt"
+        style="@style/card_input"
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/dialogTablePaymentExpirationDateViewHolderTv"
+        style="@style/input_payment_view_holders"
+        android:text="@string/dialog_payment_table_expiration_date"/>
+
+    <EditText
+        android:id="@+id/dialogTablePaymentExpirationDateEt"
+        style="@style/card_little_input"
+        android:autofillHints="creditCardExpirationDate"
+        android:hint="@string/dialog_payment_table_expiration_date_placeholder"
+        android:inputType="number|text"
+        android:maxLength="@integer/five"
+        tools:ignore="SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck,TextContrastCheck" />
+
+    <TextView
+        android:id="@+id/dialogTablePaymentCvCodeViewHolderTv"
+        style="@style/input_payment_view_holders"
+        android:text="@string/dialog_payment_table_cv_code"/>
+
+    <EditText
+        android:id="@+id/dialogTablePaymentCvCodeEt"
+        style="@style/card_little_input"
+        android:inputType="number|text"
+        android:maxLength="@integer/three"
+        tools:ignore="Autofill,SpeakableTextPresentCheck,TextFields,TouchTargetSizeCheck" />
+
+    <CheckBox
+        android:id="@+id/dialogTablePaymentSaveCardCb"
+        style="@style/save_card_checkbox"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/dialogTablePaymentPolicyTv"
+        style="@style/policy_text"
+        android:layout_marginTop="@dimen/dp10"
+        android:textColor="@color/black"
+        android:text="@string/dialog_payment_table_policy_text"/>
+
+    <TextView
+        android:id="@+id/dialogTablePaymentPolicyLinkTv"
+        style="@style/policy_text"
+        android:layout_marginTop="@dimen/dp2"
+        android:text="@string/dialog_payment_table_policy"
+        android:textColor="@color/general_color"
+        tools:ignore="TextContrastCheck" />
+
+    <ImageView
+        android:id="@+id/dialogTablePaymentTypesIv"
+        style="@style/payment_types"
+        android:contentDescription="@string/payment_types"/>
+
+    <LinearLayout
+        android:id="@+id/dialogTablePaymentGeneralButtons"
+        style="@style/dialog_general_buttons"
+        android:weightSum="@integer/two">
+
+        <Button
+            android:id="@+id/dialogTablePaymentAcceptBtn"
+            style="@style/dialog_general_button"
+            android:text="@string/dialog_payment_table_button_ok"
+            android:enabled="false"
+            tools:ignore="ButtonStyle,TextContrastCheck"
+            />
+
+        <Button
+            android:id="@+id/dialogTablePaymentCancelBtn"
+            style="@style/dialog_general_button"
+            android:text="@string/reserve_cancel_time"
+            tools:ignore="ButtonStyle,TextContrastCheck" />
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

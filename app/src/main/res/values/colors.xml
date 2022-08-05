@@ -16,4 +16,6 @@
     <color name="reserved_breakfast">#F06292</color>
     <color name="reserved_lunch" >#FF9100</color>
     <color name="reserved_dinner" >#A260FF</color>
+    <color name="inputs_background">#1F767680</color>
+    <color name="transparent_grey">#993C3C43</color>
 </resources>

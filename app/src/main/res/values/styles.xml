@@ -579,7 +579,7 @@
         <item name="android:textSize">@dimen/sp18</item>
     </style>
 
-    <style name="fragmentReserveScrollView" parent="">
+    <style name="baseScrollView" parent="">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp0</item>
         <item name="android:orientation">vertical</item>
@@ -760,7 +760,6 @@
         <item name="android:layout_margin">@dimen/dp10</item>
         <item name="android:maxLength">@integer/three</item>
         <item name="android:maxLines">@integer/three</item>
-        <item name="android:singleLine">true</item>
         <item name="android:text">@string/food_counter_default_value</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/sp18</item>
@@ -795,5 +794,132 @@
         <item name="android:textColor">@color/general_color</item>
     </style>
 
+    <style name="card_input">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp40</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:maxLength">@integer/twenty_four</item>
+        <item name="android:inputType">number|text</item>
+        <item name="android:maxLines">@integer/one</item>
+        <item name="android:paddingStart">@dimen/dp7</item>
+        <item name="android:paddingEnd">@dimen/dp7</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:background">@drawable/input_background</item>
+    </style>
+
+    <style name="card_little_input">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp40</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:minWidth">@dimen/dp62</item>
+        <item name="android:imeOptions">actionDone</item>
+        <item name="android:maxLines">@integer/one</item>
+        <item name="android:paddingStart">@dimen/dp7</item>
+        <item name="android:paddingEnd">@dimen/dp7</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:background">@drawable/input_background</item>
+    </style>
+
+    <style name="input_payment_view_holders">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="save_card_checkbox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp10</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:text">@string/dialog_payment_table_save_card</item>
+    </style>
+
+    <style name="policy_text">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:textSize">@dimen/sp14</item>
+    </style>
+
+    <style name="payment_types">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="srcCompat">@drawable/payment_types</item>
+    </style>
+
+    <style name="table_reserved_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:maxLines">@integer/one</item>
+        <item name="android:textColor">@color/transparent_grey</item>
+        <item name="android:textSize">@dimen/sp24</item>
+        <item name="android:text">@string/fragment_table_reserved_title</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginTop">@dimen/dp90</item>
+    </style>
+
+    <style name="table_reserved_logo" parent="">
+        <item name="android:layout_width">@dimen/dp195</item>
+        <item name="android:layout_height">@dimen/dp146</item>
+        <item name="android:layout_marginTop">@dimen/dp30</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+
+    <style name="table_reserved_sub_title" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dpm30</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="fontFamily">@font/proletariat</item>
+        <item name="android:textSize">@dimen/sp32</item>
+        <item name="android:textColor">@color/general_color</item>
+        <item name="android:text">@string/splash_subtitle</item>
+    </style>
+
+    <style name="table_reserved_message" parent="">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp25</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:textSize">@dimen/sp14</item>
+        <item name="android:textColor">@color/transparent_grey</item>
+        <item name="android:text">@string/fragment_table_reserved_table_has_been_reserved_text</item>
+    </style>
+
+    <style name="table_reserved_qr" parent="">
+        <item name="android:layout_width">@dimen/dp150</item>
+        <item name="android:layout_height">@dimen/dp150</item>
+        <item name="android:layout_marginTop">@dimen/dp25</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+        <item name="srcCompat">@drawable/test_qr_code</item>
+    </style>
+
+    <style name="base_button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/general_color</item>
+        <item name="android:layout_marginStart">@dimen/dp7</item>
+        <item name="android:layout_marginEnd">@dimen/dp7</item>
+        <item name="android:layout_marginTop">@dimen/dp25</item>
+        <item name="android:background">@drawable/selector_radio_buttons_state</item>
+    </style>
 
 </resources>

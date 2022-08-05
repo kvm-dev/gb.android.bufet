@@ -20,6 +20,7 @@
     <string name="navigation_food_menu">navigationFoodMenu</string>
     <string name="navigation_restaurant">navigationRestaurant</string>
     <string name="navigation_reserve">navigationReserveTable</string>
+    <string name="navigation_reserved_table">navigationReservedTable</string>
     <string name="table_image">tableImage</string>
     <string name="item_table_btn_text_order">Выбрать</string>
     <string name="item_gallery">itemGallery</string>
@@ -29,6 +30,10 @@
     <string name="favorite_button">favoriteButton</string>
     <string name="restaurant_item">restaurant_item</string>
     <string name="dialog_select_time_reserve_table">timeTableReserve</string>
+    <string name="dialog_payment_reserve_table">PaymentReserveTable</string>
+    <string name="dialog_payment_reserve_table_verification">PaymentReserveTableVerification</string>
+    <string name="payment_types">paymentTypes</string>
+    <string name="reserved_table_qr">reservedTableQrCode</string>
     <!-- /descriptions -->
 
     <!-- main display -->
@@ -128,4 +133,25 @@
     <string name="food_card_components_btn">Состав</string>
     <string name="food_card_feedback_btn">Отзывы</string>
     <!-- /food card -->
+
+    <!-- payment table reserve -->
+    <string name="dialog_payment_table_title">Оплата бронирования</string>
+    <string name="dialog_payment_table_card_number">Номер карты:</string>
+    <string name="dialog_payment_table_expiration_date">Срок действия:</string>
+    <string name="dialog_payment_table_expiration_date_placeholder">ММ/ГГ</string>
+    <string name="dialog_payment_table_cv_code">CV-код:</string>
+    <string name="dialog_payment_table_save_card">Запомнить карту</string>
+    <string name="dialog_payment_table_policy_text">Нажимая кнопку \"Оплатить\" вы соглашаетесь с </string>
+    <string name="dialog_payment_table_policy">условиями оферты</string>
+    <string name="dialog_payment_table_button_ok">Оплатить</string>
+    <string name="dialog_payment_table_button_cancel">Отменить</string>
+    <string name="dialog_payment_table_verification_code">Код подтверждения платежа:</string>
+    <!-- /payment table reserve -->
+
+    <!-- table reserved -->
+    <string name="fragment_table_reserved_title">Оплата прошла успешно</string>
+    <string name="fragment_table_reserved_table_has_been_reserved_text">Стол забронирован.\nПредъявите QR код официанту по факту посещения заведения.</string>
+    <string name="fragment_table_reserved_go_to_food_list_button">Перейти к выбору блюд</string>
+    <string name="fragment_table_reserved_go_to_cabinet_button">Перейти в кабинет</string>
+    <!-- /table reserved -->
 </resources>

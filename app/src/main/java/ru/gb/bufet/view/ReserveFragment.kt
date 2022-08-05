@@ -70,6 +70,13 @@ class ReserveFragment : BaseFragment<FragmentReserveBinding>(
         binding.backButton.setOnClickListener {
             (activity as MainActivity).onBackPressed()
         }
+        binding.fragmentReservePaymentBtn.setOnClickListener {
+            val bottomSheet = PaymentTableDialog()
+            bottomSheet.show(
+                requireActivity().supportFragmentManager,
+                getString(R.string.dialog_payment_reserve_table)
+            )
+        }
     }
 }
 

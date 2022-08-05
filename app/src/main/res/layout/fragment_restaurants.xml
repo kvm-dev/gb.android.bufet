@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:iconifiedByDefault="false"
+        app:showAsAction="always"
         app:queryHint="Search restaurant..." />
 
     <!--/todo сделать в стиле приложения!!! -->

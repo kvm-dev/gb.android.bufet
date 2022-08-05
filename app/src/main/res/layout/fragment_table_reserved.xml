@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/match_match_container">
+
+    <TextView
+        android:id="@+id/fragmentTableReservedTitle"
+        style="@style/table_reserved_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/fragmentTableReservedSv"
+        style="@style/baseScrollView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentTableReservedTitle">
+
+        <LinearLayout
+            style="@style/base_constraint"
+            android:orientation="vertical"
+            tools:ignore="UseCompoundDrawables">
+
+            <ImageView
+                android:id="@+id/fragmentReservedTableLogoIv"
+                style="@style/table_reserved_logo"
+                android:contentDescription="@string/logo_bufet"
+                app:srcCompat="@drawable/logo" />
+
+            <TextView
+                android:id="@+id/fragmentReservedTableSubtitleTv"
+                style="@style/table_reserved_sub_title" />
+
+            <TextView
+                android:id="@+id/fragmentReservedTableMessageTv"
+                style="@style/table_reserved_message"
+                tools:ignore="TextContrastCheck" />
+
+            <ImageView
+                android:id="@+id/fragmentReservedTableQrCodeIv"
+                style="@style/table_reserved_qr"
+                android:contentDescription="@string/reserved_table_qr" />
+
+            <Button
+                android:id="@+id/fragmentReservedTableGoToFoodListBtn"
+                style="@style/base_button"
+                android:text="@string/fragment_table_reserved_go_to_food_list_button"
+                tools:ignore="ButtonStyle,TextContrastCheck" />
+
+            <Button
+                android:id="@+id/fragmentReservedTableGoToCabinetBtn"
+                style="@style/base_button"
+                android:layout_marginBottom="@dimen/dp52"
+                android:text="@string/fragment_table_reserved_go_to_cabinet_button"
+                tools:ignore="ButtonStyle,TextContrastCheck" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
