@@ -1,8 +1,6 @@
 package ru.gb.bufet.view
 
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -83,62 +81,42 @@ class RestaurantsFragment : BaseFragment<FragmentRestaurantsBinding>(
                     viewModel.currentRestaurants.value?.let {
                         RestaurantsAdapter(it)
                     }
-                return true
+                if (binding.fragmentRestaurantsSearchView.query.isEmpty()) {
+                    binding.filterNavigation.getTabAt(0)?.select()
+                }
+                if (viewModel.currentRestaurants.value.isNullOrEmpty()) {
+                    BufetHelpers(requireContext()).makeVisible(
+                        arrayListOf(
+                            binding.searchSpacer,
+
+                            binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                        )
+                    )
+                    BufetHelpers(requireContext()).makeInvisible(
+                        arrayListOf(
+                            binding.filterNavigation,
+                            binding.advertiseRecycler,
+                            binding.fragmentRestaurantsRecycler
+                        )
+                    )
+                } else {
+                    BufetHelpers(requireContext()).makeVisible(
+                        arrayListOf(
+                            binding.filterNavigation,
+                            binding.advertiseRecycler,
+                            binding.fragmentRestaurantsRecycler
+                        )
+                    )
+                    BufetHelpers(requireContext()).makeInvisible(
+                        arrayListOf(
+                            binding.searchSpacer,
+                            binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
+                        )
+                    )
+                }
+                return false
             }
         })
-
-
-        if (viewModel.currentRestaurants.value.isNullOrEmpty()) {
-            BufetHelpers(requireContext()).makeVisible(
-                arrayListOf(
-                    binding.searchSpacer,
-//                    binding.cancelSearch,
-                    binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
-                )
-            )
-            BufetHelpers(requireContext()).makeInvisible(
-                arrayListOf(
-                    binding.filterNavigation,
-                    binding.advertiseRecycler,
-                    binding.fragmentRestaurantsRecycler
-                )
-            )
-        } else {
-            BufetHelpers(requireContext()).makeVisible(
-                arrayListOf(
-                    binding.filterNavigation,
-                    binding.advertiseRecycler,
-                    binding.fragmentRestaurantsRecycler
-                )
-            )
-            BufetHelpers(requireContext()).makeInvisible(
-                arrayListOf(
-                    binding.searchSpacer,
-//                    binding.cancelSearch,
-                    binding.fragmentRestaurantsItemNotFound.itemNotFoundCard
-                )
-            )
-        }
-
-        binding.fragmentRestaurantsSearchView.setOnCloseListener {
-            binding.filterNavigation.getTabAt(0)?.select()
-            Toast.makeText(requireContext(), "clear", Toast.LENGTH_SHORT).show()
-            true
-        }
-
-//        binding.cancelSearch.setOnClickListener {
-//            binding.search.text?.clear()
-//            val imm: InputMethodManager =
-//                requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-//            imm.hideSoftInputFromWindow(binding.search.windowToken, 0)
-//            binding.filterNavigation.getTabAt(0)?.select()
-//        }
-//        if (binding.search.text.isNullOrEmpty()) {
-//            binding.filterNavigation.visibility = View.VISIBLE
-//        } else {
-//            binding.filterNavigation.visibility = View.GONE
-//            binding.filterNavigation.getTabAt(0)?.select()
-//        }
     }
 
     private fun loadBanners() {
